@@ -8,6 +8,7 @@ public class Test : MonoBehaviour
     void Start()
     {
         print("wasd");
+        print("secondTest");
     }
 
     // Update is called once per frame
