@@ -19,5 +19,6 @@ public class PlayerMovement : MonoBehaviour
         Vector2 direction = Vector2.ClampMagnitude(new Vector2(horizontalMovement, verticalMovement) * _speed, _speed);//Получаем вектор направления, длинна которого меньше скорости
 
         _playerRigidbody.velocity = direction;
+        //тестовая строка
     }
 }
