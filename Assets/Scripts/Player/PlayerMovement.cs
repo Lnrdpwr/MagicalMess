@@ -5,9 +5,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed;
 
     private Rigidbody2D _playerRigidbody;
+    internal static PlayerMovement Instance;
 
-    private void Start()
+    private void Awake()
     {
+        Instance = this;
         _playerRigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -19,6 +21,5 @@ public class PlayerMovement : MonoBehaviour
         Vector2 direction = Vector2.ClampMagnitude(new Vector2(horizontalMovement, verticalMovement) * _speed, _speed);//Получаем вектор направления, длинна которого меньше скорости
 
         _playerRigidbody.velocity = direction;
-        //тестовая строка
     }
 }
