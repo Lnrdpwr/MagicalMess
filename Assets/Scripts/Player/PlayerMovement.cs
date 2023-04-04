@@ -6,12 +6,11 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D _playerRigidbody;
     internal static PlayerMovement Instance;
-
     private Vector2 _direction;
 
-
-    private void Start()
-    { 
+    private void Awake()
+    {
+        Instance = this;
         _playerRigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -20,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontalMovement = Input.GetAxisRaw("Horizontal");
         float verticalMovement = Input.GetAxisRaw("Vertical");
 
-        //Получаем вектор направления, длинна которого меньше скорости
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         _direction = Vector2.ClampMagnitude(new Vector2(horizontalMovement, verticalMovement) * _speed, _speed);
 
         _playerRigidbody.velocity = _direction;
