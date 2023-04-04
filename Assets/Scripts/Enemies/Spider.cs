@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class Sceleton : MonoBehaviour
+public class Spider : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private GameObject _effect;
+    [SerializeField] private GameObject _effect, _acid;
 
     private EnemyAnimations _enemyAnimations;
-    private Rigidbody2D _enemyRigidbody;
     private Transform _target;
+    private Rigidbody2D _enemyRigidbody;
 
     private void Start()
     {
@@ -24,8 +24,13 @@ public class Sceleton : MonoBehaviour
         _enemyRigidbody.velocity = direction;
     }
 
-    private void OnDestroy()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Instantiate(_effect, transform.position, Quaternion.identity);
+        if (collision.CompareTag("Player"))
+        {
+            Instantiate(_effect, transform.position, Quaternion.identity);
+            Instantiate(_acid, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 public class DamagingComponent : MonoBehaviour
 {
     [SerializeField] private int _damage;
-    [SerializeField] private bool _isKqamikaze;
+    [SerializeField] private bool _isKamikaze;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
