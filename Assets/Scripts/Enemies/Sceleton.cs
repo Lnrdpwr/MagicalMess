@@ -4,6 +4,7 @@ public class Sceleton : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private EnemyAnimations _enemyAnimations;
+    [SerializeField] private GameObject _effect;
 
     private Rigidbody2D _enemyRigidbody;
     private Transform _target;
@@ -19,5 +20,10 @@ public class Sceleton : MonoBehaviour
     {
         Vector2 direction = (_target.position - transform.position).normalized * _speed;
         _enemyRigidbody.velocity = direction;
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(_effect, transform.position, Quaternion.identity);
     }
 }
