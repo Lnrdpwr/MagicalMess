@@ -8,6 +8,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private float _reloadTime;
 
     private float _timer;
+    public int ShootsCount;
 
     public void Start()
     {
@@ -20,15 +21,22 @@ public class PlayerShooting : MonoBehaviour
 
         if (_timer <= 0 && Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            Shoot(ShootsCount);
             _timer = _reloadTime;
         }
     }
 
-    private void Shoot()
+    private void Shoot(int count)
     {
-        GameObject bullet = Instantiate(_bulletPrefab, _firePoint.position, _firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(_firePoint.up * _bulletForce, ForceMode2D.Impulse);
+        int i = ShootsCount;
+
+        while (i > 0)
+        {
+            GameObject bullet = Instantiate(_bulletPrefab, _firePoint.position, _firePoint.parent.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce( _firePoint.up * _bulletForce, ForceMode2D.Impulse); ;
+
+            i--;
+        }
     }
 }
