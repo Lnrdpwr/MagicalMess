@@ -10,8 +10,13 @@ public class EnemyHealth : MonoBehaviour
         _health -= damage;
         if(_health <= 0)
         {
-            Instantiate(_effect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            DestroyEnemy();
         }
+    }
+
+    public void DestroyEnemy()
+    {
+        Instantiate(_effect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

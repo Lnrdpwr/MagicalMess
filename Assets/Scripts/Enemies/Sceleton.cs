@@ -3,7 +3,6 @@ using UnityEngine;
 public class Sceleton : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private GameObject _effect;
 
     private EnemyAnimations _enemyAnimations;
     private Rigidbody2D _enemyRigidbody;
@@ -22,10 +21,5 @@ public class Sceleton : MonoBehaviour
     {
         Vector2 direction = (_target.position - transform.position).normalized * _speed;
         _enemyRigidbody.velocity = direction;
-    }
-
-    private void OnDestroy()
-    {
-        Instantiate(_effect, transform.position, Quaternion.identity);
     }
 }
