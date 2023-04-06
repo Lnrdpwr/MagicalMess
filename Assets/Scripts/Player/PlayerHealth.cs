@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     private float _currentHealth;
     private SpriteRenderer _playerRenderer;
     private bool _isInvincible;
+    private bool _canChangeBar;
 
     private void Start()
     {
@@ -22,21 +23,23 @@ public class PlayerHealth : MonoBehaviour
 
     public void ChangeHealth(float changeAmount)//Отрицательное, если надо нанести урон
     {
-        if(changeAmount > 0 || !_isInvincible)
+        if(changeAmount < 0 && !_isInvincible)
         {
             _currentHealth += changeAmount;
+            _canChangeBar = true;
         }
         
         if(_currentHealth <= 0)
         {
             Destroy(gameObject);
         }
-        else if(_currentHealth <= _maximumHealth)
+        else if(_currentHealth < _maximumHealth && _canChangeBar)
         {
             StartCoroutine(ChangeBar(_currentHealth - changeAmount, changeAmount));
             StartCoroutine(Invincible());
+            _canChangeBar = false;
         }
-        else
+        else if(_currentHealth > _maximumHealth)
         {
             _currentHealth = _maximumHealth;
         }
