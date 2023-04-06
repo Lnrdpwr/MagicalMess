@@ -31,10 +31,8 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator ChangeBar(float changeFrom, float previousChange)
     {
-        Debug.Log(changeFrom);
         for(float i = 0; i <= _timeToChangeBar; i += Time.deltaTime)
         {
-            Debug.Log((changeFrom + _healthBarChangeCurve.Evaluate(i / _timeToChangeBar) * previousChange) / _maximumHealth);
             _healthBar.fillAmount = (changeFrom + _healthBarChangeCurve.Evaluate(i / _timeToChangeBar) * previousChange) / _maximumHealth;
             yield return new WaitForEndOfFrame();
         }
