@@ -1778,6 +1778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ec9abd32bce1745a81bf5c1ad2d4df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerShooting: {fileID: 1572336969}
   _bullet: {fileID: 2462015204279850054, guid: b3554b632fdecff49bb8d065ace01f7b, type: 3}
 --- !u!4 &1741831243
 Transform:

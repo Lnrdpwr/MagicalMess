@@ -2,11 +2,18 @@ using UnityEngine;
 
 public class PassiveSkills : MonoBehaviour
 {
+    [SerializeField] PlayerShooting _playerShooting;
     [SerializeField] Bullet _bullet;
    
-    //Повысить уровень "Пронзания стрелой"
     public void ArrowpPiercingUpLevel()
     {
         _bullet.PiercingPower += 1;
     }
+
+    public void SplitArrowUpLevel()
+    {
+        _playerShooting.ShootsCount += 1;
+    }
+
+
 }
