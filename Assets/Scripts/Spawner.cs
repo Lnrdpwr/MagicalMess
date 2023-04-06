@@ -6,12 +6,20 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject[] _enemies;
     [SerializeField] private Vector2 _topRight, _bottomLeft;
     [SerializeField] private float _timeToSpawn, _waveTime;
+    [SerializeField] private GameObject _callWaveText;
 
     private Vector2 _spawnPosition;
+    private bool _waveInProgress = false;
 
-    private void Start()
+    private void Update()
     {
-        StartCoroutine(SpawnCycle());
+        if (Input.GetKeyDown("e") && !_waveInProgress)
+        {
+            _waveInProgress = true;
+            _callWaveText.SetActive(false);
+
+            StartCoroutine(SpawnCycle());
+        }
     }
 
     IEnumerator SpawnCycle()
@@ -36,6 +44,8 @@ public class Spawner : MonoBehaviour
             Instantiate(_enemies[chosenEnemy], _spawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(_timeToSpawn);
         }
+        _callWaveText.SetActive(true);
+        _waveInProgress = false;
     }
 
 }
