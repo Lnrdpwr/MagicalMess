@@ -155,8 +155,8 @@ MonoBehaviour:
   _enemies:
   - {fileID: 2542171148697995434, guid: b7408d92f6ea94a40bc92795f4c555f2, type: 3}
   - {fileID: 3401444500356740295, guid: 545d5211098de6940970a287ca3fadf9, type: 3}
-  _topRight: {x: 10, y: 6}
-  _bottomLeft: {x: -10, y: -1}
+  _topRight: {x: 11, y: 6}
+  _bottomLeft: {x: -11, y: -1}
   _timeToSpawn: 1
   _waveTime: 3
   _callWaveText: {fileID: 1284043499}
@@ -2175,6 +2175,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _timeToChangeBar: 0.5
+  _invincibleTime: 1
 --- !u!1 &1617110058
 GameObject:
   m_ObjectHideFlags: 0
