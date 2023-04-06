@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8111411876609660248}
   - component: {fileID: 4802772132787522656}
   - component: {fileID: 265207945107373760}
-  - component: {fileID: 8867755161778260568}
-  - component: {fileID: 6944827937444901201}
+  - component: {fileID: 3045485386757098343}
+  - component: {fileID: 1332207205798961614}
   m_Layer: 0
   m_Name: Acid
   m_TagString: Untagged
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -114,7 +114,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.4375}
   m_EdgeRadius: 0
---- !u!114 &8867755161778260568
+--- !u!114 &3045485386757098343
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,21 +123,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7143179204421182040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ecb1b047d09a2544803c62371733087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1
-  _isKamikaze: 0
---- !u!114 &6944827937444901201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7143179204421182040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97922c7b8943ae64e82de0280b41f5bb, type: 3}
+  m_Script: {fileID: 11500000, guid: c38541530fe9199498850af4e6178520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeTime: 5
@@ -145,35 +131,49 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.0018005371
       value: 1
-      inSlope: -0.04969718
-      outSlope: -0.04969718
+      inSlope: -0.07702664
+      outSlope: -0.07702664
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.049788415
-      outWeight: 0.09789756
+      inWeight: 0
+      outWeight: 0.11144986
     - serializedVersion: 3
-      time: 0.7284151
-      value: 0.86824167
-      inSlope: -0.4656999
-      outSlope: -0.4656999
+      time: 0.8599322
+      value: 0.8828785
+      inSlope: -0.34661058
+      outSlope: -0.34661058
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.11393877
-      outWeight: 0.26592872
+      inWeight: 0.10871025
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 0.2
-      inSlope: -5.1920447
-      outSlope: -5.1920447
+      value: 0
+      inSlope: -14.329647
+      outSlope: -14.329647
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.10409335
-      outWeight: 0.13016665
+      inWeight: 0.07439739
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1332207205798961614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7143179204421182040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a217cd7c1748874d9a26be754a15fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _isKamikaze: 0
 --- !u!1001 &9123479427980268558
 PrefabInstance:
   m_ObjectHideFlags: 0
