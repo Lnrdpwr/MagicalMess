@@ -2,14 +2,24 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private int _damage;//Ещё не изменяется при улучшении
+    private int _piercesBeforeDestruction;
+
+    public int PiercingPower;
+
+    public void Start()
+    {
+        _piercesBeforeDestruction = PiercingPower;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent(out EnemyHealth _enemy))
+        _piercesBeforeDestruction -= 1;
+
+        if (_piercesBeforeDestruction <= 0)
         {
-            _enemy.DoDamage(_damage);
+            Destroy(gameObject);
+            _piercesBeforeDestruction = PiercingPower;
         }
-        Destroy(gameObject);
+       
     }
 }

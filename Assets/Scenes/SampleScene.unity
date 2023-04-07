@@ -155,7 +155,6 @@ MonoBehaviour:
   _enemies:
   - {fileID: 2542171148697995434, guid: b7408d92f6ea94a40bc92795f4c555f2, type: 3}
   - {fileID: 3401444500356740295, guid: 545d5211098de6940970a287ca3fadf9, type: 3}
-  - {fileID: 6056844305599390997, guid: 875064f3ac87de644841fe5bf2a56741, type: 3}
   _topRight: {x: 11, y: 6}
   _bottomLeft: {x: -11, y: -1}
   _timeToSpawn: 1
@@ -1817,6 +1816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 519420031}
+  _playerMovement: {fileID: 1572336966}
 --- !u!50 &1390734065
 Rigidbody2D:
   serializedVersion: 4
@@ -2136,7 +2136,8 @@ MonoBehaviour:
   _firePoint: {fileID: 1521603479}
   _bulletPrefab: {fileID: 8769587718876736166, guid: b3554b632fdecff49bb8d065ace01f7b, type: 3}
   _bulletForce: 10
-  _reloadTime: 0.5
+  _reloadTime: 1
+  ShootsCount: 0
 --- !u!114 &1572336970
 MonoBehaviour:
   m_ObjectHideFlags: 0

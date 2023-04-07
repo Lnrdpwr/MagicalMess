@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
@@ -8,29 +7,36 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private float _bulletForce;
     [SerializeField] private float _reloadTime;
 
-    private bool _isReloaded = true;
+    private float _timer;
+    public int ShootsCount;
+
+    public void Start()
+    {
+        _timer = _reloadTime;
+    }
 
     public void Update()
     {
+        _timer -= Time.deltaTime;
 
-        if (_isReloaded && Input.GetButtonDown("Fire1"))
+        if (_timer <= 0 && Input.GetButtonDown("Fire1"))
         {
-            Shoot();
-            StartCoroutine(Reload());
-            _isReloaded = false;
+            Shoot(ShootsCount);
+            _timer = _reloadTime;
         }
     }
 
-    private void Shoot()
+    private void Shoot(int count)
     {
-        GameObject bullet = Instantiate(_bulletPrefab, _firePoint.position, _firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(_firePoint.up * _bulletForce, ForceMode2D.Impulse);
-    }
+        int i = ShootsCount;
 
-    IEnumerator Reload()
-    {
-        yield return new WaitForSeconds(_reloadTime);
-        _isReloaded = true;
+        while (i > 0)
+        {
+            GameObject bullet = Instantiate(_bulletPrefab, _firePoint.position, _firePoint.parent.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce( _firePoint.up * _bulletForce, ForceMode2D.Impulse); ;
+
+            i--;
+        }
     }
 }
