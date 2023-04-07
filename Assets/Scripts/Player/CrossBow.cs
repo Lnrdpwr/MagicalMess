@@ -36,7 +36,5 @@ public class CrossBow : MonoBehaviour
             _playerMovement.LookLeft();
             //_transform.position = new Vector3(-0.15f, -0.15f,0);
         }
-
-        Debug.Log(angle);
     }
 }
