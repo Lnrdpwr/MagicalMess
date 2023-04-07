@@ -2136,7 +2136,7 @@ MonoBehaviour:
   _firePoint: {fileID: 1521603479}
   _bulletPrefab: {fileID: 8769587718876736166, guid: b3554b632fdecff49bb8d065ace01f7b, type: 3}
   _bulletForce: 10
-  _reloadTime: 1
+  _reloadTime: 0.5
 --- !u!114 &1572336970
 MonoBehaviour:
   m_ObjectHideFlags: 0
