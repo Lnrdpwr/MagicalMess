@@ -14,8 +14,8 @@ public class EnemyAnimations : MonoBehaviour
         _enemyAnimator.SetBool("IsMoving", newState);
     }
 
-    public void SpawnBat()
+    public void StartAttack()
     {
-        _enemyAnimator.SetTrigger("StartSpawn");
+        _enemyAnimator.SetTrigger("StartAttack");
     }
 }

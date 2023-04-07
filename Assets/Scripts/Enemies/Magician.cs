@@ -1,13 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
-public class Witch : MonoBehaviour
+public class Magician : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _minimalDistance, _maximalDistance;
-    [SerializeField] private Transform _batSpawnPoint;
-    [SerializeField] private GameObject _bat;
-    [SerializeField] private float _timeToSpawnBat;
+    [SerializeField] private Transform _projectileSpawnPoint;
+    [SerializeField] private GameObject _projectile;
+    [SerializeField] private float _timeToSpawnProjectile;
 
     private EnemyAnimations _enemyAnimations;
     private Rigidbody2D _enemyRigidbody;
@@ -23,7 +23,7 @@ public class Witch : MonoBehaviour
         _target = PlayerMovement.Instance.transform;
         _enemyAnimations.SetMovingAnimation(true);
 
-        StartCoroutine(SpawnBats());
+        StartCoroutine(SpawnProjectiles());
     }
 
     private void FixedUpdate()
@@ -57,13 +57,13 @@ public class Witch : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnBats()
+    IEnumerator SpawnProjectiles()
     {
         while (true)
         {
-            yield return new WaitForSeconds(_timeToSpawnBat);
-            Instantiate(_bat, _batSpawnPoint.position, Quaternion.identity);
-            _enemyAnimations.SpawnBat();
+            yield return new WaitForSeconds(_timeToSpawnProjectile);
+            Instantiate(_projectile, _projectileSpawnPoint.position, Quaternion.identity);
+            _enemyAnimations.StartAttack();
         }
     }
 }
