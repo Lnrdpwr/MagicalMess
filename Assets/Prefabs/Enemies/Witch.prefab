@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6056844305599391007}
   - component: {fileID: 6056844305599391006}
   - component: {fileID: 6056844305599391004}
+  - component: {fileID: -3029030702031289157}
   m_Layer: 0
   m_Name: Witch
   m_TagString: Untagged
@@ -188,6 +189,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &-3029030702031289157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6056844305599390997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55794287e504ae640bb9aff5726407e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 3
+  _effect: {fileID: 7770072003549023447, guid: 90a7aab429c01b549970b666c7f480e4, type: 3}
 --- !u!1 &6056844306414766863
 GameObject:
   m_ObjectHideFlags: 0

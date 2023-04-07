@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
 {
     private int _piercesBeforeDestruction;
 
+    public float _damage;
     public int PiercingPower;
 
     public void Start()
@@ -13,13 +14,16 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _piercesBeforeDestruction -= 1;
-
-        if (_piercesBeforeDestruction <= 0)
+        if(collision.TryGetComponent(out EnemyHealth enemy))
         {
-            Destroy(gameObject);
-            _piercesBeforeDestruction = PiercingPower;
+            enemy.DoDamage(_damage);
+            _piercesBeforeDestruction -= 1;
+
+            if (_piercesBeforeDestruction <= 0)
+            {
+                Destroy(gameObject);
+                _piercesBeforeDestruction = PiercingPower;
+            }
         }
-       
     }
 }

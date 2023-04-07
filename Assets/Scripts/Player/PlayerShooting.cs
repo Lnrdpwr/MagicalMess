@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
@@ -6,37 +7,36 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private float _bulletForce;
     [SerializeField] private float _reloadTime;
+    [SerializeField] private float _damage;
 
-    private float _timer;
     public int ShootsCount;
-
-    public void Start()
-    {
-        _timer = _reloadTime;
-    }
+    private bool _isReloaded = true;
 
     public void Update()
     {
-        _timer -= Time.deltaTime;
-
-        if (_timer <= 0 && Input.GetButtonDown("Fire1"))
+        if (_isReloaded && Input.GetButtonDown("Fire1"))
         {
-            Shoot(ShootsCount);
-            _timer = _reloadTime;
+            Shoot();
+            StartCoroutine(Reload());
         }
     }
 
-    private void Shoot(int count)
+    private void Shoot()
     {
-        int i = ShootsCount;
-
-        while (i > 0)
+        for(int i = ShootsCount; i > 0; i--)
         {
-            GameObject bullet = Instantiate(_bulletPrefab, _firePoint.position, _firePoint.parent.rotation);
+            Bullet bullet = Instantiate(_bulletPrefab, _firePoint.position, _firePoint.parent.rotation).GetComponent<Bullet>();
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce( _firePoint.up * _bulletForce, ForceMode2D.Impulse); ;
+            rb.AddForce(_firePoint.up * _bulletForce, ForceMode2D.Impulse);
 
-            i--;
+            bullet._damage = _damage;
         }
+    }
+
+    IEnumerator Reload()
+    {
+        _isReloaded = false;
+        yield return new WaitForSeconds(_reloadTime);
+        _isReloaded = true;
     }
 }

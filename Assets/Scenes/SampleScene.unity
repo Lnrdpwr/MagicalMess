@@ -155,6 +155,7 @@ MonoBehaviour:
   _enemies:
   - {fileID: 2542171148697995434, guid: b7408d92f6ea94a40bc92795f4c555f2, type: 3}
   - {fileID: 3401444500356740295, guid: 545d5211098de6940970a287ca3fadf9, type: 3}
+  - {fileID: 6056844305599390997, guid: 875064f3ac87de644841fe5bf2a56741, type: 3}
   _topRight: {x: 11, y: 6}
   _bottomLeft: {x: -11, y: -1}
   _timeToSpawn: 1
@@ -502,7 +503,7 @@ Tilemap:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -17, y: -7, z: 0}
   m_Size: {x: 33, y: 14, z: 1}
-  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
+  m_TileAnchor: {x: 0.6, y: 0.6, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
     e00: 1
@@ -1118,7 +1119,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1572336969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1135,7 +1136,8 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 8769587718876736166, guid: b3554b632fdecff49bb8d065ace01f7b, type: 3}
   _bulletForce: 10
   _reloadTime: 1
-  ShootsCount: 0
+  _damage: 1
+  ShootsCount: 1
 --- !u!114 &1572336970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1832,7 +1834,7 @@ Tilemap:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -14, y: -7, z: 0}
   m_Size: {x: 28, y: 14, z: 1}
-  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
+  m_TileAnchor: {x: 0.6, y: 0.6, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
     e00: 1

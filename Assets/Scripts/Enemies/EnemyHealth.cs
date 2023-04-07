@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private int _health;
+    [SerializeField] private float _health;
     [SerializeField] private GameObject _effect;
 
-    public void DoDamage(int damage)
+    public void DoDamage(float damage)
     {
         _health -= damage;
         if(_health <= 0)
