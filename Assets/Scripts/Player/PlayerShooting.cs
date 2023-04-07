@@ -9,6 +9,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private float _reloadTime;
     [SerializeField] private float _damage;
 
+    public int PiercingPower;
     public int ShootsCount;
     private bool _isReloaded = true;
 
@@ -29,7 +30,8 @@ public class PlayerShooting : MonoBehaviour
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(_firePoint.up * _bulletForce, ForceMode2D.Impulse);
 
-            bullet._damage = _damage;
+            bullet.Damage = _damage;
+            bullet.PiercingPower = PiercingPower;
         }
     }
 
