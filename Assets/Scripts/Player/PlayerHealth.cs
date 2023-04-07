@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private float _maximumHealth;
     [SerializeField] private Image _healthBar;
     [SerializeField] private AnimationCurve _healthBarChangeCurve;
     [SerializeField] private float _timeToChangeBar;
@@ -15,9 +14,11 @@ public class PlayerHealth : MonoBehaviour
     private bool _isInvincible;
     private bool _canChangeBar;
 
+    public float MaximumHealth;
+
     private void Start()
     {
-        _currentHealth = _maximumHealth;
+        _currentHealth = MaximumHealth;
         _playerRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -33,15 +34,15 @@ public class PlayerHealth : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else if(_currentHealth < _maximumHealth && _canChangeBar)
+        else if(_currentHealth < MaximumHealth && _canChangeBar)
         {
             StartCoroutine(ChangeBar(_currentHealth - changeAmount, changeAmount));
             StartCoroutine(Invincible());
             _canChangeBar = false;
         }
-        else if(_currentHealth > _maximumHealth)
+        else if(_currentHealth > MaximumHealth)
         {
-            _currentHealth = _maximumHealth;
+            _currentHealth = MaximumHealth;
         }
     }
 
@@ -49,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
     {
         for(float i = 0; i <= _timeToChangeBar; i += Time.deltaTime)
         {
-            _healthBar.fillAmount = (changeFrom + _healthBarChangeCurve.Evaluate(i / _timeToChangeBar) * previousChange) / _maximumHealth;
+            _healthBar.fillAmount = (changeFrom + _healthBarChangeCurve.Evaluate(i / _timeToChangeBar) * previousChange) / MaximumHealth;
             yield return new WaitForEndOfFrame();
         }
     }

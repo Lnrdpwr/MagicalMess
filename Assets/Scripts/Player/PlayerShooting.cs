@@ -5,13 +5,15 @@ public class PlayerShooting : MonoBehaviour
 {
     [SerializeField] private Transform _firePoint;
     [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private float _bulletForce;
-    [SerializeField] private float _reloadTime;
-    [SerializeField] private float _damage;
 
+    private bool _isReloaded = true;
+
+    public float ReloadTime;
+    public float Damage;
+    public float BulletForce;
     public int PiercingPower;
     public int ShootsCount;
-    private bool _isReloaded = true;
+    public Vector3 ArrowScale;
 
     public void Update()
     {
@@ -28,17 +30,18 @@ public class PlayerShooting : MonoBehaviour
         {
             Bullet bullet = Instantiate(_bulletPrefab, _firePoint.position, _firePoint.parent.rotation).GetComponent<Bullet>();
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(_firePoint.up * _bulletForce, ForceMode2D.Impulse);
+            rb.AddForce(_firePoint.up * BulletForce, ForceMode2D.Impulse);
 
-            bullet.Damage = _damage;
+            bullet.Damage = Damage;
             bullet.PiercingPower = PiercingPower;
+            bullet.transform.localScale = ArrowScale;
         }
     }
 
     IEnumerator Reload()
     {
         _isReloaded = false;
-        yield return new WaitForSeconds(_reloadTime);
+        yield return new WaitForSeconds(ReloadTime);
         _isReloaded = true;
     }
 }

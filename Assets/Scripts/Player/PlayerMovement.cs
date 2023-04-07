@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed; 
 
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _playerRigidbody;
     internal static PlayerMovement Instance;
     private Vector2 _direction;
+
+    public float Speed;
 
     private void Awake()
     {
@@ -22,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         float verticalMovement = Input.GetAxisRaw("Vertical");
 
         //�������� ������ �����������, ������ �������� ������ ��������
-        _direction = Vector2.ClampMagnitude(new Vector2(horizontalMovement, verticalMovement) * _speed, _speed);
+        _direction = Vector2.ClampMagnitude(new Vector2(horizontalMovement, verticalMovement) * Speed, Speed);
 
         _playerRigidbody.velocity = _direction;
     }
