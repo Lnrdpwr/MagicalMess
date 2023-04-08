@@ -1,30 +1,29 @@
 using UnityEngine;
-
+using System.Collections;
 
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float _health;
     [SerializeField] private GameObject _effect;
 
-    public float Damage;
-
-    public void DoDamage()
+    public void DoDamageAfterTrack(float time, float damage)
     {
-        _health -= Damage;
-        if(_health <= 0)
-        {
-            DestroyEnemy();
-        }
-    }
-
-    public void DoDamageAfterTrack(float time)
-    {
-        Invoke("DoDamage", time);
+        StartCoroutine(DoDamage(time, damage));
     }
 
     public void DestroyEnemy()
     {
         Instantiate(_effect, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    IEnumerator DoDamage(float time, float damage)
+    {
+        yield return new WaitForSeconds(time);
+        _health -= damage;
+        if (_health <= 0)
+        {
+            DestroyEnemy();
+        }
     }
 }

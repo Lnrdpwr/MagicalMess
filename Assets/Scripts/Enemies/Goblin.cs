@@ -9,6 +9,8 @@ public class Goblin : MonoBehaviour
     private EnemyAnimations _enemyAnimations;
     private Rigidbody2D _enemyRigidbody;
     private Transform _target;
+    private bool _stoleMoney = false;
+
 
     private void Start()
     {
@@ -29,10 +31,10 @@ public class Goblin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))//Потом collision.TryGetComponent(out PlayerWallet wallet)
+        if(collision.CompareTag("Player") && !_stoleMoney)//Потом collision.TryGetComponent(out PlayerWallet wallet)
         {
-            //Добавить алгоритм воровства
             _speed *= -1;//Что бы гоблин бежал от игрока
+            _stoleMoney = true;
         }
     }
 

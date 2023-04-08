@@ -9,15 +9,16 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject _callWaveText;
 
     private Vector2 _spawnPosition;
-    private bool _waveInProgress = false;
+    private bool _canShowText = true;
+    private int _wavesPassed = 0;
 
     private void Update()
     {
-        if (Input.GetKeyDown("e") && !_waveInProgress)
+        if (Input.GetKeyDown("e") && _canShowText)
         {
-            _waveInProgress = true;
+            _canShowText = false;
             _callWaveText.SetActive(false);
-
+            
             StartCoroutine(SpawnCycle());
         }
     }
@@ -44,8 +45,17 @@ public class Spawner : MonoBehaviour
             Instantiate(_enemies[chosenEnemy], _spawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(_timeToSpawn);
         }
+        _wavesPassed++;
         _callWaveText.SetActive(true);
-        _waveInProgress = false;
+        _canShowText = true;
+    }
+
+    public int StopSpawner()
+    {
+        StopAllCoroutines();
+        _canShowText = false;
+        _callWaveText.SetActive(false);
+        return _wavesPassed;
     }
 
 }

@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private AnimationCurve _healthBarChangeCurve;
     [SerializeField] private float _timeToChangeBar;
     [SerializeField] private float _invincibleTime;
+    [SerializeField] private GameObject _healthbarObject;
+    [SerializeField] private LevelManager _levelManager;
 
     private float _currentHealth;
     private SpriteRenderer _playerRenderer;
@@ -32,6 +34,8 @@ public class PlayerHealth : MonoBehaviour
         
         if(_currentHealth <= 0)
         {
+            _healthbarObject.SetActive(false);
+            _levelManager.StopGame();
             Destroy(gameObject);
         }
         else if(_currentHealth < MaximumHealth && _canChangeBar)

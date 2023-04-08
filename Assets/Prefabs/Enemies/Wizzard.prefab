@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 688015496063706318}
   m_Layer: 0
   m_Name: Wizzard
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
-  _effect: {fileID: 0}
+  _effect: {fileID: 3466444311966102826, guid: cfbb62f6dfa6db843b45c2511efc779d, type: 3}
 --- !u!114 &688015496063706308
 MonoBehaviour:
   m_ObjectHideFlags: 0
