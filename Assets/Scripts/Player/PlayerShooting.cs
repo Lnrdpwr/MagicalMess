@@ -8,10 +8,11 @@ public class PlayerShooting : MonoBehaviour
 
     private bool _isReloaded = true;
 
+    public bool isTracked = false;
     public float ReloadTime;
     public float Damage;
     public float BulletForce;
-    public int PiercingPower;
+    public int PiercingPower; 
     public int ShootsCount;
     public Vector3 ArrowScale;
 
@@ -35,6 +36,7 @@ public class PlayerShooting : MonoBehaviour
             bullet.Damage = Damage;
             bullet.PiercingPower = PiercingPower;
             bullet.transform.localScale = ArrowScale;
+            bullet.isTracked = isTracked;
         }
     }
 

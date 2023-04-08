@@ -1,17 +1,25 @@
 using UnityEngine;
 
+
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float _health;
     [SerializeField] private GameObject _effect;
 
-    public void DoDamage(float damage)
+    public float Damage;
+
+    public void DoDamage()
     {
-        _health -= damage;
+        _health -= Damage;
         if(_health <= 0)
         {
             DestroyEnemy();
         }
+    }
+
+    public void DoDamageAfterTrack(float time)
+    {
+        Invoke("DoDamage", time);
     }
 
     public void DestroyEnemy()

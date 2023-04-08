@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _direction;
 
     public float Speed;
+    public Vector3 PlayerScale;
 
     private void Awake()
     {
@@ -19,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        transform.localScale = PlayerScale;
+
         float horizontalMovement = Input.GetAxisRaw("Horizontal");
         float verticalMovement = Input.GetAxisRaw("Vertical");
 

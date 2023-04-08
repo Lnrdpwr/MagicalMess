@@ -52,4 +52,15 @@ public class PassiveSkills : MonoBehaviour
             _playerHealth.MaximumHealth -= 1;
         }  
     }
+
+    public void TitanUpLevel()
+    {
+        _playerHealth.MaximumHealth += 2;
+        _playerMovement.PlayerScale += new Vector3(0.5f, 0.5f, 0);
+    }
+
+    public void MonsterMark()
+    {
+        _playerShooting.isTracked = true;
+    }
 }
