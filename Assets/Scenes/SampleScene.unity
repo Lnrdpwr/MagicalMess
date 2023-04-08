@@ -963,7 +963,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2053557058}
         m_TargetAssemblyTypeName: PassiveSkills, Assembly-CSharp
-        m_MethodName: LightnessInTheLegsUpLevel
+        m_MethodName: MonsterMark
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1370,6 +1370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+  PlayerScale: {x: 1, y: 1, z: 1}
 --- !u!50 &1572336967
 Rigidbody2D:
   serializedVersion: 4
@@ -1405,6 +1406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firePoint: {fileID: 1521603479}
   _bulletPrefab: {fileID: 8769587718876736166, guid: b3554b632fdecff49bb8d065ace01f7b, type: 3}
+  isTracked: 0
   ReloadTime: 1
   Damage: 1
   BulletForce: 10
