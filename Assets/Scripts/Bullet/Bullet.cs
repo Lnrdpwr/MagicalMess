@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 
     public float Damage;
     public int PiercingPower;
+    public bool isTracked;
 
     public void Start()
     {
@@ -16,8 +17,15 @@ public class Bullet : MonoBehaviour
     {
         if(collision.TryGetComponent(out EnemyHealth enemy))
         {
-            enemy.DoDamage(Damage);
+            enemy.Damage = Damage;
+
+            enemy.DoDamage();
             _piercesBeforeDestruction -= 1;
+
+            if (isTracked == true)
+            {
+                enemy.DoDamageAfterTrack(2);  
+            }
 
             if (_piercesBeforeDestruction <= 0)
             {
