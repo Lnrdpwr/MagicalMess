@@ -156,6 +156,8 @@ MonoBehaviour:
   - {fileID: 2542171148697995434, guid: b7408d92f6ea94a40bc92795f4c555f2, type: 3}
   - {fileID: 3401444500356740295, guid: 545d5211098de6940970a287ca3fadf9, type: 3}
   - {fileID: 6056844305599390997, guid: 875064f3ac87de644841fe5bf2a56741, type: 3}
+  - {fileID: 688015496063706311, guid: ff96626bf379e8a41aba91575157bfc1, type: 3}
+  - {fileID: 1451827323516615525, guid: dfabfa9d790f9c24988071df56bfa8fd, type: 3}
   _topRight: {x: 11, y: 6}
   _bottomLeft: {x: -11, y: -1}
   _timeToSpawn: 1
