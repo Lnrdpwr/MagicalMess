@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
         {
             _healthbarObject.SetActive(false);
             _levelManager.StopGame();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         else if(_currentHealth < MaximumHealth && _canChangeBar)
         {
