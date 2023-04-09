@@ -36,7 +36,7 @@ public class PlayerShooting : MonoBehaviour
             bullet.Damage = Damage;
             bullet.PiercingPower = PiercingPower;
             bullet.transform.localScale = ArrowScale;
-            bullet.isTracked = isTracked;
+            bullet.isTrackActive = isTracked;
         }
     }
 

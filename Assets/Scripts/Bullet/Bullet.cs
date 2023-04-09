@@ -1,16 +1,21 @@
+using System.Collections;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private float _timeBeforeDestroy;
+
     private int _piercesBeforeDestruction;
 
     public float Damage;
     public int PiercingPower;
-    public bool isTracked;
+    public bool isTrackActive;
 
     public void Start()
     {
         _piercesBeforeDestruction = PiercingPower;
+
+        StartCoroutine(DestroyBullet(_timeBeforeDestroy));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +26,7 @@ public class Bullet : MonoBehaviour
 
             _piercesBeforeDestruction -= 1;
 
-            if (isTracked == true)
+            if (isTrackActive == true)
             {
                 enemy.DoDamageAfterTrack(2, Damage);  
             }
@@ -32,5 +37,11 @@ public class Bullet : MonoBehaviour
                 _piercesBeforeDestruction = PiercingPower;
             }
         }
+    }
+
+    IEnumerator DestroyBullet(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
     }
 }
