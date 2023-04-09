@@ -1843,7 +1843,7 @@ GameObject:
   - component: {fileID: 1502214278}
   - component: {fileID: 1502214277}
   - component: {fileID: 1502214276}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
