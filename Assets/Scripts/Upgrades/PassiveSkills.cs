@@ -18,9 +18,9 @@ public class PassiveSkills : MonoBehaviour
 
     public void ThickArrowsUpLevel()
     {
-        if (_playerShooting.BulletForce > 1)
+        if (_playerShooting.Speed > 1)
         {
-            _playerShooting.BulletForce -= 1;
+            _playerShooting.Speed -= 1;
         }
 
         _playerShooting.Damage += 1;
@@ -40,7 +40,7 @@ public class PassiveSkills : MonoBehaviour
             _playerShooting.Damage -= 1;
         }
 
-        _playerShooting.BulletForce += 1;
+        _playerShooting.Speed += 1;
     }
 
     public void LightnessInTheLegsUpLevel()

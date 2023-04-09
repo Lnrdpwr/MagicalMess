@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
@@ -11,7 +12,7 @@ public class PlayerShooting : MonoBehaviour
     public bool isTracked = false;
     public float ReloadTime;
     public float Damage;
-    public float BulletForce;
+    public float Speed;
     public int PiercingPower; 
     public int ShootsCount;
     public Vector3 ArrowScale;
@@ -27,17 +28,29 @@ public class PlayerShooting : MonoBehaviour
 
     private void Shoot()
     {
-        for(int i = ShootsCount; i > 0; i--)
-        {
-            Bullet bullet = Instantiate(_bulletPrefab, _firePoint.position, _firePoint.parent.rotation).GetComponent<Bullet>();
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(_firePoint.up * BulletForce, ForceMode2D.Impulse);
+        int FixedShootsCount = ShootsCount - 1;
+        float maxAngle = 80f;
 
-            bullet.Damage = Damage;
-            bullet.PiercingPower = PiercingPower;
-            bullet.transform.localScale = ArrowScale;
-            bullet.isTrackActive = isTracked;
-        }
+        if (FixedShootsCount <= 0)
+            FixedShootsCount = 1;
+
+        for (float angle = -(maxAngle) / 2; angle <= maxAngle / 2; angle += maxAngle / FixedShootsCount)
+        {
+            Quaternion rotation = _firePoint.parent.rotation;
+
+            if (ShootsCount > 1)
+                rotation.z += angle * 0.001f;
+            else
+                rotation.z += 0;
+            
+            Bullet bullet = Instantiate(_bulletPrefab, _firePoint.position, rotation).GetComponent<Bullet>();
+
+             bullet.Speed = Speed;
+             bullet.Damage = Damage;
+             bullet.PiercingPower = PiercingPower;
+             bullet.transform.localScale = ArrowScale;
+             bullet.isTrackActive = isTracked;    
+        }   
     }
 
     IEnumerator Reload()
