@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 688015496063706308}
   - component: {fileID: 688015496063706319}
   - component: {fileID: 688015496063706318}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wizzard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
