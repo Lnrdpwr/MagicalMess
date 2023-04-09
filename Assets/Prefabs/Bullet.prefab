@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeBeforeDestroy: 5
+  _speed: 10
   Damage: 0
   PiercingPower: 1
   isTrackActive: 0

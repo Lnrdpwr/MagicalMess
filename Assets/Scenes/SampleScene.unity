@@ -2980,7 +2980,7 @@ MonoBehaviour:
   isTracked: 0
   ReloadTime: 1
   Damage: 1
-  BulletForce: 10
+  Speed: 10
   PiercingPower: 1
   ShootsCount: 1
   ArrowScale: {x: 1, y: 1, z: 1}
