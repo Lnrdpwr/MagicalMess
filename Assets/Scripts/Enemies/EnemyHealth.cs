@@ -3,11 +3,17 @@ using System.Collections;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [SerializeField] private MonsterMark _monsterMark;
     [SerializeField] private float _health;
     [SerializeField] private GameObject _effect;
 
-    public void DoDamageAfterTrack(float time, float damage)
+    public void DoDamage(float time, float damage,bool doTrack)
     {
+        if (doTrack == true && _health != damage)
+        {
+            _monsterMark.StartTimer(time);
+        }
+        
         StartCoroutine(DoDamage(time, damage));
     }
 

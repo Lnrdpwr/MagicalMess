@@ -22,13 +22,13 @@ public class Bullet : MonoBehaviour
     {
         if(collision.TryGetComponent(out EnemyHealth enemy))
         {
-            enemy.DoDamageAfterTrack(0, Damage);
+            enemy.DoDamage(0, Damage, false);
 
             _piercesBeforeDestruction -= 1;
 
             if (isTrackActive == true)
             {
-                enemy.DoDamageAfterTrack(2, Damage);  
+                enemy.DoDamage(2, Damage, true);  
             }
 
             if (_piercesBeforeDestruction <= 0)
