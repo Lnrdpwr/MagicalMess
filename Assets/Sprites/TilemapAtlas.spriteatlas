@@ -15,12 +15,24 @@ SpriteAtlas:
       compressionQuality: 50
       maxTextureSize: 2048
       textureCompression: 0
-      filterMode: 1
+      filterMode: 0
       generateMipMaps: 0
       readable: 0
       crunchedCompression: 0
       sRGB: 1
-    platformSettings: []
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
       serializedVersion: 2
       padding: 4
@@ -37,8 +49,16 @@ SpriteAtlas:
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
-  m_PackedSprites: []
-  m_PackedSpriteNamesToIndex: []
+  m_PackedSprites:
+  - {fileID: 1035187602, guid: ee4683eef26fd97499a0aaa4f331785c, type: 3}
+  - {fileID: -122583211, guid: ee4683eef26fd97499a0aaa4f331785c, type: 3}
+  - {fileID: -340620032, guid: ee4683eef26fd97499a0aaa4f331785c, type: 3}
+  - {fileID: 1146703080, guid: ee4683eef26fd97499a0aaa4f331785c, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - TileGround_
+  - TileGround_3
+  - TileGround_2
+  - TileGround_1
   m_RenderDataMap: {}
   m_Tag: TilemapAtlas
   m_IsVariant: 0
