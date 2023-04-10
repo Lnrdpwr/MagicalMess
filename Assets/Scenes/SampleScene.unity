@@ -211,6 +211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 168608137}
+  - component: {fileID: 168608138}
   m_Layer: 0
   m_Name: MusicObject
   m_TagString: Untagged
@@ -235,6 +236,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &168608138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168608136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d40d99e33ee8d4ca44ace494c95af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _activeMusicSource: {fileID: 341161024}
+  _calmMusicSource: {fileID: 1485077773}
 --- !u!1 &195371134
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +291,7 @@ MonoBehaviour:
   _waveTime: 10
   _callWaveText: {fileID: 1284043499}
   _coefficientDelta: 0.1
+  _musicSwitch: {fileID: 168608138}
   Coefficient: 1
   ActiveEnemies: 0
 --- !u!4 &195371136
@@ -582,9 +598,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cbfafb1fb02b0fb4da02b9b63afa4de0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2321,7 +2337,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
