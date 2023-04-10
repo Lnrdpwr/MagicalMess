@@ -13,7 +13,9 @@ public class Spawner : MonoBehaviour
     private bool _canShowText = true;
     private int _wavesPassed = 0;
     private LevelManager _levelManager;
+
     public float Coefficient = 1;
+    public int ActiveEnemies = 0;
 
     internal static Spawner Instance;
 
@@ -54,8 +56,10 @@ public class Spawner : MonoBehaviour
             }
 
             GameObject newEnemy = Instantiate(_enemies[chosenEnemy], _spawnPosition, Quaternion.identity);
+            ActiveEnemies++;
             yield return new WaitForSeconds(_timeToSpawn);
         }
+        yield return new WaitWhile(() => ActiveEnemies > 0);
         Coefficient += _coefficientDelta;
         _levelManager.CoinsPerKill = Mathf.RoundToInt(Coefficient);
 

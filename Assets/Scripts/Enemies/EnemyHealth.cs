@@ -28,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
     {
         Instantiate(_effect, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        Spawner.Instance.ActiveEnemies--;
     }
 
     IEnumerator DoDamage(float time, float damage)
