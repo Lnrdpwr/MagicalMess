@@ -8,7 +8,16 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject _panel;
     [SerializeField] private TMP_Text _passedWavesText;
     [SerializeField] private TMP_Text _bestResultText;
+
+    public int CoinsPerKill = 1;
+
+    internal static LevelManager Instance;
     
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     public void StopGame()
     {
         int bestResult = PlayerPrefs.GetInt("BestResult", 0);

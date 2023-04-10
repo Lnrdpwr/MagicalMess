@@ -168,7 +168,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fc9ea861533e34b47a897e849270e558, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4e028275eba9924fa564f2b51f18359, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -395,6 +395,8 @@ MonoBehaviour:
   _monsterMark: {fileID: 1049976698}
   _health: 3
   _effect: {fileID: 7770072003549023447, guid: 90a7aab429c01b549970b666c7f480e4, type: 3}
+  _coin: {fileID: 4132947167205755242, guid: c454f855bce931e4ba5a6ac827598e37, type: 3}
+  _canDropCoins: 1
 --- !u!1 &6056844306414766863
 GameObject:
   m_ObjectHideFlags: 0

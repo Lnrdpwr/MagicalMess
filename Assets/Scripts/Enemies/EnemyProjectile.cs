@@ -18,6 +18,8 @@ public class EnemyProjectile : MonoBehaviour
         Vector2 direction = (_target.position - transform.position).normalized * _speed;
         _projectileRigidbody.velocity = direction;
 
+        _projectileDamage *= Spawner.Instance.Coefficient;
+
         StartCoroutine(SelfDestroy());
     }
 

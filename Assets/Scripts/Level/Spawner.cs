@@ -7,10 +7,21 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Vector2 _topRight, _bottomLeft;
     [SerializeField] private float _timeToSpawn, _waveTime;
     [SerializeField] private GameObject _callWaveText;
+    [SerializeField] private float _coefficientDelta;
 
     private Vector2 _spawnPosition;
     private bool _canShowText = true;
     private int _wavesPassed = 0;
+    private LevelManager _levelManager;
+    public float Coefficient = 1;
+
+    internal static Spawner Instance;
+
+    private void Start()
+    {
+        Instance = this;
+        _levelManager = LevelManager.Instance;
+    }
 
     private void Update()
     {
@@ -42,9 +53,12 @@ public class Spawner : MonoBehaviour
                     break;
             }
 
-            Instantiate(_enemies[chosenEnemy], _spawnPosition, Quaternion.identity);
+            GameObject newEnemy = Instantiate(_enemies[chosenEnemy], _spawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(_timeToSpawn);
         }
+        Coefficient += _coefficientDelta;
+        _levelManager.CoinsPerKill = Mathf.RoundToInt(Coefficient);
+
         _wavesPassed++;
         _callWaveText.SetActive(true);
         _canShowText = true;

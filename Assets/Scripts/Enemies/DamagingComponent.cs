@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class DamagingComponent : MonoBehaviour
 {
-    [SerializeField] private int _damage;
+    [SerializeField] private float _damage;
     [SerializeField] private bool _isKamikaze;
 
     private EnemyHealth _health;
 
     private void Start()
     {
+        _damage *= Spawner.Instance.Coefficient;
         if (_isKamikaze)
         {
             _health = GetComponent<EnemyHealth>();
