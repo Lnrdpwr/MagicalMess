@@ -33,13 +33,15 @@ public class EnemyHealth : MonoBehaviour
     IEnumerator DoDamage(float time, float damage)
     {
         yield return new WaitForSeconds(time);
-        _health -= damage;
-        if (_health <= 0)
+        if(_health > 0)//Двойная проверка, что бы не спавнить несколько монет при попадании нескольких стрел
         {
-            if (Random.Range(0, 100) < 10 && _canDropCoins)
-                Instantiate(_coin, transform.position, Quaternion.identity);
-
-            DestroyEnemy();
+            _health -= damage;
+            if (_health <= 0)
+            {
+                if (Random.Range(0, 100) < 10 && _canDropCoins)
+                    Instantiate(_coin, transform.position, Quaternion.identity);
+                DestroyEnemy();
+            }
         }
     }
 }

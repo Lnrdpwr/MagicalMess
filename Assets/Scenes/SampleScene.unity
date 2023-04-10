@@ -242,7 +242,7 @@ MonoBehaviour:
   _timeToSpawn: 0.75
   _waveTime: 10
   _callWaveText: {fileID: 1284043499}
-  _coefficientDelta: 0
+  _coefficientDelta: 0.1
   Coefficient: 1
 --- !u!4 &195371136
 Transform:
