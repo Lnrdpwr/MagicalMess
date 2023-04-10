@@ -14,13 +14,17 @@ public class PassiveSkills : MonoBehaviour
     public void SplitArrowUpLevel()
     {
         _playerShooting.ShootsCount += 1;
+        if(_playerShooting.MaxAngle < 80)
+        {
+            _playerShooting.MaxAngle += 10f;
+        }
     }
 
     public void ThickArrowsUpLevel()
     {
-        if (_playerShooting.BulletForce > 1)
+        if (_playerShooting.Speed > 1)
         {
-            _playerShooting.BulletForce -= 1;
+            _playerShooting.Speed -= 1;
         }
 
         _playerShooting.Damage += 1;
@@ -40,7 +44,7 @@ public class PassiveSkills : MonoBehaviour
             _playerShooting.Damage -= 1;
         }
 
-        _playerShooting.BulletForce += 1;
+        _playerShooting.Speed += 1;
     }
 
     public void LightnessInTheLegsUpLevel()

@@ -5,14 +5,19 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _timeBeforeDestroy;
 
+    private Rigidbody2D _rigidbody2D;
     private int _piercesBeforeDestruction;
 
+    public float Speed;
     public float Damage;
     public int PiercingPower;
     public bool isTrackActive;
 
     public void Start()
     {
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+
+        _rigidbody2D.velocity = Speed * gameObject.transform.up;
         _piercesBeforeDestruction = PiercingPower;
 
         StartCoroutine(DestroyBullet(_timeBeforeDestroy));
