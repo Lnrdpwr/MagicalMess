@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float _timeToSpawn, _waveTime;
     [SerializeField] private GameObject _callWaveText;
     [SerializeField] private float _coefficientDelta;
+    [SerializeField] private MusicSwitch _musicSwitch;
 
     private Vector2 _spawnPosition;
     private bool _canShowText = true;
@@ -38,6 +39,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpawnCycle()
     {
+        _musicSwitch.SwitchMusic();
         for (float i = 0; i < _waveTime; i += _timeToSpawn)
         {
             int chosenEnemy = Random.Range(0, _enemies.Length);
@@ -60,6 +62,8 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(_timeToSpawn);
         }
         yield return new WaitWhile(() => ActiveEnemies > 0);
+        _musicSwitch.SwitchMusic();
+
         Coefficient += _coefficientDelta;
         _levelManager.CoinsPerKill = Mathf.RoundToInt(Coefficient);
 
