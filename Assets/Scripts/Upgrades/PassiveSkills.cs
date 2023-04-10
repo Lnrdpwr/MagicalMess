@@ -14,6 +14,10 @@ public class PassiveSkills : MonoBehaviour
     public void SplitArrowUpLevel()
     {
         _playerShooting.ShootsCount += 1;
+        if(_playerShooting.MaxAngle < 80)
+        {
+            _playerShooting.MaxAngle += 10f;
+        }
     }
 
     public void ThickArrowsUpLevel()

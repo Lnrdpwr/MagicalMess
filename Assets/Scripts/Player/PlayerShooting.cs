@@ -9,13 +9,14 @@ public class PlayerShooting : MonoBehaviour
 
     private bool _isReloaded = true;
 
-    public bool isTracked = false;
-    public float ReloadTime;
-    public float Damage;
-    public float Speed;
-    public int PiercingPower; 
-    public int ShootsCount;
-    public Vector3 ArrowScale;
+    public bool isTracked = false;//Метка монстра
+    public float ReloadTime;//Перезарядка
+    public float Damage;//Урон
+    public float Speed;//Скорость снаряда
+    public int PiercingPower;//Пронзание
+    public int ShootsCount;//Кол-во выстрелов
+    public Vector3 ArrowScale;//Размер стрелы
+    public float MaxAngle = 0f;//Фиксированный разброс
 
     public void Update()
     {
@@ -28,13 +29,9 @@ public class PlayerShooting : MonoBehaviour
 
     private void Shoot()
     {
-        int FixedShootsCount = ShootsCount - 1;
         float maxAngle = 80f;
 
-        if (FixedShootsCount <= 0)
-            FixedShootsCount = 1;
-
-        for (float angle = -(maxAngle) / 2; angle <= maxAngle / 2; angle += maxAngle / FixedShootsCount)
+        for (float angle = -(maxAngle) / 2; angle < maxAngle / 2; angle += maxAngle / ShootsCount)
         {
             Quaternion rotation = _firePoint.parent.rotation;
 
@@ -42,15 +39,15 @@ public class PlayerShooting : MonoBehaviour
                 rotation.z += angle * 0.001f;
             else
                 rotation.z += 0;
-            
+
             Bullet bullet = Instantiate(_bulletPrefab, _firePoint.position, rotation).GetComponent<Bullet>();
 
-             bullet.Speed = Speed;
-             bullet.Damage = Damage;
-             bullet.PiercingPower = PiercingPower;
-             bullet.transform.localScale = ArrowScale;
-             bullet.isTrackActive = isTracked;    
-        }   
+            bullet.Speed = Speed;
+            bullet.Damage = Damage;
+            bullet.PiercingPower = PiercingPower;
+            bullet.transform.localScale = ArrowScale;
+            bullet.isTrackActive = isTracked;
+        }
     }
 
     IEnumerator Reload()

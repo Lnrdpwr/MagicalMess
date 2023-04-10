@@ -1758,7 +1758,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2053557058}
         m_TargetAssemblyTypeName: PassiveSkills, Assembly-CSharp
-        m_MethodName: MonsterMark
+        m_MethodName: SplitArrowUpLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2984,6 +2984,7 @@ MonoBehaviour:
   PiercingPower: 1
   ShootsCount: 1
   ArrowScale: {x: 1, y: 1, z: 1}
+  MaxAngle: 0
 --- !u!114 &1572336970
 MonoBehaviour:
   m_ObjectHideFlags: 0
