@@ -20,10 +20,10 @@ public class MusicSwitch : MonoBehaviour
 
     IEnumerator SwitchVolume()
     {
-        for(float i = 0; i <= 1; i += Time.deltaTime)
+        for(float i = 0; i <= 3; i += Time.deltaTime)
         {
-            _activeSource.volume = 1 - i;
-            _disabledSource.volume = i;
+            _activeSource.volume = 1 - i/3;
+            _disabledSource.volume = i/3;
             yield return new WaitForEndOfFrame();
         }
         _activeSource.volume = 0;
