@@ -9,11 +9,13 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject _callWaveText;
     [SerializeField] private float _coefficientDelta;
     [SerializeField] private MusicSwitch _musicSwitch;
+    [SerializeField] private PassiveSkills _skillsManager;
 
     private Vector2 _spawnPosition;
     private bool _canShowText = true;
     private int _wavesPassed = 0;
     private LevelManager _levelManager;
+    private int _wavesUntillSkill = 5;
 
     public float Coefficient = 1;
     public int ActiveEnemies = 0;
@@ -68,6 +70,13 @@ public class Spawner : MonoBehaviour
         _levelManager.CoinsPerKill = Mathf.RoundToInt(Coefficient);
 
         _wavesPassed++;
+        _wavesUntillSkill--;
+        if(_wavesUntillSkill == 0)
+        {
+            _skillsManager.ShowUpgradePanel();
+            _wavesUntillSkill = 5;
+        }
+
         _callWaveText.SetActive(true);
         _canShowText = true;
     }
