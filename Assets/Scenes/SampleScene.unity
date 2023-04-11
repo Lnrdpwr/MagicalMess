@@ -2016,7 +2016,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2053557058}
         m_TargetAssemblyTypeName: PassiveSkills, Assembly-CSharp
-        m_MethodName: SplitArrowUpLevel
+        m_MethodName: TitanUpLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3368,7 +3368,7 @@ MonoBehaviour:
   isTracked: 0
   ReloadTime: 1
   Damage: 1
-  Speed: 10
+  BulletSpeed: 10
   PiercingPower: 1
   ShootsCount: 1
   ArrowScale: {x: 1, y: 1, z: 1}

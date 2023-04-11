@@ -12,7 +12,7 @@ public class PlayerShooting : MonoBehaviour
     public bool isTracked = false;//Метка монстра
     public float ReloadTime;//Перезарядка
     public float Damage;//Урон
-    public float Speed;//Скорость снаряда
+    public float BulletSpeed;//Скорость снаряда
     public int PiercingPower;//Пронзание
     public int ShootsCount;//Кол-во выстрелов
     public Vector3 ArrowScale;//Размер стрелы
@@ -42,7 +42,7 @@ public class PlayerShooting : MonoBehaviour
 
             Bullet bullet = Instantiate(_bulletPrefab, _firePoint.position, rotation).GetComponent<Bullet>();
 
-            bullet.Speed = Speed;
+            bullet.Speed = BulletSpeed;
             bullet.Damage = Damage;
             bullet.PiercingPower = PiercingPower;
             bullet.transform.localScale = ArrowScale;

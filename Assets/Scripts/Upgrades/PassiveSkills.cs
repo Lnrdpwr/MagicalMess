@@ -22,9 +22,9 @@ public class PassiveSkills : MonoBehaviour
 
     public void ThickArrowsUpLevel()
     {
-        if (_playerShooting.Speed > 1)
+        if (_playerShooting.BulletSpeed > 1)
         {
-            _playerShooting.Speed -= 1;
+            _playerShooting.BulletSpeed -= 1;
         }
 
         _playerShooting.Damage += 1;
@@ -44,7 +44,7 @@ public class PassiveSkills : MonoBehaviour
             _playerShooting.Damage -= 1;
         }
 
-        _playerShooting.Speed += 1;
+        _playerShooting.BulletSpeed += 1;
     }
 
     public void LightnessInTheLegsUpLevel()
@@ -59,7 +59,7 @@ public class PassiveSkills : MonoBehaviour
 
     public void TitanUpLevel()
     {
-        _playerHealth.MaximumHealth += 2;
+        _playerHealth.ChangeMaxHealth(1);
         _playerMovement.PlayerScale += new Vector3(0.5f, 0.5f, 0);
     }
 

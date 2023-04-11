@@ -24,6 +24,16 @@ public class PlayerHealth : MonoBehaviour
         _playerRenderer = GetComponent<SpriteRenderer>();
     }
 
+    public void ChangeMaxHealth(float addedHelath)
+    {
+        MaximumHealth += addedHelath;
+        float chageAmount = MaximumHealth - _currentHealth;
+
+        StartCoroutine(ChangeBar(_currentHealth + (chageAmount), chageAmount));
+        _currentHealth = MaximumHealth;
+
+    }
+
     public void ChangeHealth(float changeAmount)//Отрицательное, если надо нанести урон
     {
         if(changeAmount < 0 && !_isInvincible)
