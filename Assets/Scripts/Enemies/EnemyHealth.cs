@@ -26,9 +26,11 @@ public class EnemyHealth : MonoBehaviour
 
     public void DestroyEnemy()
     {
+        if(TryGetComponent(out Goblin goblin))
+            goblin.ReturnCoin();
         Instantiate(_effect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
         Spawner.Instance.ActiveEnemies--;
+        Destroy(gameObject);
     }
 
     IEnumerator DoDamage(float time, float damage)
