@@ -12,7 +12,7 @@ public class PassiveSkills : MonoBehaviour
     [SerializeField] private Button[] _buttons;
     [SerializeField] private TMP_Text[] _buttonTexts;
     [SerializeField] private GameObject _panel;
-    //Если будет перевод, то добавить два списка с описаниями
+    //Г…Г±Г«ГЁ ГЎГіГ¤ГҐГІ ГЇГҐГ°ГҐГўГ®Г¤, ГІГ® Г¤Г®ГЎГ ГўГЁГІГј Г¤ГўГ  Г±ГЇГЁГ±ГЄГ  Г± Г®ГЇГЁГ±Г Г­ГЁГїГ¬ГЁ
 
     public void ArrowpPiercingUpLevel()
     {
@@ -87,9 +87,10 @@ public class PassiveSkills : MonoBehaviour
 
     public void ShowUpgradePanel()
     {
-        int chosenUpgrade = Random.Range(0, 7);
+        
         for(int i = 0; i < _buttons.Length; i++)
         {
+            int chosenUpgrade = Random.Range(0, 7);
             switch (chosenUpgrade)
             {
                 case 0:
