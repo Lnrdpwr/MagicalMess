@@ -3238,6 +3238,7 @@ GameObject:
   - component: {fileID: 1572336969}
   - component: {fileID: 1572336970}
   - component: {fileID: 1572336972}
+  - component: {fileID: 1572336973}
   - component: {fileID: 1572336967}
   - component: {fileID: 1572336971}
   m_Layer: 6
@@ -3454,6 +3455,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coinsText: {fileID: 1945552444}
+--- !u!114 &1572336973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572336963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0acaaf78d89474eb98568ceff6a4ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firePoint: {fileID: 1521603479}
+  _fireBallPrefab: {fileID: 2910136757587383637, guid: 4b0f81e509cda1a48ad6cd9b240bbc4f, type: 3}
 --- !u!1 &1617110058
 GameObject:
   m_ObjectHideFlags: 0
