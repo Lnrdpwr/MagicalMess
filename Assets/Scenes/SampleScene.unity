@@ -288,7 +288,7 @@ MonoBehaviour:
   _topRight: {x: 28, y: 23}
   _bottomLeft: {x: -28, y: -1.5}
   _timeToSpawn: 0.75
-  _waveTime: 10
+  _waveTime: 4.5
   _callWaveText: {fileID: 1284043499}
   _coefficientDelta: 0.1
   _musicSwitch: {fileID: 168608138}
