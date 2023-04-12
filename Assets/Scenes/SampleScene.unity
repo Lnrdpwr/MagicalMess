@@ -3469,6 +3469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firePoint: {fileID: 1521603479}
   _fireBallPrefab: {fileID: 2910136757587383637, guid: 4b0f81e509cda1a48ad6cd9b240bbc4f, type: 3}
+  _witchScythePrefab: {fileID: 4885137079371374419, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
 --- !u!1 &1617110058
 GameObject:
   m_ObjectHideFlags: 0
