@@ -345,6 +345,8 @@ MonoBehaviour:
   _health: 1
   _effect: {fileID: 5054030501338876720, guid: 9b606365f869b51488fb9b2c8c308f4f, type: 3}
   _coin: {fileID: 4132947167205755242, guid: c454f855bce931e4ba5a6ac827598e37, type: 3}
+  _egg: {fileID: 3566341127917700373, guid: e0f26d8196387114ca76fb4f0735e38b, type: 3}
+  _manaStar: {fileID: 8603938539015566652, guid: 37b47d497009bc64cb52efe8fd1f3159, type: 3}
   _canDropCoins: 0
 --- !u!114 &3167667646035572280
 MonoBehaviour:

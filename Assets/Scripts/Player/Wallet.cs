@@ -15,4 +15,16 @@ public class Wallet : MonoBehaviour
             _coinsText.text = _coins.ToString();
         }
     }
+
+    public bool StealCoin()
+    {
+        int _stealAmount = Mathf.RoundToInt(Spawner.Instance.Coefficient);
+        if (_coins >= _stealAmount)
+        {
+            _coins -= _stealAmount;
+            _coinsText.text = _coins.ToString();
+            return true;
+        }
+        return false;
+    }
 }

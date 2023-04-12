@@ -8,9 +8,12 @@ public class Spider : MonoBehaviour
     private EnemyAnimations _enemyAnimations;
     private Transform _target;
     private Rigidbody2D _enemyRigidbody;
+    private EnemyHealth _health;
 
     private void Start()
     {
+        _health = GetComponent<EnemyHealth>();
+
         _enemyAnimations = GetComponent<EnemyAnimations>();
         _enemyRigidbody = GetComponent<Rigidbody2D>();
 
@@ -28,9 +31,8 @@ public class Spider : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Instantiate(_effect, transform.position, Quaternion.identity);
             Instantiate(_acid, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            _health.DestroyEnemy();
         }
     }
 }

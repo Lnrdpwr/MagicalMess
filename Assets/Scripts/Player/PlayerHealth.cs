@@ -18,8 +18,11 @@ public class PlayerHealth : MonoBehaviour
 
     public float MaximumHealth;
 
+    internal static PlayerHealth Instance;
+
     private void Start()
     {
+        Instance = this;
         _currentHealth = MaximumHealth;
         _playerRenderer = GetComponent<SpriteRenderer>();
     }

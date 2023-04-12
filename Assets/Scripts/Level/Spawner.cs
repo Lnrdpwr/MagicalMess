@@ -9,11 +9,14 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject _callWaveText;
     [SerializeField] private float _coefficientDelta;
     [SerializeField] private MusicSwitch _musicSwitch;
+    [SerializeField] private PassiveSkills _skillsManager;
+    [SerializeField] private GameObject _upgradePanel;
 
     private Vector2 _spawnPosition;
     private bool _canShowText = true;
     private int _wavesPassed = 0;
     private LevelManager _levelManager;
+    private int _wavesUntillSkill = 5;
 
     public float Coefficient = 1;
     public int ActiveEnemies = 0;
@@ -43,7 +46,7 @@ public class Spawner : MonoBehaviour
         for (float i = 0; i < _waveTime; i += _timeToSpawn)
         {
             int chosenEnemy = Random.Range(0, _enemies.Length);
-            int chosenBorder = Random.Range(-1, 2);//-1 - ñëåâà; 1 - ñïðàâà; 0 - ñâåðõó
+            int chosenBorder = Random.Range(-1, 2);//-1 - Ã±Ã«Ã¥Ã¢Ã ; 1 - Ã±Ã¯Ã°Ã Ã¢Ã ; 0 - Ã±Ã¢Ã¥Ã°ÃµÃ³
             switch (chosenBorder)
             {
                 case -1:
@@ -68,6 +71,14 @@ public class Spawner : MonoBehaviour
         _levelManager.CoinsPerKill = Mathf.RoundToInt(Coefficient);
 
         _wavesPassed++;
+        _wavesUntillSkill--;
+        if(_wavesUntillSkill == 0)
+        {
+            _skillsManager.ShowUpgradePanel();
+            _wavesUntillSkill = 5;
+            yield return new WaitWhile(() => _upgradePanel.activeSelf);
+        }
+
         _callWaveText.SetActive(true);
         _canShowText = true;
     }
