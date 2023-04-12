@@ -76,7 +76,7 @@ public class Spawner : MonoBehaviour
         {
             _skillsManager.ShowUpgradePanel();
             _wavesUntillSkill = 5;
-            yield return new WaitWhile(() => _upgradePanel.IsActive);
+            yield return new WaitWhile(() => _upgradePanel.activeSelf);
         }
 
         _callWaveText.SetActive(true);

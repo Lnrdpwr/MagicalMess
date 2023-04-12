@@ -430,6 +430,7 @@ MonoBehaviour:
   _coefficientDelta: 0.05
   _musicSwitch: {fileID: 168608138}
   _skillsManager: {fileID: 2053557058}
+  _upgradePanel: {fileID: 225617516}
   Coefficient: 1
   ActiveEnemies: 0
 --- !u!4 &195371136
