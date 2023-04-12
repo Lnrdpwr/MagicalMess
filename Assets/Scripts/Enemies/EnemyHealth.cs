@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private MonsterMark _monsterMark;
     [SerializeField] private float _health;
     [SerializeField] private GameObject _effect;
-    [SerializeField] private GameObject _coin;
+    [SerializeField] private GameObject _coin, _egg, _manaStar;
     [SerializeField] private bool _canDropCoins;
 
     private void Start()
@@ -41,8 +41,19 @@ public class EnemyHealth : MonoBehaviour
             _health -= damage;
             if (_health <= 0)
             {
-                if (Random.Range(0, 100) < 10 && _canDropCoins)
-                    Instantiate(_coin, transform.position, Quaternion.identity);
+                int dropChance = Random.Range(0, 100);
+                switch (dropChance)
+                {
+                    case < 10:
+                        Instantiate(_coin, transform.position, Quaternion.identity);
+                        break;
+                    case < 15:
+                        Instantiate(_egg, transform.position, Quaternion.identity);
+                        break;
+                    case < 20:
+                        Instantiate(_manaStar, transform.position, Quaternion.identity);
+                        break;
+                }
                 DestroyEnemy();
             }
         }
