@@ -8,7 +8,9 @@ public class PlayerSpell : MonoBehaviour
     [SerializeField] private AnimationCurve _manaBarChangeCurve;
     [SerializeField] private float _timeToChangeBar;
     [SerializeField] private GameObject _manaBarObject;
+    //сюда крч GameObject спела, который будет изменяться в магазе(можно public сделать или метод вызвать)
 
+    //тут можно всякие сатыт для спеллов
     private float _currentMana;
     private bool _canChangeBar;
 
