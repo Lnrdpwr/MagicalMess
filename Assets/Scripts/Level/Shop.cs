@@ -18,12 +18,13 @@ public class Shop : MonoBehaviour
     [SerializeField] private Button[] _spellButtons;
     [SerializeField] private TMP_Text[] _spellCostTexts;
     [SerializeField] private TMP_Text[] _statsCostTexts;
+    [SerializeField] private TMP_Text _shopCoinsAmount;
      
     private PlayerHealth _playerHealth;
     private PlayerSpell _playerMana;
     private PlayerShooting _playerShooting;
     private Wallet _wallet;
-    private float _walletAmount;
+    private float _walletAmount = 0;
 
     internal static Shop Instance;
 
@@ -43,6 +44,8 @@ public class Shop : MonoBehaviour
     private void OnEnable()
     {
         _walletAmount = _wallet.Coins;
+        _shopCoinsAmount.text = _walletAmount.ToString();
+        print(_walletAmount);
     }
 
     public void UpgradeHealth()
@@ -53,8 +56,9 @@ public class Shop : MonoBehaviour
             _walletAmount -= _healthCost;
             _healthCost = Mathf.Round(_healthCost * 1.5f);
             _statsCostTexts[0].text = _healthCost.ToString();
+            _wallet.ChangeMoney(_walletAmount);
+            _shopCoinsAmount.text = _walletAmount.ToString();
         }
-        _wallet.ChangeMoney(_walletAmount);
     }
 
     public void UpgradeMana()
@@ -65,8 +69,9 @@ public class Shop : MonoBehaviour
             _walletAmount -= _manaCost;
             _manaCost = Mathf.Round(_manaCost * 1.5f);
             _statsCostTexts[1].text = _manaCost.ToString();
+            _wallet.ChangeMoney(_walletAmount);
+            _shopCoinsAmount.text = _walletAmount.ToString();
         }
-        _wallet.ChangeMoney(_walletAmount);
     }
 
     public void UpgradeDamage()
@@ -77,8 +82,9 @@ public class Shop : MonoBehaviour
             _walletAmount -= _damageCost;
             _damageCost = Mathf.Round(_damageCost * 1.5f);
             _statsCostTexts[2].text = _damageCost.ToString();
+            _wallet.ChangeMoney(_walletAmount);
+            _shopCoinsAmount.text = _walletAmount.ToString();
         }
-        _wallet.ChangeMoney(_walletAmount);
     }
 
     public void UpgradeSpeed()
@@ -89,8 +95,9 @@ public class Shop : MonoBehaviour
             _walletAmount -= _speedCost;
             _speedCost = Mathf.Round(_speedCost * 1.5f);
             _statsCostTexts[3].text = _speedCost.ToString();
+            _wallet.ChangeMoney(_walletAmount);
+            _shopCoinsAmount.text = _walletAmount.ToString();
         }
-        _wallet.ChangeMoney(_walletAmount);
     }
 
     public void BuySpell(int index)
@@ -107,8 +114,10 @@ public class Shop : MonoBehaviour
             _spellButtonsObjects[index].SetActive(true);
             _spellButtons[index].onClick.RemoveAllListeners();
             _spellButtons[index].onClick.AddListener(UpgradeSpell);
+
+            _wallet.ChangeMoney(_walletAmount);
+            _shopCoinsAmount.text = _walletAmount.ToString();
         }
-        _wallet.ChangeMoney(_walletAmount);
     }
 
     public void UpgradeSpell()
@@ -118,7 +127,10 @@ public class Shop : MonoBehaviour
             _playerMana.Damage += _spellDamageDelta;
             _walletAmount -= _speedCost;
             _spellCost = Mathf.Round(_spellCost * 1.5f);
+            _wallet.ChangeMoney(_walletAmount);
+            _shopCoinsAmount.text = _walletAmount.ToString();
         }
-        _wallet.ChangeMoney(_walletAmount);
     }
+
+  
 }

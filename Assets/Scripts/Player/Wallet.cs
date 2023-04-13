@@ -11,6 +11,7 @@ public class Wallet : MonoBehaviour
 
     private void Awake()
     {
+        Coins = 0;
         Instance = this;
     }
 
