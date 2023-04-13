@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +26,7 @@ public class Shop : MonoBehaviour
     private PlayerShooting _playerShooting;
     private Wallet _wallet;
     private float _walletAmount = 0;
+    private int _mainSpellButton;
 
     internal static Shop Instance;
 
@@ -107,17 +109,20 @@ public class Shop : MonoBehaviour
         {
             _playerMana.SetSpell(_spells[index]);
             _walletAmount -= _spellCost;
-            _speedCost = Mathf.Round(_speedCost / 2);
+            _spellCost = Mathf.Round(_spellCost / 2);
 
             foreach (GameObject button in _spellButtonsObjects)
                 button.SetActive(false);
 
             _spellButtonsObjects[index].SetActive(true);
+            _spellCostTexts[index].text = _spellCost.ToString();
             _spellButtons[index].onClick.RemoveAllListeners();
             _spellButtons[index].onClick.AddListener(UpgradeSpell);
 
             _wallet.ChangeMoney(_walletAmount);
             _shopCoinsAmount.text = _walletAmount.ToString();
+
+            _mainSpellButton = index;
         }
     }
 
@@ -126,12 +131,12 @@ public class Shop : MonoBehaviour
         if (_walletAmount >= _spellCost)
         {
             _playerMana.Damage += _spellDamageDelta;
+            _playerMana.ManaUsage += 0.5f;
             _walletAmount -= _speedCost;
             _spellCost = Mathf.Round(_spellCost * 1.5f);
             _wallet.ChangeMoney(_walletAmount);
             _shopCoinsAmount.text = _walletAmount.ToString();
+            _spellCostTexts[_mainSpellButton].text = _spellCost.ToString();
         }
     }
-
-  
 }

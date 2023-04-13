@@ -123,6 +123,10 @@ MonoBehaviour:
   _speed: 5
   _damage: 3
   _timeBeforeDestroy: 1.5
+  _radius: 8
+  _enemiesLayer:
+    serializedVersion: 2
+    m_Bits: 256
   _fireWallPrefab: {fileID: 1232220981570531686, guid: f3f058e99504db54ebef7e36985bb1fa, type: 3}
 --- !u!61 &3464746441922631172
 BoxCollider2D:

@@ -6,12 +6,25 @@ public class EldenScroll : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _damage;
     [SerializeField] private float _timeBeforeDestroy;
+    [SerializeField] private float _radius;
+    [SerializeField] private LayerMask _enemiesLayer;
     [SerializeField] private GameObject _fireWallPrefab;
 
     private Rigidbody2D _rigidbody2D;
  
     public void Start()
     {
+        transform.parent = null;
+
+        Collider2D[] closestEnemies = Physics2D.OverlapCircleAll(transform.position, _radius, _enemiesLayer);
+        if(closestEnemies != null)
+        {
+            Vector3 chosenEnemy = closestEnemies[Random.Range(0, closestEnemies.Length)].transform.position;
+            Vector2 direction = chosenEnemy - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _rigidbody2D.velocity = _speed * gameObject.transform.up;
 

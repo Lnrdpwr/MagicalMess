@@ -15,7 +15,7 @@ public class PlayerUsingSpells : MonoBehaviour
     private void UseWitchScythe()
     {
         _witchScythe.gameObject.SetActive(true);
-        _witchScythe.StartTimer();
+        //_witchScythe.StartTimer();
     }
 
     private void UseSmoleLeaf()

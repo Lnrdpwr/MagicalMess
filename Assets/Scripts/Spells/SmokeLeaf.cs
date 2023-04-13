@@ -11,6 +11,7 @@ public class SmokeLeaf : MonoBehaviour
 
     private void Start()
     {
+        transform.parent = null;
         StartCoroutine(LifeTime(_timeBeforeDestroy));
     }
 
@@ -42,7 +43,6 @@ public class SmokeLeaf : MonoBehaviour
 
     IEnumerator Reload(float timeBetweenDamage)
     {
-        _isReloaded = false;
         yield return new WaitForSeconds(timeBetweenDamage);
         _isReloaded = true;
     }

@@ -12,17 +12,13 @@ public class WitchScythe : MonoBehaviour
     public void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        StartCoroutine(LifeTime(_timeBeforeDestroy));
     }
 
     public void FixedUpdate()
     {
+        transform.position = transform.parent.position;
         _rigidbody2D.rotation -= _rotationaLspeed;
-        gameObject.transform.position = gameObject.transform.parent.position; 
-    }
-
-    public void StartTimer()
-    {
-        StartCoroutine(LifeTime(_timeBeforeDestroy));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
