@@ -4,19 +4,23 @@ public class PlayerUsingSpells : MonoBehaviour
 {
     [SerializeField] private Transform _firePoint;
     [SerializeField] private GameObject _fireBallPrefab;
-    [SerializeField] private GameObject _witchScythePrefab;
+    [SerializeField] private GameObject _SmokeLeafPrefab;
+    [SerializeField] private WitchScythe _witchScythe;
 
     private void UseElderScroll()
     {
-        EldenScroll eldenScroll = Instantiate(_fireBallPrefab, _firePoint.position, _firePoint.parent.rotation).GetComponent<EldenScroll>();
+        Instantiate(_fireBallPrefab, _firePoint.position, _firePoint.parent.rotation);
     }
 
     private void UseWitchScythe()
     {
-        WitchScythe witchScythe =
-            Instantiate(_witchScythePrefab, gameObject.transform.position, _witchScythePrefab.transform.rotation).GetComponent<WitchScythe>();
+        _witchScythe.gameObject.SetActive(true);
+        _witchScythe.StartTimer();
+    }
 
-        witchScythe.Parent = gameObject.transform;
+    private void UseSmoleLeaf()
+    {
+        Instantiate(_SmokeLeafPrefab, gameObject.transform.position, _SmokeLeafPrefab.transform.rotation);
     }
 
     public void Update()
@@ -29,6 +33,11 @@ public class PlayerUsingSpells : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             UseWitchScythe();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            UseSmoleLeaf();
         }
     }
 }
