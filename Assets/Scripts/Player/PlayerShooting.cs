@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
@@ -17,6 +16,13 @@ public class PlayerShooting : MonoBehaviour
     public int ShootsCount;//Кол-во выстрелов
     public Vector3 ArrowScale;//Размер стрелы
     public float MaxAngle = 0f;//Фиксированный разброс
+
+    internal static PlayerShooting Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public void Update()
     {

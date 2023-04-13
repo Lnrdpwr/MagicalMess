@@ -5,31 +5,38 @@ public class Wallet : MonoBehaviour
 {
     [SerializeField] private TMP_Text _coinsText;
 
-    private int _coins = 0;
+    public int Coins = 0;
+
+    internal static Wallet Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out Coin coin))
         {
-            _coins += coin.GetCoins();
-            _coinsText.text = _coins.ToString();
+            Coins += coin.GetCoins();
+            _coinsText.text = Coins.ToString();
         }
     }
 
     public bool StealCoin()
     {
         int _stealAmount = Mathf.RoundToInt(Spawner.Instance.Coefficient);
-        if (_coins >= _stealAmount)
+        if (Coins >= _stealAmount)
         {
-            _coins -= _stealAmount;
-            _coinsText.text = _coins.ToString();
+            Coins -= _stealAmount;
+            _coinsText.text = Coins.ToString();
             return true;
         }
         return false;
     }
     
-    public void ChangeMoney(int newAmount){
-        _coins = newAmount;
-        _coinsText.text = _coins.ToString();
+    public void ChangeMoney(float newAmount){
+        Coins = Mathf.RoundToInt(newAmount);
+        _coinsText.text = Coins.ToString();
     }
 }

@@ -16,12 +16,15 @@ public class PlayerSpell : MonoBehaviour
     public float MaximumMana;
     public float Damage;
 
-    private void Start()
+    internal static PlayerSpell Instance;
+
+    private void Awake()
     {
+        Instance = this;
         _currentMana = MaximumMana;
     }
 
-    public void ChangeMaxMana(float addedMana)
+    public void ChangeMaximumMana(float addedMana)
     {
         MaximumMana += addedMana;
         float chageAmount = MaximumMana - _currentMana;

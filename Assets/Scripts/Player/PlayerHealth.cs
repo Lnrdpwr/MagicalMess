@@ -63,7 +63,8 @@ public class PlayerHealth : MonoBehaviour
         }
     }
     
-    public void ChangeMaximumHealth(float addedHealth){
+    public void ChangeMaximumHealth(float addedHealth)
+    {
         MaximumHealth += addedHealth;
         _healthBar.fillAmount = _currentHealth / MaximumHealth;
     }
