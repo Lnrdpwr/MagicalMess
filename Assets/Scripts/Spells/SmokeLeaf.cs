@@ -22,6 +22,18 @@ public class SmokeLeaf : MonoBehaviour
         }  
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out EnemyHealth enemy))
+        {
+            if (_isReloaded)
+            {
+                enemy.DoDamage(0, _damage, false);
+                _isReloaded = false;
+            }
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out EnemyHealth enemy))

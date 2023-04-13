@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 808377222215155930}
   - component: {fileID: 808377222215155933}
   - component: {fileID: 808377222215155932}
+  - component: {fileID: 457080151}
   m_Layer: 0
   m_Name: SmokeLeaf
   m_TagString: Untagged
@@ -75,9 +76,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: e2ff4030690c82243864bcf9cb66ab75, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 634838446, guid: 5189bad41b4ffd646927dda2fa30168c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,18 +122,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0059714317, y: -0.011943579}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4628571, y: 1.4628571}
+    oldSize: {x: 2.7333333, y: 1.5666667}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4628571, y: 1.4628571}
+  m_Size: {x: 2.812481, y: 1.6061802}
   m_EdgeRadius: 0
 --- !u!114 &808377222215155932
 MonoBehaviour:
@@ -146,6 +147,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9fae62cdd1c574b9dfed2bd3c5dbcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 1
+  _damage: 0.25
   _timeBeforeDestroy: 15
-  _timeBetweenDamage: 1
+  _timeBetweenDamage: 0.5
+--- !u!95 &457080151
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808377222215155935}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c88ae389ea3381044a755ea9059e4e5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

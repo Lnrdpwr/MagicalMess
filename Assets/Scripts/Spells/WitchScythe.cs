@@ -25,13 +25,13 @@ public class WitchScythe : MonoBehaviour
         StartCoroutine(LifeTime(_timeBeforeDestroy));
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent(out EnemyHealth enemy))
-        {
-            enemy.DoDamage(0, _damage, false);
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.TryGetComponent(out EnemyHealth enemy))
+    //    {
+    //        enemy.DoDamage(0, _damage, false);
+    //    }
+    //}
 
     IEnumerator LifeTime(float timeBeforeDestroy)
     {
