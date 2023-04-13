@@ -27,4 +27,9 @@ public class Wallet : MonoBehaviour
         }
         return false;
     }
+    
+    public void ChangeMoney(int newAmount){
+        _coins = newAmount;
+        _coinsText.text = _coins.ToString();
+    }
 }
