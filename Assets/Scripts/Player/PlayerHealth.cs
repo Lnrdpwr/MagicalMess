@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-    public void ChangeHealth(float changeAmount)//Отрицательное, если надо нанести урон
+    public void ChangeHealth(float changeAmount)//ГЋГІГ°ГЁГ¶Г ГІГҐГ«ГјГ­Г®ГҐ, ГҐГ±Г«ГЁ Г­Г Г¤Г® Г­Г Г­ГҐГ±ГІГЁ ГіГ°Г®Г­
     {
         if(changeAmount < 0 && !_isInvincible)
         {
@@ -61,6 +61,11 @@ public class PlayerHealth : MonoBehaviour
         {
             _currentHealth = MaximumHealth;
         }
+    }
+    
+    public void ChangeMaximumHealth(float addedHealth){
+        MaximumHealth += addedHealth;
+        _healthBar.fillAmount = _currentHealth / MaximumHealth;
     }
 
     IEnumerator ChangeBar(float changeFrom, float previousChange)
