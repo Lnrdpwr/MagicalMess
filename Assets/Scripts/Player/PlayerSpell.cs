@@ -8,9 +8,9 @@ public class PlayerSpell : MonoBehaviour
     [SerializeField] private AnimationCurve _manaBarChangeCurve;
     [SerializeField] private float _timeToChangeBar;
     [SerializeField] private GameObject _manaBarObject;
-    //сюда крч GameObject спела, который будет изменяться в магазе(можно public сделать или метод вызвать)
+    //Е„ЕЈГ¤Е• Д™Д‘Г· GameObject Е„ДЏДєГ«Е•, Д™Г®Е€Г®Д‘Е±Г© ГЎГіГ¤ДєЕ€ ДЌГ§Д›ДєГ­Л™Е€ГјЕ„Л™ Гў Д›Е•ДѓЕ•Г§Дє(Д›Г®Д‡Г­Г® public Е„Г¤ДєГ«Е•Е€Гј ДЌГ«ДЌ Д›ДєЕ€Г®Г¤ ГўЕ±Г§ГўЕ•Е€Гј)
 
-    //тут можно всякие сатыт для спеллов
+    //Е€ГіЕ€ Д›Г®Д‡Г­Г® ГўЕ„Л™Д™ДЌДє Е„Е•Е€Е±Е€ Г¤Г«Л™ Е„ДЏДєГ«Г«Г®Гў
     private float _currentMana;
     private bool _canChangeBar;
 
@@ -48,10 +48,15 @@ public class PlayerSpell : MonoBehaviour
             _currentMana = MaximumMana;
         }
     }
+    
+    public void ChangeMaximummana(float addedMana){
+        MaximumMana += addedMana;
+        _manaBar.fillAmount = _currentMana / MaximumMana;
+    }
 
     void CreateSpell()
     {
-        //Сюда прописать механику стрельбы спелом
+        //ЕѓЕЈГ¤Е• ДЏД‘Г®ДЏДЌЕ„Е•Е€Гј Д›ДєЕ‘Е•Г­ДЌД™Гі Е„Е€Д‘ДєГ«ГјГЎЕ± Е„ДЏДєГ«Г®Д›
     }
 
     IEnumerator ChangeBar(float changeFrom, float previousChange)
