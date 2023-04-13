@@ -4,7 +4,7 @@ public class PlayerUsingSpells : MonoBehaviour
 {
     [SerializeField] private Transform _firePoint;
     [SerializeField] private GameObject _fireBallPrefab;
-    [SerializeField] private GameObject _witchScythePrefab;
+    [SerializeField] private WitchScythe _witchScythe;
 
     private void UseElderScroll()
     {
@@ -13,10 +13,8 @@ public class PlayerUsingSpells : MonoBehaviour
 
     private void UseWitchScythe()
     {
-        WitchScythe witchScythe =
-            Instantiate(_witchScythePrefab, gameObject.transform.position, _witchScythePrefab.transform.rotation).GetComponent<WitchScythe>();
-
-        witchScythe.Parent = gameObject.transform;
+        _witchScythe.gameObject.SetActive(true);
+        _witchScythe.StartTimer();
     }
 
     public void Update()

@@ -9,21 +9,20 @@ public class WitchScythe : MonoBehaviour
 
     private Rigidbody2D _rigidbody2D;
 
-    public Transform Parent;
-
     public void Start()
     {
-        gameObject.transform.SetParent(Parent);
-        gameObject.transform.localScale = Parent.localScale;
-
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        StartCoroutine(LifeTime(_timeBeforeDestroy));
     }
 
     public void FixedUpdate()
     {
         _rigidbody2D.rotation -= _rotationaLspeed;
-        gameObject.transform.position = Parent.position; 
+        gameObject.transform.position = gameObject.transform.parent.position; 
+    }
+
+    public void StartTimer()
+    {
+        StartCoroutine(LifeTime(_timeBeforeDestroy));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,6 +36,6 @@ public class WitchScythe : MonoBehaviour
     IEnumerator LifeTime(float timeBeforeDestroy)
     {
         yield return new WaitForSeconds(timeBeforeDestroy);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
