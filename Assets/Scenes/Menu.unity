@@ -3359,7 +3359,7 @@ GameObject:
   - component: {fileID: 1976702703}
   - component: {fileID: 1976702702}
   m_Layer: 5
-  m_Name: SExitButton
+  m_Name: RExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
