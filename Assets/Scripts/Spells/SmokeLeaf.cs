@@ -14,14 +14,6 @@ public class SmokeLeaf : MonoBehaviour
         StartCoroutine(LifeTime(_timeBeforeDestroy));
     }
 
-    private void FixedUpdate()
-    {
-        if (_isReloaded)
-        {
-            StartCoroutine(Reload(_timeBetweenDamage));
-        }  
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out EnemyHealth enemy))
@@ -30,6 +22,7 @@ public class SmokeLeaf : MonoBehaviour
             {
                 enemy.DoDamage(0, _damage, false);
                 _isReloaded = false;
+                StartCoroutine(Reload(_timeBetweenDamage));
             }
         }
     }
@@ -42,13 +35,13 @@ public class SmokeLeaf : MonoBehaviour
             {
                 enemy.DoDamage(0, _damage, false);
                 _isReloaded = false;
+                StartCoroutine(Reload(_timeBetweenDamage));
             }
         }
     }
 
     IEnumerator Reload(float timeBetweenDamage)
     {
-        yield return new WaitForSeconds(0.1f);
         _isReloaded = false;
         yield return new WaitForSeconds(timeBetweenDamage);
         _isReloaded = true;
