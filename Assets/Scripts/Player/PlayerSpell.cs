@@ -14,6 +14,7 @@ public class PlayerSpell : MonoBehaviour
     private GameObject _currentSpell;
     
     public float MaximumMana;
+    public float Damage;
 
     private void Start()
     {
