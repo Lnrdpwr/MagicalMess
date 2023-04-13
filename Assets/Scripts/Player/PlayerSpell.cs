@@ -8,12 +8,11 @@ public class PlayerSpell : MonoBehaviour
     [SerializeField] private AnimationCurve _manaBarChangeCurve;
     [SerializeField] private float _timeToChangeBar;
     [SerializeField] private GameObject _manaBarObject;
-    //ńţäŕ ęđ÷ GameObject ńďĺëŕ, ęîňîđűé áóäĺň čçěĺí˙ňüń˙ â ěŕăŕçĺ(ěîćíî public ńäĺëŕňü čëč ěĺňîä âűçâŕňü)
-
-    //ňóň ěîćíî âń˙ęčĺ ńŕňűň äë˙ ńďĺëëîâ
+    
     private float _currentMana;
     private bool _canChangeBar;
-
+    private GameObject _currentSpell;
+    
     public float MaximumMana;
 
     private void Start()
@@ -57,6 +56,10 @@ public class PlayerSpell : MonoBehaviour
     void CreateSpell()
     {
         //Ńţäŕ ďđîďčńŕňü ěĺőŕíčęó ńňđĺëüáű ńďĺëîě
+    }
+    
+    public void SetSpell(GameObject newSpell){
+        _currentSpell = newSpell;
     }
 
     IEnumerator ChangeBar(float changeFrom, float previousChange)
