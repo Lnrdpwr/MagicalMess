@@ -32,6 +32,7 @@ public class Shop : MonoBehaviour
     {
         Instance = this;
     }
+    
 
     private void Start()
     {
@@ -41,11 +42,11 @@ public class Shop : MonoBehaviour
         _wallet = Wallet.Instance;
     }
 
-    private void OnEnable()
-    {
-        _walletAmount = _wallet.Coins;
+    public void SetPanelOn()
+    {   
+        gameObject.SetActive(true);
+        _walletAmount = PlayerPrefs.GetInt("CollectedCoins");
         _shopCoinsAmount.text = _walletAmount.ToString();
-        print(_walletAmount);
     }
 
     public void UpgradeHealth()
