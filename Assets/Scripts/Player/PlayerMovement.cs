@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] Sprite _forwardLookPrefab;
+    [SerializeField] Sprite _leftLookPrefab;
+    [SerializeField] Sprite _rightLookPrefab;
 
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _playerRigidbody;
@@ -33,11 +36,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void LookRight()
     {
-        _spriteRenderer.flipX = true;
+        _spriteRenderer.sprite = _rightLookPrefab;
     }
 
     public void LookLeft()
     {
-        _spriteRenderer.flipX = false;
+        _spriteRenderer.sprite = _leftLookPrefab;
+    }
+
+    public void LookForward()
+    {
+        _spriteRenderer.sprite = _forwardLookPrefab;
     }
 }

@@ -3346,6 +3346,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7efd4326f614a464a96845f85c49483a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _forwardLookPrefab: {fileID: 928449333, guid: 646ca90437378c844b4bc62064417973, type: 3}
+  _leftLookPrefab: {fileID: 1342214240, guid: 646ca90437378c844b4bc62064417973, type: 3}
+  _rightLookPrefab: {fileID: 7210665, guid: 646ca90437378c844b4bc62064417973, type: 3}
   Speed: 3
   PlayerScale: {x: 1, y: 1, z: 1}
 --- !u!50 &1572336967
@@ -6763,37 +6766,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1572336965}
     m_Modifications:
-    - target: {fileID: 437143838346198975, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
-      propertyPath: m_Size.x
-      value: 0.79463494
-      objectReference: {fileID: 0}
-    - target: {fileID: 437143838346198975, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
-      propertyPath: m_Size.y
-      value: 1.2039783
-      objectReference: {fileID: 0}
-    - target: {fileID: 437143838346198975, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.80606025
-      objectReference: {fileID: 0}
-    - target: {fileID: 437143838346198975, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.7124425
-      objectReference: {fileID: 0}
-    - target: {fileID: 437143838346198975, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 437143838346198975, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.64
-      objectReference: {fileID: 0}
     - target: {fileID: 4885137079371374419, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
       propertyPath: m_Name
       value: WitchScythe
-      objectReference: {fileID: 0}
-    - target: {fileID: 4885137079371374419, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5522329177931495516, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
       propertyPath: m_RootOrder
@@ -6839,18 +6814,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8016602861885510888, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
-      propertyPath: m_Size.x
-      value: 2.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016602861885510888, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
-      propertyPath: m_Size.y
-      value: 2.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016602861885510888, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 90fd256e27abc1b44ae46ffccb3755c2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
 --- !u!1 &1792995293
