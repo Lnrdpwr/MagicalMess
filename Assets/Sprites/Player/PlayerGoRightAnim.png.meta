@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 646ca90437378c844b4bc62064417973
+guid: 202eea2906c9e31449c5f1325927b7c3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,52 +105,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerForward
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 23
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08c9ce64f305416499eb8db879076b4b
-      internalID: 928449333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerLeft
+      name: PlayerGoRightAnim_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 23
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8ee4925fe0b73684dae98a807afb9fdd
-      internalID: 1342214240
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRight
-      rect:
-        serializedVersion: 2
-        x: 80
         y: 0
         width: 23
         height: 32
@@ -161,8 +119,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fa8fbb4bb9733949a573e81fb778930
-      internalID: 7210665
+      spriteID: e4361e5737eb7124694e24c0e6945a45
+      internalID: -379385595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerGoRightAnim_1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 0
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190464539e95052488dd86383f47e25f
+      internalID: -1449576241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerGoRightAnim_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f945392f147cb144d929fdfdfb67e1ff
+      internalID: -759592972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerGoRightAnim_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d226cf3a014e6b648947072a38e33df9
+      internalID: -420104838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerGoRightAnim_4
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80bcfad0a51ec1e439870d9896a7f35e
+      internalID: -888783956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerGoRightAnim_5
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c8c52db2a271047a1e8b6dd3b25614
+      internalID: 2063437792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerGoRightAnim_6
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb3b7070df1fa4488d3fb341cd0db8d
+      internalID: 1484048451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerGoRightAnim_7
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 0
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7ecb0857ef58146900160c1b1171c5
+      internalID: -924346343
       vertices: []
       indices: 
       edges: []
@@ -178,9 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlayerForward: 928449333
-      PlayerLeft: 1342214240
-      PlayerRight: 7210665
+      PlayerGoRightAnim_0: -379385595
+      PlayerGoRightAnim_1: -1449576241
+      PlayerGoRightAnim_2: -759592972
+      PlayerGoRightAnim_3: -420104838
+      PlayerGoRightAnim_4: -888783956
+      PlayerGoRightAnim_5: 2063437792
+      PlayerGoRightAnim_6: 1484048451
+      PlayerGoRightAnim_7: -924346343
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
