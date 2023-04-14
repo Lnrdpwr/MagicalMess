@@ -44,13 +44,13 @@ public class EnemyHealth : MonoBehaviour
                 int dropChance = Random.Range(0, 100);
                 switch (dropChance)
                 {
-                    case < 10:
+                    case < 20:
                         Instantiate(_coin, transform.position, Quaternion.identity);
                         break;
-                    case < 15:
+                    case < 30:
                         Instantiate(_egg, transform.position, Quaternion.identity);
                         break;
-                    case < 20:
+                    case < 40:
                         Instantiate(_manaStar, transform.position, Quaternion.identity);
                         break;
                 }

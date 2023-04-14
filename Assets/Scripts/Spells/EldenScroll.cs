@@ -14,6 +14,7 @@ public class EldenScroll : MonoBehaviour
  
     public void Start()
     {
+        _damage *= Shop.Instance.SpellDamageModifier;
         transform.parent = null;
 
         Collider2D[] closestEnemies = Physics2D.OverlapCircleAll(transform.position, _radius, _enemiesLayer);

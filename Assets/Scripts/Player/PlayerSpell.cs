@@ -16,7 +16,6 @@ public class PlayerSpell : MonoBehaviour
     private bool _canUseSpell = false;
     
     public float MaximumMana;
-    public float Damage;
     public float ManaUsage;
 
     internal static PlayerSpell Instance;

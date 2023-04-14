@@ -11,6 +11,7 @@ public class WitchScythe : MonoBehaviour
 
     public void Start()
     {
+        _damage *= Shop.Instance.SpellDamageModifier;
         _rigidbody2D = GetComponent<Rigidbody2D>();
         StartCoroutine(LifeTime(_timeBeforeDestroy));
     }

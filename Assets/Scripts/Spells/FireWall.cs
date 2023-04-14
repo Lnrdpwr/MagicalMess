@@ -13,6 +13,7 @@ public class FireWall : MonoBehaviour
     public void Start()
     {
         StartCoroutine(ChangeScale());
+        Damage *= Shop.Instance.SpellDamageModifier;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

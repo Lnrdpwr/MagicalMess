@@ -13,6 +13,7 @@ public class SmokeLeaf : MonoBehaviour
     {
         transform.parent = null;
         StartCoroutine(LifeTime(_timeBeforeDestroy));
+        _damage *= Shop.Instance.SpellDamageModifier;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

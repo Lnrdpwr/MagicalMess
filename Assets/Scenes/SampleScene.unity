@@ -808,8 +808,8 @@ MonoBehaviour:
   - {fileID: 1451827323516615525, guid: dfabfa9d790f9c24988071df56bfa8fd, type: 3}
   _topRight: {x: 28, y: 23}
   _bottomLeft: {x: -28, y: -1.5}
-  _timeToSpawn: 0.1
-  _waveTime: 0.1
+  _timeToSpawn: 1
+  _waveTime: 10
   _callWaveText: {fileID: 1284043499}
   _coefficientDelta: 0.05
   _musicSwitch: {fileID: 168608138}
@@ -2262,6 +2262,7 @@ MonoBehaviour:
   - {fileID: 2050705573}
   - {fileID: 2086016108}
   _shopCoinsAmount: {fileID: 891407880}
+  SpellDamageModifier: 1
 --- !u!1 &379129193
 GameObject:
   m_ObjectHideFlags: 0
@@ -9126,7 +9127,6 @@ MonoBehaviour:
   _manaBarObject: {fileID: 1473157047}
   _spellCooldown: 1
   MaximumMana: 5
-  Damage: 1
   ManaUsage: 1
 --- !u!1 &1617110058
 GameObject:

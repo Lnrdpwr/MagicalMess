@@ -28,6 +28,8 @@ public class Shop : MonoBehaviour
     private float _walletAmount = 0;
     private int _mainSpellButton;
 
+    public float SpellDamageModifier = 1;
+
     internal static Shop Instance;
 
     private void Awake()
@@ -130,7 +132,7 @@ public class Shop : MonoBehaviour
     {
         if (_walletAmount >= _spellCost)
         {
-            _playerMana.Damage += _spellDamageDelta;
+            SpellDamageModifier += _spellDamageDelta;
             _playerMana.ManaUsage += 0.5f;
             _walletAmount -= _speedCost;
             _spellCost = Mathf.Round(_spellCost * 1.5f);
