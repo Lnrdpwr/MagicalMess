@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 646ca90437378c844b4bc62064417973
+guid: 7fb75db010e906c4681b4527785a4cc7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,33 +105,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerForward
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 23
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08c9ce64f305416499eb8db879076b4b
-      internalID: 928449333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerLeft
+      name: PlayerGoLeftAnim_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 23
+        width: 24
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -140,29 +119,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ee4925fe0b73684dae98a807afb9fdd
-      internalID: 1342214240
+      spriteID: 6171093203267c7418d20bfca70f5a48
+      internalID: 157046801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerRight
+      name: PlayerGoLeftAnim_1
       rect:
         serializedVersion: 2
-        x: 80
+        x: 24
         y: 0
-        width: 23
+        width: 24
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fa8fbb4bb9733949a573e81fb778930
-      internalID: 7210665
+      spriteID: 163a36341cc67c24e9cd8993d86deba9
+      internalID: 280036663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerGoLeftAnim_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6419eade87b6b1b4e86aa8f0d097bc82
+      internalID: 925968445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerGoLeftAnim_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b6f4e18548835498363f124f402d4e
+      internalID: -1053903976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerGoLeftAnim_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7cb1bc77917d74ba6de74486e4c189
+      internalID: 757382100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerGoLeftAnim_5
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 333dc09e2e3d0314f9791a7c5a82ada3
+      internalID: 932667699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerGoLeftAnim_6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d328feee2474ac140a9891c096dc9ddd
+      internalID: 395602394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerGoLeftAnim_7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eef656364b482dd45853065b4f1ac5c0
+      internalID: 1685106631
       vertices: []
       indices: 
       edges: []
@@ -178,9 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlayerForward: 928449333
-      PlayerLeft: 1342214240
-      PlayerRight: 7210665
+      PlayerGoLeftAnim_0: 157046801
+      PlayerGoLeftAnim_1: 280036663
+      PlayerGoLeftAnim_2: 925968445
+      PlayerGoLeftAnim_3: -1053903976
+      PlayerGoLeftAnim_4: 757382100
+      PlayerGoLeftAnim_5: 932667699
+      PlayerGoLeftAnim_6: 395602394
+      PlayerGoLeftAnim_7: 1685106631
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
