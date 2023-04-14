@@ -36,20 +36,33 @@ public class PlayerMovement : MonoBehaviour
         _direction = Vector2.ClampMagnitude(new Vector2(horizontalMovement, verticalMovement) * Speed, Speed);
 
         _playerRigidbody.velocity = _direction;
+
+
+        if (_direction == new Vector2(0, 0))
+        {
+            _animator.enabled = false;
+        }
+        else
+        {
+            _animator.enabled = true;
+        }
     }
 
     public void LookRight()
     {
         _spriteRenderer.sprite = _rightLookPrefab;
+        _animator.Play("PlayerGoRight");
     }
 
     public void LookLeft()
     {
         _spriteRenderer.sprite = _leftLookPrefab;
+        _animator.Play("PlayerGoLeft");
     }
 
     public void LookForward()
     {
         _spriteRenderer.sprite = _forwardLookPrefab;
+        _animator.Play("PlayerGoForward");
     }
 }
