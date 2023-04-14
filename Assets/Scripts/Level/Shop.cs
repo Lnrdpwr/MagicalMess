@@ -134,7 +134,7 @@ public class Shop : MonoBehaviour
         {
             SpellDamageModifier += _spellDamageDelta;
             _playerMana.ManaUsage += 0.5f;
-            _walletAmount -= _speedCost;
+            _walletAmount -= _spellCost;
             _spellCost = Mathf.Round(_spellCost * 1.5f);
             _wallet.ChangeMoney(_walletAmount);
             _shopCoinsAmount.text = _walletAmount.ToString();
