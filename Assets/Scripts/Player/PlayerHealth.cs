@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     private float _currentHealth;
     private SpriteRenderer _playerRenderer;
     private bool _isInvincible;
-    private bool _canChangeBar;
+    private bool _canChangeBar = true;
 
     public float MaximumHealth;
 
@@ -39,11 +39,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void ChangeHealth(float changeAmount)//Îòðèöàòåëüíîå, åñëè íàäî íàíåñòè óðîí
     {
-        if(changeAmount < 0 && !_isInvincible)
-        {
-            _currentHealth += changeAmount;
-            _canChangeBar = true;
-        }
+        _currentHealth += changeAmount;
         
         if(_currentHealth <= 0)
         {
@@ -51,11 +47,11 @@ public class PlayerHealth : MonoBehaviour
             _levelManager.StopGame();
             gameObject.SetActive(false);
         }
-        else if(_currentHealth < MaximumHealth && _canChangeBar)
+        else if(_currentHealth <= MaximumHealth && _canChangeBar)
         {
+            _canChangeBar = false;
             StartCoroutine(ChangeBar(_currentHealth - changeAmount, changeAmount));
             StartCoroutine(Invincible());
-            _canChangeBar = false;
         }
         else if(_currentHealth > MaximumHealth)
         {
@@ -76,6 +72,8 @@ public class PlayerHealth : MonoBehaviour
             _healthBar.fillAmount = (changeFrom + _healthBarChangeCurve.Evaluate(i / _timeToChangeBar) * previousChange) / MaximumHealth;
             yield return new WaitForEndOfFrame();
         }
+
+        _canChangeBar = true;
     }
 
     IEnumerator Invincible()

@@ -11,7 +11,7 @@ public class PlayerSpell : MonoBehaviour
     [SerializeField] private float _spellCooldown;
 
     private float _currentMana;
-    private bool _canChangeBar;
+    private bool _canChangeBar = true;
     private GameObject _currentSpell;
     private bool _canUseSpell = false;
     
