@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Experimental.AI;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -6,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Sprite _leftLookPrefab;
     [SerializeField] Sprite _rightLookPrefab;
 
+    private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _playerRigidbody;
     internal static PlayerMovement Instance;
@@ -17,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        _animator = GetComponent<Animator>();
         _playerRigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer =  GetComponent<SpriteRenderer>();
     }
