@@ -18,7 +18,11 @@ public class CrossBow : MonoBehaviour
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        if (angle > -180f && angle < 0f)
+        if (angle > -220f && angle < -135f)
+        {
+            _playerMovement.LookForward();
+        }
+        else if (angle > -135f && angle < 0f)
         {
             _playerMovement.LookRight();
         }
@@ -26,5 +30,6 @@ public class CrossBow : MonoBehaviour
         {
             _playerMovement.LookLeft();
         }
+       
     }
 }

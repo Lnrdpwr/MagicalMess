@@ -6,14 +6,15 @@ public class SmokeLeaf : MonoBehaviour
     [SerializeField] private float _damage;
     [SerializeField] private float _timeBeforeDestroy;
     [SerializeField] private float _timeBetweenDamage;
+    [SerializeField] private AnimationCurve _disappearCurve;
 
     private bool _isReloaded = true;
+    private SpriteRenderer _spriteRenderer;
 
     private void Start()
     {
-        transform.parent = null;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(LifeTime(_timeBeforeDestroy));
-        _damage *= Shop.Instance.SpellDamageModifier;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,13 +45,19 @@ public class SmokeLeaf : MonoBehaviour
 
     IEnumerator Reload(float timeBetweenDamage)
     {
+        _isReloaded = false;
         yield return new WaitForSeconds(timeBetweenDamage);
         _isReloaded = true;
     }
 
     IEnumerator LifeTime(float timeBeforeDestroy)
     {
-        yield return new WaitForSeconds(timeBeforeDestroy);
+        for (float i = 0; i < timeBeforeDestroy; i += Time.deltaTime)
+        {
+            _spriteRenderer.color = new Color(1, 1, 1, _disappearCurve.Evaluate(i / timeBeforeDestroy));
+            yield return new WaitForEndOfFrame();
+        }
+        //yield return new WaitForSeconds(timeBeforeDestroy);       
         Destroy(gameObject);
     }
 }
