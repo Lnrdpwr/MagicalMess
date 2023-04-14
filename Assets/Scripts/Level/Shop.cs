@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -118,7 +119,7 @@ public class Shop : MonoBehaviour
 
             _spellButtonsObjects[index].SetActive(true);
             _spellCostTexts[index].text = _spellCost.ToString();
-            _spellButtons[index].onClick.RemoveAllListeners();
+            _spellButtons[index].onClick.SetPersistentListenerState(0, UnityEngine.Events.UnityEventCallState.Off);
             _spellButtons[index].onClick.AddListener(UpgradeSpell);
 
             _wallet.ChangeMoney(_walletAmount);

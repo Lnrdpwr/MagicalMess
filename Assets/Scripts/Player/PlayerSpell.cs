@@ -50,12 +50,8 @@ public class PlayerSpell : MonoBehaviour
 
     public void ChangeMana(float changeAmount)
     {
-        if (changeAmount < 0)
-        {
-            _currentMana += changeAmount;
-            _canChangeBar = true;
-        }
-        else if (_currentMana < MaximumMana && _canChangeBar)
+        _currentMana += changeAmount;
+        if (_currentMana <= MaximumMana && _canChangeBar)
         {
             StartCoroutine(ChangeBar(_currentMana - changeAmount, changeAmount));
             _canChangeBar = false;
@@ -83,6 +79,7 @@ public class PlayerSpell : MonoBehaviour
             _manaBar.fillAmount = (changeFrom + _manaBarChangeCurve.Evaluate(i / _timeToChangeBar) * previousChange) / MaximumMana;
             yield return new WaitForEndOfFrame();
         }
+        _canChangeBar = true;
     }
 
     IEnumerator Cooldown()
