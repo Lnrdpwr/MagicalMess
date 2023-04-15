@@ -40,22 +40,24 @@ public class Shop : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-    }
-    
 
-    private void Start()
-    {
         _playerHealth = PlayerHealth.Instance;
         _playerMana = PlayerSpell.Instance;
         _playerShooting = PlayerShooting.Instance;
         _wallet = Wallet.Instance;
     }
 
+    private void OnDisable()
+    {
+        _playerShooting.CanShoot = true;
+    }
+
     public void SetPanelOn()
-    {   
+    {
         gameObject.SetActive(true);
         _walletAmount = PlayerPrefs.GetInt("CollectedCoins");
         _shopCoinsAmount.text = _walletAmount.ToString();
+        _playerShooting.CanShoot = false;
     }
 
     public void UpgradeHealth()

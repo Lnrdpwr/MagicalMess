@@ -14,8 +14,6 @@ public class Bat : MonoBehaviour
 
     private void Start()
     {
-        Spawner.Instance.ActiveEnemies++;
-
         _currentSpeed = _maximumSpeed;
         _enemyAnimations = GetComponent<EnemyAnimations>();
         _enemyRigidbody = GetComponent<Rigidbody2D>();

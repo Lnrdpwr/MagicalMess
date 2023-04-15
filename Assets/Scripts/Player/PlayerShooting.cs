@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerShooting : MonoBehaviour
 
     private bool _isReloaded = true;
 
+    public bool CanShoot = true;
     public bool isTracked = false;//Метка монстра
     public float ReloadTime;//Перезарядка
     public float Damage;//Урон
@@ -26,7 +28,7 @@ public class PlayerShooting : MonoBehaviour
 
     public void Update()
     {
-        if (_isReloaded && Input.GetButtonDown("Fire1"))
+        if (CanShoot && _isReloaded && Input.GetButtonDown("Fire1"))
         {
             Shoot();
             StartCoroutine(Reload());

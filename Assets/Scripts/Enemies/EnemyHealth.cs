@@ -29,7 +29,6 @@ public class EnemyHealth : MonoBehaviour
         if(TryGetComponent(out Goblin goblin))
             goblin.ReturnCoin();
         Instantiate(_effect, transform.position, Quaternion.identity);
-        Spawner.Instance.ActiveEnemies--;
         Destroy(gameObject);
     }
 

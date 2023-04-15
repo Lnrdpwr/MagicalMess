@@ -11,6 +11,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private MusicSwitch _musicSwitch;
     [SerializeField] private PassiveSkills _skillsManager;
     [SerializeField] private GameObject _upgradePanel;
+    [SerializeField] private GameObject _shopButton;
 
     private Vector2 _spawnPosition;
     private bool _canShowText = true;
@@ -19,7 +20,6 @@ public class Spawner : MonoBehaviour
     private int _wavesUntillSkill = 5;
 
     public float Coefficient = 1;
-    public int ActiveEnemies = 0;
 
     internal static Spawner Instance;
 
@@ -42,6 +42,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpawnCycle()
     {
+        _shopButton.SetActive(false);
         _musicSwitch.SwitchMusic();
         for (float i = 0; i < _waveTime; i += _timeToSpawn)
         {
@@ -61,11 +62,14 @@ public class Spawner : MonoBehaviour
             }
 
             GameObject newEnemy = Instantiate(_enemies[chosenEnemy], _spawnPosition, Quaternion.identity);
-            ActiveEnemies++;
             yield return new WaitForSeconds(_timeToSpawn);
         }
-        StartCoroutine(SecondCheck());
-        yield return new WaitWhile(() => ActiveEnemies > 0);
+        GameObject[] enemies = null;
+        do
+        {
+            yield return new WaitForSeconds(1);
+            enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        } while (enemies.Length > 0);
         _musicSwitch.SwitchMusic();
 
         Coefficient += _coefficientDelta;
@@ -82,6 +86,7 @@ public class Spawner : MonoBehaviour
 
         _callWaveText.SetActive(true);
         _canShowText = true;
+        _shopButton.SetActive(true);
     }
 
     public int StopSpawner()
@@ -90,16 +95,5 @@ public class Spawner : MonoBehaviour
         _canShowText = false;
         _callWaveText.SetActive(false);
         return _wavesPassed;
-    }
-
-
-    IEnumerator SecondCheck()
-    {
-        do
-        {
-            yield return new WaitForSeconds(5);
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        } while (_enemies.Length >= 0);
-        ActiveEnemies = 0;
     }
 }
