@@ -42,8 +42,5 @@ public class CrossBow : MonoBehaviour
         {
             _playerMovement.LookUpRight();
         }
-       
-
-        Debug.Log(angle);
     }
 }
