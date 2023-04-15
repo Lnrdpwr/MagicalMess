@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 646ca90437378c844b4bc62064417973
+guid: 13ef412853827294998c8367b4a5dc27
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 28
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,76 +105,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerForward
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 23
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08c9ce64f305416499eb8db879076b4b
-      internalID: 928449333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerLeft
+      name: animreload_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 23
-        height: 32
+        width: 15
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ee4925fe0b73684dae98a807afb9fdd
-      internalID: 1342214240
+      spriteID: 6f9afd1943633c14f986e6686c436b0f
+      internalID: 618746623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerRight
+      name: animreload_1
       rect:
         serializedVersion: 2
-        x: 80
+        x: 15
         y: 0
-        width: 23
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8fa8fbb4bb9733949a573e81fb778930
-      internalID: 7210665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 40
-        width: 23
-        height: 32
+        width: 15
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 001e9d96cc679e948a42add402857782
-      internalID: -1926761148
+      spriteID: 8b5b3c67491bcf848be878089bc713a0
+      internalID: 1748857389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_1
+      name: animreload_2
       rect:
         serializedVersion: 2
-        x: 41
-        y: 40
-        width: 23
-        height: 32
+        x: 30
+        y: 0
+        width: 15
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a37047f3d2bdba489c5cdb2dd0f58f2
-      internalID: 1355149617
+      spriteID: 9ed722e322ce5fc428a1ad6927431b57
+      internalID: 2022745479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_2
+      name: animreload_3
       rect:
         serializedVersion: 2
-        x: 80
-        y: 40
-        width: 23
-        height: 32
+        x: 45
+        y: 0
+        width: 15
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,8 +182,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 150dd691276fe714990a1a1ea16106db
-      internalID: 1006084328
+      spriteID: 84c180b5aacf466468e7b6be9113c123
+      internalID: -115293963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animreload_4
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbdc9589ffc5ccd4c9ba842429d8c3f1
+      internalID: 383872894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animreload_5
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 150522ebb97b3dd49a237d8c104d88cd
+      internalID: 504024890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animreload_6
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d01d443d096274792732fc602b6280
+      internalID: -911042528
       vertices: []
       indices: 
       edges: []
@@ -241,12 +262,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlayerForward: 928449333
-      PlayerLeft: 1342214240
-      PlayerRight: 7210665
-      Player_0: -1926761148
-      Player_1: 1355149617
-      Player_2: 1006084328
+      animreload_0: 618746623
+      animreload_1: 1748857389
+      animreload_2: 2022745479
+      animreload_3: -115293963
+      animreload_4: 383872894
+      animreload_5: 504024890
+      animreload_6: -911042528
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

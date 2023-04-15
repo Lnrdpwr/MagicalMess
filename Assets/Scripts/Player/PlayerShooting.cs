@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Linq.Expressions;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
 {
     [SerializeField] private Transform _firePoint;
     [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private Image _reloadBar;
+
+    [SerializeField] private Animator _reloadingBarAnimator;
+    [SerializeField] private Animator _reloadingCanvasAnimator;
 
     private bool _isReloaded = true;
 
@@ -61,7 +66,19 @@ public class PlayerShooting : MonoBehaviour
     IEnumerator Reload()
     {
         _isReloaded = false;
+
+        _reloadBar.gameObject.SetActive(true);
+        _reloadingCanvasAnimator.Play("ReloadingCanvas");
+        _reloadingBarAnimator.speed = 1 / ReloadTime;
+        _reloadingBarAnimator.Play("ReloadingBar");
+
         yield return new WaitForSeconds(ReloadTime);
+
+        _reloadingCanvasAnimator.Play("ReloadingCanvasHide");
+        _reloadingBarAnimator.Play("ReloadingBarIdle");
+        yield return new WaitForSeconds(0.1f);
+        _reloadBar.gameObject.SetActive(false);
+
         _isReloaded = true;
     }
 }

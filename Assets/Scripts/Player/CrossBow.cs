@@ -22,14 +22,28 @@ public class CrossBow : MonoBehaviour
         {
             _playerMovement.LookForward();
         }
-        else if (angle > -135f && angle < 0f)
+        else if (angle > -135f && angle < -50f)
         {
             _playerMovement.LookRight();
         }
-        else if (angle < -180f || angle > 0f)
+        else if (angle > -270f && angle < -220f)
         {
             _playerMovement.LookLeft();
         }
+        else if (angle < 15f && angle > -15f)
+        {
+            _playerMovement.LookUpForward();
+        }
+        else if (angle < 90f && angle > 50f)
+        {
+            _playerMovement.LookUpLeft();
+        }
+        else if (angle > -50f && angle < -15f )
+        {
+            _playerMovement.LookUpRight();
+        }
        
+
+        Debug.Log(angle);
     }
 }
