@@ -39,7 +39,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void ChangeHealth(float changeAmount)//Îòðèöàòåëüíîå, åñëè íàäî íàíåñòè óðîí
     {
-        _currentHealth += changeAmount;
+
+        if(!_isInvincible)
+            _currentHealth += changeAmount;
         
         if(_currentHealth <= 0)
         {

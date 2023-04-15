@@ -18,12 +18,16 @@ public class EldenScroll : MonoBehaviour
         transform.parent = null;
 
         Collider2D[] closestEnemies = Physics2D.OverlapCircleAll(transform.position, _radius, _enemiesLayer);
-        if(closestEnemies != null)
+        if(closestEnemies.Length > 0)
         {
             Vector3 chosenEnemy = closestEnemies[Random.Range(0, closestEnemies.Length)].transform.position;
             Vector2 direction = chosenEnemy - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
             transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360f));
         }
 
         _rigidbody2D = GetComponent<Rigidbody2D>();
