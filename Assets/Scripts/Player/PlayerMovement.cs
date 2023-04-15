@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float Speed;
     public Vector3 PlayerScale;
+    public bool PlayerLookFlip;
 
     private void Awake()
     {
@@ -52,12 +53,16 @@ public class PlayerMovement : MonoBehaviour
     {
         _spriteRenderer.sprite = _rightLookPrefab;
         _animator.Play("PlayerGoRight");
+
+        PlayerLookFlip = true;
     }
 
     public void LookLeft()
     {
         _spriteRenderer.sprite = _leftLookPrefab;
         _animator.Play("PlayerGoLeft");
+
+        PlayerLookFlip = false;
     }
 
     public void LookForward()
