@@ -9,6 +9,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private Image _reloadBar;
 
     [SerializeField] private Animator _reloadingBarAnimator;
+    [SerializeField] private Animator _reloadingCanvasAnimator;
 
     private bool _isReloaded = true;
 
@@ -64,13 +65,17 @@ public class PlayerShooting : MonoBehaviour
     {
         _isReloaded = false;
 
+        _reloadBar.gameObject.SetActive(true);
+        _reloadingCanvasAnimator.Play("ReloadingCanvas");
         _reloadingBarAnimator.speed = 1 / ReloadTime;
-
         _reloadingBarAnimator.Play("ReloadingBar");
 
         yield return new WaitForSeconds(ReloadTime);
 
+        _reloadingCanvasAnimator.Play("ReloadingCanvasHide");
         _reloadingBarAnimator.Play("ReloadingBarIdle");
+        yield return new WaitForSeconds(0.1f);
+        _reloadBar.gameObject.SetActive(false);
 
         _isReloaded = true;
     }

@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Sprite _forwardLookPrefab;
     [SerializeField] Sprite _leftLookPrefab;
     [SerializeField] Sprite _rightLookPrefab;
+    [SerializeField] Sprite _forwardLookUpPrefab;
+    [SerializeField] Sprite _leftLookUpPrefab;
+    [SerializeField] Sprite _rightLookUpPrefab;
 
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
@@ -51,6 +54,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void LookRight()
     {
+        _spriteRenderer.sortingOrder = 3;
+
         _spriteRenderer.sprite = _rightLookPrefab;
         _animator.Play("PlayerGoRight");
 
@@ -59,6 +64,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void LookLeft()
     {
+        _spriteRenderer.sortingOrder = 3;
+
         _spriteRenderer.sprite = _leftLookPrefab;
         _animator.Play("PlayerGoLeft");
 
@@ -67,7 +74,35 @@ public class PlayerMovement : MonoBehaviour
 
     public void LookForward()
     {
+        _spriteRenderer.sortingOrder = 3;
+
         _spriteRenderer.sprite = _forwardLookPrefab;
         _animator.Play("PlayerGoForward");
+    }
+
+    public void LookUpForward()
+    {
+        _spriteRenderer.sortingOrder = 5;
+
+        _spriteRenderer.sprite = _forwardLookUpPrefab;
+        _animator.Play("PlayerGoUpForward");
+    }
+
+    public void LookUpRight()
+    {
+        _spriteRenderer.sortingOrder = 5;
+
+        _spriteRenderer.sprite = _rightLookUpPrefab;
+        _animator.Play("PlayerGoUpRight");
+        PlayerLookFlip = true;
+    }
+
+    public void LookUpLeft()
+    {
+        _spriteRenderer.sortingOrder = 5;
+
+        _spriteRenderer.sprite = _leftLookUpPrefab;
+        _animator.Play("PlayerGoUpLeft");
+        PlayerLookFlip = false;
     }
 }
