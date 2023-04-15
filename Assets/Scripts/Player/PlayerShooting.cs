@@ -1,10 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
 {
     [SerializeField] private Transform _firePoint;
     [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private Image _reloadBar;
+
+    [SerializeField] private Animator _reloadingBarAnimator;
 
     private bool _isReloaded = true;
 
@@ -59,7 +63,15 @@ public class PlayerShooting : MonoBehaviour
     IEnumerator Reload()
     {
         _isReloaded = false;
+
+        _reloadingBarAnimator.speed = 1 / ReloadTime;
+
+        _reloadingBarAnimator.Play("ReloadingBar");
+
         yield return new WaitForSeconds(ReloadTime);
+
+        _reloadingBarAnimator.Play("ReloadingBarIdle");
+
         _isReloaded = true;
     }
 }
