@@ -33,6 +33,6 @@ public class WitchScythe : MonoBehaviour
     IEnumerator LifeTime(float timeBeforeDestroy)
     {
         yield return new WaitForSeconds(timeBeforeDestroy);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }
