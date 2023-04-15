@@ -9,18 +9,22 @@ public class Shop : MonoBehaviour
     //Статы
     [SerializeField] private float _healthDelta, _manaDelta, _damageDelta, _speedDelta;
     [SerializeField] private float _healthCost, _manaCost, _damageCost, _speedCost;
+    [SerializeField] private int[] _statsLevels;
 
     //Спеллы
     [SerializeField] private GameObject[] _spells;
     [SerializeField] private float _spellCost;
     [SerializeField] private float _spellDamageDelta;
     [SerializeField] private GameObject[] _spellButtonsObjects;
+    private int _mainSpellLevel = 1;
 
     //UI
     [SerializeField] private Button[] _spellButtons;
     [SerializeField] private TMP_Text[] _spellCostTexts;
     [SerializeField] private TMP_Text[] _statsCostTexts;
     [SerializeField] private TMP_Text _shopCoinsAmount;
+    [SerializeField] private TMP_Text[] _statsLevelsText;
+    [SerializeField] private TMP_Text[] _spellsLevelsText;
      
     private PlayerHealth _playerHealth;
     private PlayerSpell _playerMana;
@@ -64,6 +68,9 @@ public class Shop : MonoBehaviour
             _statsCostTexts[0].text = _healthCost.ToString();
             _wallet.ChangeMoney(_walletAmount);
             _shopCoinsAmount.text = _walletAmount.ToString();
+
+            _statsLevels[3]++;
+            _statsLevelsText[3].text = "Здоровье(" + _statsLevels[0].ToString() + ")";
         }
     }
 
@@ -77,6 +84,9 @@ public class Shop : MonoBehaviour
             _statsCostTexts[1].text = _manaCost.ToString();
             _wallet.ChangeMoney(_walletAmount);
             _shopCoinsAmount.text = _walletAmount.ToString();
+
+            _statsLevels[1]++;
+            _statsLevelsText[1].text = "Мана(" + _statsLevels[1].ToString() + ")";
         }
     }
 
@@ -90,6 +100,9 @@ public class Shop : MonoBehaviour
             _statsCostTexts[2].text = _damageCost.ToString();
             _wallet.ChangeMoney(_walletAmount);
             _shopCoinsAmount.text = _walletAmount.ToString();
+
+            _statsLevels[2]++;
+            _statsLevelsText[2].text = "Урон(" + _statsLevels[2].ToString() + ")";
         }
     }
 
@@ -103,6 +116,9 @@ public class Shop : MonoBehaviour
             _statsCostTexts[3].text = _speedCost.ToString();
             _wallet.ChangeMoney(_walletAmount);
             _shopCoinsAmount.text = _walletAmount.ToString();
+
+            _statsLevels[3]++;
+            _statsLevelsText[3].text = "Скорость(" + _statsLevels[3].ToString() + ")"; 
         }
     }
 
@@ -126,6 +142,7 @@ public class Shop : MonoBehaviour
             _shopCoinsAmount.text = _walletAmount.ToString();
 
             _mainSpellButton = index;
+            _spellsLevelsText[_mainSpellButton].text = "Заклинание(1)";
         }
     }
 
@@ -140,6 +157,9 @@ public class Shop : MonoBehaviour
             _wallet.ChangeMoney(_walletAmount);
             _shopCoinsAmount.text = _walletAmount.ToString();
             _spellCostTexts[_mainSpellButton].text = _spellCost.ToString();
+
+            _mainSpellLevel++;
+            _spellsLevelsText[_mainSpellButton].text = "Заклинание(" + _mainSpellLevel.ToString() + ")";
         }
     }
 }

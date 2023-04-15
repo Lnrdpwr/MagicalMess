@@ -64,6 +64,7 @@ public class Spawner : MonoBehaviour
             ActiveEnemies++;
             yield return new WaitForSeconds(_timeToSpawn);
         }
+        StartCoroutine(SecondCheck());
         yield return new WaitWhile(() => ActiveEnemies > 0);
         _musicSwitch.SwitchMusic();
 
@@ -91,4 +92,14 @@ public class Spawner : MonoBehaviour
         return _wavesPassed;
     }
 
+
+    IEnumerator SecondCheck()
+    {
+        do
+        {
+            yield return new WaitForSeconds(5);
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        } while (_enemies.Length >= 0);
+        ActiveEnemies = 0;
+    }
 }

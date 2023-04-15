@@ -2238,6 +2238,7 @@ MonoBehaviour:
   _manaCost: 3
   _damageCost: 5
   _speedCost: 2
+  _statsLevels: 01000000010000000100000001000000
   _spells:
   - {fileID: 4885137079371374419, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
   - {fileID: 2910136757587383637, guid: 4b0f81e509cda1a48ad6cd9b240bbc4f, type: 3}
@@ -2262,6 +2263,15 @@ MonoBehaviour:
   - {fileID: 2050705573}
   - {fileID: 2086016108}
   _shopCoinsAmount: {fileID: 891407880}
+  _statsLevelsText:
+  - {fileID: 281842407}
+  - {fileID: 1120014633}
+  - {fileID: 214765685}
+  - {fileID: 1188888119}
+  _spellsLevelsText:
+  - {fileID: 1189394335}
+  - {fileID: 1310450274}
+  - {fileID: 1172572156}
   SpellDamageModifier: 1
 --- !u!1 &379129193
 GameObject:
