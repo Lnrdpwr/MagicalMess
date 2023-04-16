@@ -55,7 +55,7 @@ public class Shop : MonoBehaviour
     public void SetPanelOn()
     {
         gameObject.SetActive(true);
-        _walletAmount = PlayerPrefs.GetInt("CollectedCoins");
+        _walletAmount = PlayerPrefs.GetInt("CollectedCoins", 0);
         _shopCoinsAmount.text = _walletAmount.ToString();
         _playerShooting.CanShoot = false;
     }
@@ -71,8 +71,8 @@ public class Shop : MonoBehaviour
             _wallet.ChangeMoney(_walletAmount);
             _shopCoinsAmount.text = _walletAmount.ToString();
 
-            _statsLevels[3]++;
-            _statsLevelsText[3].text = "Çהמנמגüו(" + _statsLevels[0].ToString() + ")";
+            _statsLevels[0]++;
+            _statsLevelsText[0].text = "Çהמנמגüו(" + _statsLevels[0].ToString() + ")";
         }
     }
 

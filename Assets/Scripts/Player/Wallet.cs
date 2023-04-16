@@ -12,7 +12,7 @@ public class Wallet : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        PlayerPrefs.SetInt("CollectedCoins", 1);
+        PlayerPrefs.SetInt("CollectedCoins", 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
