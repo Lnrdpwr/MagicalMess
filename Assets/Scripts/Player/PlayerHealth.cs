@@ -37,27 +37,28 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-    public void ChangeHealth(float changeAmount)//Îòðèöàòåëüíîå, åñëè íàäî íàíåñòè óðîí
+    public void ChangeHealth(float changeAmount)
     {
 
-        if(!_isInvincible)
+        if(!_isInvincible || changeAmount > 0)
+        {
             _currentHealth += changeAmount;
-        
-        if(_currentHealth <= 0)
-        {
-            _healthbarObject.SetActive(false);
-            _levelManager.StopGame();
-            gameObject.SetActive(false);
-        }
-        else if(_currentHealth <= MaximumHealth && _canChangeBar)
-        {
-            _canChangeBar = false;
-            StartCoroutine(ChangeBar(_currentHealth - changeAmount, changeAmount));
-            StartCoroutine(Invincible());
-        }
-        else if(_currentHealth > MaximumHealth)
-        {
-            _currentHealth = MaximumHealth;
+            if (_currentHealth <= 0)
+            {
+                _healthbarObject.SetActive(false);
+                _levelManager.StopGame();
+                gameObject.SetActive(false);
+            }
+            else if (_currentHealth <= MaximumHealth && _canChangeBar)
+            {
+                _canChangeBar = false;
+                StartCoroutine(ChangeBar(_currentHealth - changeAmount, changeAmount));
+                StartCoroutine(Invincible());
+            }
+            else if (_currentHealth > MaximumHealth)
+            {
+                _currentHealth = MaximumHealth;
+            }
         }
     }
     

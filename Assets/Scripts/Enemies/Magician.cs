@@ -55,6 +55,10 @@ public class Magician : MonoBehaviour
             _isWalking = false;
             _enemyAnimations.SetMovingAnimation(_isWalking);
         }
+        else
+        {
+            _enemyRigidbody.velocity = Vector2.zero;
+        }
     }
 
     IEnumerator SpawnProjectiles()

@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject _panel;
     [SerializeField] private TMP_Text _passedWavesText;
     [SerializeField] private TMP_Text _bestResultText;
+    [SerializeField] private Animator _transitionAnimator;
 
     public int CoinsPerKill = 1;
 
@@ -44,6 +46,18 @@ public class LevelManager : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("SampleScene");
+        StartCoroutine(StartTransition("SampleScene"));
+    }
+
+    public void GoToMenu()
+    {
+        StartCoroutine(StartTransition("Menu"));
+    }
+
+    IEnumerator StartTransition(string newScene)
+    {
+        _transitionAnimator.SetTrigger("FinalTransition");
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(newScene);
     }
 }
