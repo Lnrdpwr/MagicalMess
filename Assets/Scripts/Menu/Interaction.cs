@@ -16,6 +16,10 @@ public class Interaction : MonoBehaviour
             {
                 _playerShooting.CanShoot = false;
             }
+            else
+            {
+                _playerShooting.CanShoot = true;
+            }
         }
     }
 }
