@@ -1,17 +1,20 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ScenesSwitch : MonoBehaviour
 {
+    [SerializeField] private Animator _transitionAnimator;
 
-    public void StartGame()
+    public void LoadScene(int sceneNum)
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(StartLoadScene(sceneNum));
     }
 
-    public void ExitToMenu()
+    IEnumerator StartLoadScene(int sceneNum)
     {
-        SceneManager.LoadScene("Menu");
+        _transitionAnimator.SetTrigger("FinalTransition");
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(sceneNum);
     }
-
 }

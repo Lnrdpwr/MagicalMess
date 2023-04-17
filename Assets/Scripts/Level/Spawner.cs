@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
     private bool _canShowText = true;
     private int _wavesPassed = 0;
     private LevelManager _levelManager;
-    private int _wavesUntillSkill = 5;
+    private int _wavesUntillSkill = 3;
 
     public float Coefficient = 1;
 
@@ -80,7 +80,7 @@ public class Spawner : MonoBehaviour
         if(_wavesUntillSkill == 0)
         {
             _skillsManager.ShowUpgradePanel();
-            _wavesUntillSkill = 5;
+            _wavesUntillSkill = 3;
             yield return new WaitWhile(() => _upgradePanel.activeSelf);
         }
 
