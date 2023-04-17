@@ -7,6 +7,8 @@ TagManager:
   - Bolt
   - Enemy
   - Coin
+  - ShopButton
+  - ButtonOrMenu
   layers:
   - Default
   - TransparentFX
