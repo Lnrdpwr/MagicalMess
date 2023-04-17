@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Runtime.CompilerServices;
 
 public class Spawner : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private PassiveSkills _skillsManager;
     [SerializeField] private GameObject _upgradePanel;
     [SerializeField] private GameObject _shopButton;
+    [SerializeField] private int _averageCoins;
 
     private Vector2 _spawnPosition;
     private bool _canShowText = true;
@@ -19,6 +21,7 @@ public class Spawner : MonoBehaviour
     private LevelManager _levelManager;
     private int _wavesUntillSkill = 3;
 
+    public int CoinsToDrop = 5;
     public float Coefficient = 1;
 
     internal static Spawner Instance;
@@ -46,7 +49,7 @@ public class Spawner : MonoBehaviour
         _musicSwitch.SwitchMusic();
         for (float i = 0; i < _waveTime; i += _timeToSpawn)
         {
-            int chosenEnemy = Random.Range(0, _enemies.Length);
+            int chosenEnemy = Random.Range(0, 100);
             int chosenBorder = Random.Range(-1, 2);//-1 - ñëåâà; 1 - ñïðàâà; 0 - ñâåðõó
             switch (chosenBorder)
             {
@@ -60,8 +63,24 @@ public class Spawner : MonoBehaviour
                     _spawnPosition = new Vector2(Random.Range(_bottomLeft.x, _topRight.x), _topRight.y);
                     break;
             }
-
-            GameObject newEnemy = Instantiate(_enemies[chosenEnemy], _spawnPosition, Quaternion.identity);
+            switch (chosenEnemy)
+            {
+                case < 40:
+                    Instantiate(_enemies[0], _spawnPosition, Quaternion.identity);
+                    break;
+                case < 70:
+                    Instantiate(_enemies[1], _spawnPosition, Quaternion.identity);
+                    break;
+                case < 80:
+                    Instantiate(_enemies[2], _spawnPosition, Quaternion.identity);
+                    break;
+                case < 90:
+                    Instantiate(_enemies[3], _spawnPosition, Quaternion.identity);
+                    break;
+                case <= 100:
+                    Instantiate(_enemies[4], _spawnPosition, Quaternion.identity);
+                    break;
+            }
             yield return new WaitForSeconds(_timeToSpawn);
         }
         GameObject[] enemies = null;
@@ -84,6 +103,7 @@ public class Spawner : MonoBehaviour
             yield return new WaitWhile(() => _upgradePanel.activeSelf);
         }
 
+        CoinsToDrop = Random.Range(4, 7);
         _callWaveText.SetActive(true);
         _canShowText = true;
         _shopButton.SetActive(true);

@@ -64,7 +64,8 @@ public class PlayerSpell : MonoBehaviour
     
     public void ChangeMaximummana(float addedMana){
         MaximumMana += addedMana;
-        _manaBar.fillAmount = _currentMana / MaximumMana;
+        _currentMana = MaximumMana;
+        _manaBar.fillAmount = 1;
     }
     
     public void SetSpell(GameObject newSpell){

@@ -40,18 +40,25 @@ public class EnemyHealth : MonoBehaviour
             _health -= damage;
             if (_health <= 0)
             {
-                int dropChance = Random.Range(0, 100);
-                switch (dropChance)
+                if (Spawner.Instance.CoinsToDrop >= GameObject.FindGameObjectsWithTag("Enemy").Length && _canDropCoins)
                 {
-                    case < 20:
-                        Instantiate(_coin, transform.position, Quaternion.identity);
-                        break;
-                    case < 30:
-                        Instantiate(_egg, transform.position, Quaternion.identity);
-                        break;
-                    case < 40:
-                        Instantiate(_manaStar, transform.position, Quaternion.identity);
-                        break;
+                    Instantiate(_coin, transform.position, Quaternion.identity);
+                }
+                else if(_canDropCoins)
+                {
+                    int dropChance = Random.Range(0, 100);
+                    switch (dropChance)
+                    {
+                        case < 20:
+                            Instantiate(_coin, transform.position, Quaternion.identity);
+                            break;
+                        case < 30:
+                            Instantiate(_egg, transform.position, Quaternion.identity);
+                            break;
+                        case < 40:
+                            Instantiate(_manaStar, transform.position, Quaternion.identity);
+                            break;
+                    }
                 }
                 DestroyEnemy();
             }

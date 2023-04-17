@@ -153,7 +153,6 @@ public class Shop : MonoBehaviour
         if (_walletAmount >= _spellCost)
         {
             SpellDamageModifier += _spellDamageDelta;
-            _playerMana.ManaUsage += 0.5f;
             _walletAmount -= _spellCost;
             _spellCost = Mathf.Round(_spellCost * 1.5f);
             _wallet.ChangeMoney(_walletAmount);

@@ -5,11 +5,13 @@ public class Acid : MonoBehaviour
 {
     [SerializeField] private float _lifeTime;
     [SerializeField] private AnimationCurve _disappearCurve;
+    [SerializeField] private AudioClip _spawnSound;
 
     private SpriteRenderer _acidRenderer;
 
     private void Start()
     {
+        SoundManager.Instance.PlayClip(_spawnSound);
         _acidRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(Disappear());
     }

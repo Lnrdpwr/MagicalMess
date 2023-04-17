@@ -160,6 +160,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _spawnSound: {fileID: 8300000, guid: 198dd35f49957f64ba50698c69bbd3fc, type: 3}
 --- !u!114 &1332207205798961614
 MonoBehaviour:
   m_ObjectHideFlags: 0
