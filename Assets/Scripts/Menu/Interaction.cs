@@ -12,7 +12,7 @@ public class Interaction : MonoBehaviour
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            if (hit.collider.tag == "ShopButton")
+            if (hit.collider.tag == "ButtonOrMenu")
             {
                 _playerShooting.CanShoot = false;
             }
@@ -20,6 +20,10 @@ public class Interaction : MonoBehaviour
             {
                 _playerShooting.CanShoot = true;
             }
+        }
+        else
+        {
+            _playerShooting.CanShoot = true;
         }
     }
 }
