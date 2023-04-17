@@ -8,9 +8,9 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private Transform _firePoint;
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Image _reloadBar;
-
     [SerializeField] private Animator _reloadingBarAnimator;
     [SerializeField] private Animator _reloadingCanvasAnimator;
+    [SerializeField] private AudioClip _shotClip;
 
     private bool _isReloaded = true;
 
@@ -35,6 +35,7 @@ public class PlayerShooting : MonoBehaviour
     {
         if (CanShoot && _isReloaded && Input.GetButtonDown("Fire1"))
         {
+            SoundManager.Instance.PlayClip(_shotClip);
             Shoot();
             StartCoroutine(Reload());
         }
