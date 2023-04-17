@@ -96,7 +96,7 @@ public class PassiveSkills : MonoBehaviour
             do
             {
                 chosenUpgrade = Random.Range(0, 7);
-            } while (chosenUpgrade != _previousUpgrade);
+            } while (chosenUpgrade == _previousUpgrade);
             _previousUpgrade = chosenUpgrade;
 
             switch (chosenUpgrade)

@@ -326,6 +326,7 @@ MonoBehaviour:
   _projectileSpawnPoint: {fileID: 6056844306414766860}
   _projectile: {fileID: 3167667646035572286, guid: 595d318969a9f4a4098e44aeebf668aa, type: 3}
   _timeToSpawnProjectile: 8
+  _spawnSound: {fileID: 8300000, guid: bdbfd22d739da2e49982cf1274b08262, type: 3}
 --- !u!114 &6056844305599391007
 MonoBehaviour:
   m_ObjectHideFlags: 0

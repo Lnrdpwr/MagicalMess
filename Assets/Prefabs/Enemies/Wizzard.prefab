@@ -409,6 +409,7 @@ MonoBehaviour:
   _projectileSpawnPoint: {fileID: 688015495029353998}
   _projectile: {fileID: 351362046522028137, guid: 117d5506b852e704da418cdf379dcc96, type: 3}
   _timeToSpawnProjectile: 5
+  _spawnSound: {fileID: 8300000, guid: c5c7cec91362b664891f0cb22a010ea5, type: 3}
 --- !u!95 &688015496063706318
 Animator:
   serializedVersion: 5

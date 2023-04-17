@@ -8982,6 +8982,8 @@ MonoBehaviour:
   _invincibleTime: 1
   _healthbarObject: {fileID: 1617110058}
   _levelManager: {fileID: 320247725}
+  _hurtSound: {fileID: 8300000, guid: a82d2d743bb53704692c31cb0635d028, type: 3}
+  _healSound: {fileID: 8300000, guid: 65c9425919d66f24b9afced459a48e63, type: 3}
   MaximumHealth: 5
 --- !u!61 &1572336971
 BoxCollider2D:

@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float _invincibleTime;
     [SerializeField] private GameObject _healthbarObject;
     [SerializeField] private LevelManager _levelManager;
+    [SerializeField] private AudioClip _hurtSound, _healSound;
 
     private float _currentHealth;
     private SpriteRenderer _playerRenderer;
@@ -58,6 +59,15 @@ public class PlayerHealth : MonoBehaviour
             else if (_currentHealth > MaximumHealth)
             {
                 _currentHealth = MaximumHealth;
+            }
+
+            if(changeAmount < 0)
+            {
+                SoundManager.Instance.PlayClip(_hurtSound);
+            }
+            else
+            {
+                SoundManager.Instance.PlayClip(_healSound);
             }
         }
     }
