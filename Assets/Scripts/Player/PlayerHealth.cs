@@ -69,8 +69,7 @@ public class PlayerHealth : MonoBehaviour
     public void ChangeMaximumHealth(float addedHealth)
     {
         MaximumHealth += addedHealth;
-        _currentHealth = MaximumHealth;
-        _healthBar.fillAmount = 1;
+        _healthBar.fillAmount = _currentHealth / MaximumHealth;
     }
 
     IEnumerator ChangeBar(float changeFrom, float previousChange)
