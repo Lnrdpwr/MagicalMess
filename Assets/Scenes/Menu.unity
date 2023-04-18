@@ -2716,7 +2716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transitionAnimator: {fileID: 2013028793}
-  _musicSource: {fileID: 0}
+  _musicSource: {fileID: 1117579935}
 --- !u!1 &1327120093
 GameObject:
   m_ObjectHideFlags: 0
