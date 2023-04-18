@@ -1250,7 +1250,7 @@ MonoBehaviour:
   _timeToSpawn: 1
   _waveTime: 10
   _callWaveText: {fileID: 1284043499}
-  _coefficientDelta: 0.05
+  _coefficientDelta: 1.5
   _musicSwitch: {fileID: 168608138}
   _skillsManager: {fileID: 2053557058}
   _upgradePanel: {fileID: 225617516}

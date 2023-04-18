@@ -90,13 +90,13 @@ public class Spawner : MonoBehaviour
         } while (enemies.Length > 0);
         _musicSwitch.SwitchMusic();
 
-        Coefficient += _coefficientDelta;
         _levelManager.CoinsPerKill = Mathf.RoundToInt(Coefficient);
 
         _wavesPassed++;
         _wavesUntillSkill--;
         if(_wavesUntillSkill == 0)
         {
+            Coefficient += _coefficientDelta;
             _skillsManager.ShowUpgradePanel();
             _wavesUntillSkill = 3;
             yield return new WaitWhile(() => _upgradePanel.activeSelf);
