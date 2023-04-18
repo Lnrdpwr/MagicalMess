@@ -176,7 +176,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -184,6 +184,27 @@ TextureImporter:
       bones: []
       spriteID: 4dd4e1e7c30b63948a841d8f52ccca7d
       internalID: -122583211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileGround_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597042839e63df74685ee4b0bd1485c9
+      internalID: -1818690979
       vertices: []
       indices: 
       edges: []
@@ -200,6 +221,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       TileGround_: 1035187602
+      TileGround_0: -1818690979
       TileGround_1: 1146703080
       TileGround_2: -340620032
       TileGround_3: -122583211
