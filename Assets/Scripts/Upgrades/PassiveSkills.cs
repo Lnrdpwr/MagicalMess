@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class PassiveSkills : MonoBehaviour
 {
-    [SerializeField] PlayerShooting _playerShooting;
-    [SerializeField] PlayerMovement _playerMovement;
-    [SerializeField] PlayerHealth _playerHealth;
+    [SerializeField] private PlayerShooting _playerShooting;
+    [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private PlayerHealth _playerHealth;
+    [SerializeField] private AudioClip _buttonSound;
     //UI
     [SerializeField] private Button[] _buttons;
     [SerializeField] private TMP_Text[] _buttonTexts;
@@ -64,12 +65,12 @@ public class PassiveSkills : MonoBehaviour
         if (_playerHealth.MaximumHealth > 1)
         {
             _playerHealth.MaximumHealth -= 1;
-        }  
+        }
     }
 
     public void TitanUpLevel()
     {
-        _playerHealth.ChangeMaxHealth(1);
+        _playerHealth.ChangeMaximumHealth(1);
         _playerMovement.PlayerScale += new Vector3(0.5f, 0.5f, 0);
     }
 
@@ -80,6 +81,7 @@ public class PassiveSkills : MonoBehaviour
 
     public void HidePanel()
     {
+        SoundManager.Instance.PlayClip(_buttonSound);
         _panel.SetActive(false);
         for(int i = 0; i < _buttons.Length; i++)
         {
@@ -96,7 +98,7 @@ public class PassiveSkills : MonoBehaviour
             do
             {
                 chosenUpgrade = Random.Range(0, 7);
-            } while (chosenUpgrade != _previousUpgrade);
+            } while (chosenUpgrade == _previousUpgrade);
             _previousUpgrade = chosenUpgrade;
 
             switch (chosenUpgrade)

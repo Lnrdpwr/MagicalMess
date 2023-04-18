@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class ScenesSwitch : MonoBehaviour
 {
     [SerializeField] private Animator _transitionAnimator;
+    [SerializeField] private AudioSource _musicSource;
 
     public void LoadScene(int sceneNum)
     {
@@ -14,7 +15,11 @@ public class ScenesSwitch : MonoBehaviour
     IEnumerator StartLoadScene(int sceneNum)
     {
         _transitionAnimator.SetTrigger("FinalTransition");
-        yield return new WaitForSeconds(2);
+        for(float i = 2; i > 0; i -= Time.deltaTime)
+        {
+            _musicSource.volume = i / 2;
+            yield return new WaitForEndOfFrame();
+        }
         SceneManager.LoadScene(sceneNum);
     }
 }
