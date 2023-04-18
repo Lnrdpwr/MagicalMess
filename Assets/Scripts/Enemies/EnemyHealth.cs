@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private GameObject _effect;
     [SerializeField] private GameObject _coin, _egg, _manaStar;
     [SerializeField] private bool _canDropCoins;
+    [SerializeField] private AudioClip _damagedSound, _destroySound;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void DestroyEnemy()
     {
+        SoundManager.Instance.PlayClip(_destroySound);
         if(TryGetComponent(out Goblin goblin))
             goblin.ReturnCoin();
         Instantiate(_effect, transform.position, Quaternion.identity);
@@ -61,6 +63,10 @@ public class EnemyHealth : MonoBehaviour
                     }
                 }
                 DestroyEnemy();
+            }
+            else
+            {
+                SoundManager.Instance.PlayClip(_damagedSound);
             }
         }
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 public class Wallet : MonoBehaviour
 {
     [SerializeField] private TMP_Text _coinsText;
+    [SerializeField] private AudioClip _coinSound;
 
     private int _coins;
 
@@ -19,6 +20,7 @@ public class Wallet : MonoBehaviour
     {
         if (collision.TryGetComponent(out Coin coin))
         {
+            SoundManager.Instance.PlayClip(_coinSound);
             _coins += coin.GetCoins();
             _coinsText.text = _coins.ToString();
             PlayerPrefs.SetInt("CollectedCoins", _coins);

@@ -6,16 +6,29 @@ public class MusicSwitch : MonoBehaviour
     [SerializeField] private AudioSource _activeMusicSource, _calmMusicSource;
 
     private AudioSource _activeSource, _disabledSource;
+    private bool _canSwitch = true;
 
     private void Start()
     {
+        
         _activeSource = _calmMusicSource;
         _disabledSource = _activeMusicSource;
+        StartCoroutine(StartMusicTransition());
     }
 
     public void SwitchMusic()
     {
         StartCoroutine(SwitchVolume());
+    }
+
+    public void StopMusic()
+    {
+        if (_canSwitch)
+        {
+            StartCoroutine(EndMusic());
+            _canSwitch = false;
+        }
+        
     }
 
     IEnumerator SwitchVolume()
@@ -32,5 +45,23 @@ public class MusicSwitch : MonoBehaviour
         AudioSource temp = _activeSource;
         _activeSource = _disabledSource;
         _disabledSource = temp;
+    }
+
+    IEnumerator StartMusicTransition()
+    {
+        for(float i = 0; i <= 2; i += Time.deltaTime)
+        {
+            _activeSource.volume = i / 2;
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    IEnumerator EndMusic()
+    {
+        for (float i = 2; i > 0; i -= Time.deltaTime)
+        {
+            _activeSource.volume = i / 2;
+            yield return new WaitForEndOfFrame();
+        }
     }
 }

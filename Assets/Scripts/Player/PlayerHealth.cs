@@ -28,16 +28,6 @@ public class PlayerHealth : MonoBehaviour
         _playerRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void ChangeMaxHealth(float addedHelath)
-    {
-        MaximumHealth += addedHelath;
-        float chageAmount = MaximumHealth - _currentHealth;
-
-        StartCoroutine(ChangeBar(_currentHealth + (chageAmount), chageAmount));
-        _currentHealth = MaximumHealth;
-
-    }
-
     public void ChangeHealth(float changeAmount)
     {
 
@@ -58,7 +48,11 @@ public class PlayerHealth : MonoBehaviour
             }
             else if (_currentHealth > MaximumHealth)
             {
+                float tempValue = changeAmount - (_currentHealth - MaximumHealth);
                 _currentHealth = MaximumHealth;
+                _canChangeBar = false;
+                StartCoroutine(ChangeBar(_currentHealth - tempValue, tempValue));
+                StartCoroutine(Invincible());
             }
 
             if(changeAmount < 0)
@@ -75,7 +69,8 @@ public class PlayerHealth : MonoBehaviour
     public void ChangeMaximumHealth(float addedHealth)
     {
         MaximumHealth += addedHealth;
-        _healthBar.fillAmount = _currentHealth / MaximumHealth;
+        _currentHealth = MaximumHealth;
+        _healthBar.fillAmount = 1;
     }
 
     IEnumerator ChangeBar(float changeFrom, float previousChange)
