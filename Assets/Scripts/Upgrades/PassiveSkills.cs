@@ -105,31 +105,31 @@ public class PassiveSkills : MonoBehaviour
             {
                 case 0:
                     _buttons[i].onClick.AddListener(ArrowpPiercingUpLevel);
-                    _buttonTexts[i].text = "Piercing\n(+1 piercing)";
+                    _buttonTexts[i].text = "Пронзание\n+1 к пронзанию";
                     break;
                 case 1:
                     _buttons[i].onClick.AddListener(SplitArrowUpLevel);
-                    _buttonTexts[i].text = "Split arrow\n(+1 arrow)";
+                    _buttonTexts[i].text = "Разрезанная стрела\n+1 стрела";
                     break;
                 case 2:
                     _buttons[i].onClick.AddListener(ThickArrowsUpLevel);
-                    _buttonTexts[i].text = "Thick arrow\n(+size,\n+damage,\nincrease reload,\n-speed)";
+                    _buttonTexts[i].text = "Толстая стрела\n+размер\n+урон\nмедленнее перезарядка\n-скорость";
                     break;
                 case 3:
                     _buttons[i].onClick.AddListener(SmallArrowsUpLevel);
-                    _buttonTexts[i].text = "Small arrow\n(+speed,\ndecrease reload,\n-damage)";
+                    _buttonTexts[i].text = "Мелкие стрелы\n+скорость\nбыстрее перезарядка\n-урон";
                     break;
                 case 4:
                     _buttons[i].onClick.AddListener(LightnessInTheLegsUpLevel);
-                    _buttonTexts[i].text = "Light boots\n(+speed,\n-health)";
+                    _buttonTexts[i].text = "Лёгкие поножи\n+скорость\n-здоровье";
                     break;
                 case 5:
                     _buttons[i].onClick.AddListener(TitanUpLevel);
-                    _buttonTexts[i].text = "Titan\n(+health,\n+size)";
+                    _buttonTexts[i].text = "Титан\n+здоровье\n+размер";
                     break;
                 case 6:
                     _buttons[i].onClick.AddListener(MonsterMark);
-                    _buttonTexts[i].text = "Monster mark\n(deals damage after time)";
+                    _buttonTexts[i].text = "Метка монстра\nнаносит урон через время";
                     break;
             }
             _buttons[i].onClick.AddListener(HidePanel);

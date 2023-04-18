@@ -25,16 +25,16 @@ public class LevelManager : MonoBehaviour
     {
         int bestResult = PlayerPrefs.GetInt("BestResult", 0);
         int currentResult = _spawner.StopSpawner();
-        _passedWavesText.text = "Waves passed: " + currentResult.ToString();
+        _passedWavesText.text = "Пройдено волн: " + currentResult.ToString();
 
         if (currentResult > bestResult)
         {
-            _bestResultText.text = "Best result: " + currentResult.ToString();
+            _bestResultText.text = "Лучший результат: " + currentResult.ToString();
             PlayerPrefs.SetInt("BestResult", currentResult);
         }
         else
         {
-            _bestResultText.text = "Best result: " + bestResult.ToString();
+            _bestResultText.text = "Лучший результат: " + bestResult.ToString();
         }
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
