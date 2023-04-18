@@ -2072,7 +2072,7 @@ MonoBehaviour:
   _passedWavesText: {fileID: 1792995294}
   _bestResultText: {fileID: 522172437}
   _transitionAnimator: {fileID: 1396373292}
-  _musicSwitch: {fileID: 0}
+  _musicSwitch: {fileID: 168608138}
   CoinsPerKill: 1
 --- !u!4 &320247726
 Transform:
