@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TMP_Text _passedWavesText;
     [SerializeField] private TMP_Text _bestResultText;
     [SerializeField] private Animator _transitionAnimator;
+    [SerializeField] private MusicSwitch _musicSwitch;
 
     public int CoinsPerKill = 1;
 
@@ -56,6 +57,7 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator StartTransition(string newScene)
     {
+        _musicSwitch.StopMusic();
         _transitionAnimator.SetTrigger("FinalTransition");
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(newScene);

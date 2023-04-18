@@ -70,7 +70,7 @@ public class PassiveSkills : MonoBehaviour
 
     public void TitanUpLevel()
     {
-        _playerHealth.ChangeMaxHealth(1);
+        _playerHealth.ChangeMaximumHealth(1);
         _playerMovement.PlayerScale += new Vector3(0.5f, 0.5f, 0);
     }
 

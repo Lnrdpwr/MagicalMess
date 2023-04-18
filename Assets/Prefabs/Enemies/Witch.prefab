@@ -326,7 +326,6 @@ MonoBehaviour:
   _projectileSpawnPoint: {fileID: 6056844306414766860}
   _projectile: {fileID: 3167667646035572286, guid: 595d318969a9f4a4098e44aeebf668aa, type: 3}
   _timeToSpawnProjectile: 8
-  _spawnSound: {fileID: 8300000, guid: bdbfd22d739da2e49982cf1274b08262, type: 3}
 --- !u!114 &6056844305599391007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +399,8 @@ MonoBehaviour:
   _egg: {fileID: 3566341127917700373, guid: e0f26d8196387114ca76fb4f0735e38b, type: 3}
   _manaStar: {fileID: 8603938539015566652, guid: 37b47d497009bc64cb52efe8fd1f3159, type: 3}
   _canDropCoins: 1
+  _damagedSound: {fileID: 8300000, guid: 03b0102fb9fdad940968ee89e934b3fd, type: 3}
+  _destroySound: {fileID: 8300000, guid: e7af3d05b9103354bb25b1112ec9b9c8, type: 3}
 --- !u!1 &6056844306414766863
 GameObject:
   m_ObjectHideFlags: 0
