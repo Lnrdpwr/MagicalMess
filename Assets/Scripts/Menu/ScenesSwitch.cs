@@ -6,6 +6,17 @@ public class ScenesSwitch : MonoBehaviour
 {
     [SerializeField] private Animator _transitionAnimator;
     [SerializeField] private AudioSource _musicSource;
+    [SerializeField] private GameObject _tutoralPanel;
+
+    private void Start()
+    {
+        if (!PlayerPrefs.HasKey("PassedTutorial"))
+        {
+            _tutoralPanel.SetActive(true);
+            PlayerPrefs.SetInt("PassedTutorial", 1);
+            PlayerPrefs.Save();
+        }
+    }
 
     public void LoadScene(int sceneNum)
     {

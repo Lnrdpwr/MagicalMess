@@ -41,11 +41,11 @@ public class PlayerSpell : MonoBehaviour
     public void ChangeMaximumMana(float addedMana)
     {
         MaximumMana += addedMana;
-        float chageAmount = MaximumMana - _currentMana;
-
-        StartCoroutine(ChangeBar(_currentMana + (chageAmount), chageAmount));
-        _currentMana = MaximumMana;
-
+        if(_currentMana == MaximumMana - addedMana)
+        {
+            _currentMana = MaximumMana;
+        }
+        _manaBar.fillAmount = _currentMana / MaximumMana;
     }
 
     public void ChangeMana(float changeAmount)
@@ -60,11 +60,6 @@ public class PlayerSpell : MonoBehaviour
         {
             _currentMana = MaximumMana;
         }
-    }
-    
-    public void ChangeMaximummana(float addedMana){
-        MaximumMana += addedMana;
-        _manaBar.fillAmount = _currentMana / MaximumMana;
     }
     
     public void SetSpell(GameObject newSpell){
