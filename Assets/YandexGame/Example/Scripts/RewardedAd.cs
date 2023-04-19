@@ -1,18 +1,16 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 namespace YG.Example
 {
     public class RewardedAd : MonoBehaviour
     {
         [SerializeField] int AdID;
-        [SerializeField] Text textMoney;
 
-        int moneyCount = 0;
+        private LevelManager _levelManager;
 
-        void Awake()
+        private void Start()
         {
-            AdMoney(0);
+            _levelManager = LevelManager.Instance;
         }
 
         private void OnEnable() => YandexGame.RewardVideoEvent += Rewarded;
@@ -20,14 +18,13 @@ namespace YG.Example
 
         void Rewarded(int id)
         {
-            if (id == AdID)
-                AdMoney(1);
+            RevivePlayer();
         }
 
-        void AdMoney(int count)
-        {
-            moneyCount += count;
-            textMoney.text = "" + moneyCount;
+        void RevivePlayer()
+        {   
+            _levelManager.RevivePlayer();
+            gameObject.SetActive(false);
         }
     }
 }

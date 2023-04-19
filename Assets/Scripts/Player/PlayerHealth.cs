@@ -76,6 +76,14 @@ public class PlayerHealth : MonoBehaviour
         _healthBar.fillAmount = _currentHealth / MaximumHealth;
     }
 
+    public void Revive()
+    {
+        _currentHealth = MaximumHealth;
+        gameObject.SetActive(true);
+        _healthbarObject.SetActive(true);
+        StartCoroutine(ChangeBar(0, MaximumHealth));
+    }
+
     IEnumerator ChangeBar(float changeFrom, float previousChange)
     {
         for(float i = 0; i <= _timeToChangeBar; i += Time.deltaTime)

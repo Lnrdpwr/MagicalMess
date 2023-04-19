@@ -115,4 +115,10 @@ public class Spawner : MonoBehaviour
         _callWaveText.SetActive(false);
         return _wavesPassed;
     }
+
+    public void ResetSpawner()
+    {
+        _canShowText = true;
+        _callWaveText.SetActive(true);
+    }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;
 
 public class LevelManager : MonoBehaviour
 {
@@ -11,11 +12,14 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TMP_Text _bestResultText;
     [SerializeField] private Animator _transitionAnimator;
     [SerializeField] private MusicSwitch _musicSwitch;
+    [SerializeField] private PlayerHealth _player;
+    [SerializeField] private PlayerSpell _playerMana;
 
     public int CoinsPerKill = 1;
 
     internal static LevelManager Instance;
-    
+
+
     private void Awake()
     {
         Instance = this;
@@ -42,8 +46,22 @@ public class LevelManager : MonoBehaviour
         {
             enemy.GetComponent<EnemyHealth>().DestroyEnemy();
         }
+        GameObject[] acids = GameObject.FindGameObjectsWithTag("Acid");
+        foreach (GameObject acid in acids)
+        {
+            Destroy(acid);
+        }
         _panel.SetActive(true);
     }
+
+    public void RevivePlayer()
+    {
+        _panel.SetActive(false);
+        _player.Revive();
+        _playerMana.Revive();
+        _spawner.ResetSpawner();
+    }
+
 
     public void Restart()
     {

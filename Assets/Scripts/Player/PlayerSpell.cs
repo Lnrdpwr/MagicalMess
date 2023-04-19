@@ -67,6 +67,12 @@ public class PlayerSpell : MonoBehaviour
         _canUseSpell = true;
     }
 
+    public void Revive()
+    {
+        _currentMana = MaximumMana;
+        StartCoroutine(ChangeBar(0, MaximumMana));
+    }
+
     IEnumerator ChangeBar(float changeFrom, float previousChange)
     {
         for (float i = 0; i <= _timeToChangeBar; i += Time.deltaTime)
