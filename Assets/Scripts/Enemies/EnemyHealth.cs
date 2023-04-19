@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -9,15 +10,19 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private GameObject _coin, _egg, _manaStar;
     [SerializeField] private bool _canDropCoins;
     [SerializeField] private AudioClip _damagedSound, _destroySound;
+    [SerializeField] private Image _healthBar;
+
+    private float _currentHealth;
 
     private void Start()
     {
         _health *= Spawner.Instance.Coefficient;
+        _currentHealth = _health;
     }
 
     public void DoDamage(float time, float damage,bool doTrack)
     {
-        if (doTrack == true && _health != damage)
+        if (doTrack == true && _currentHealth != damage)
         {
             _monsterMark.StartTimer(time);
         }
@@ -37,10 +42,11 @@ public class EnemyHealth : MonoBehaviour
     IEnumerator DoDamage(float time, float damage)
     {
         yield return new WaitForSeconds(time);
-        if(_health > 0)//Двойная проверка, что бы не спавнить несколько монет при попадании нескольких стрел
+        if(_currentHealth > 0)//Двойная проверка, что бы не спавнить несколько монет при попадании нескольких стрел
         {
-            _health -= damage;
-            if (_health <= 0)
+            _currentHealth -= damage;
+            _healthBar.fillAmount = _currentHealth / _health;
+            if (_currentHealth <= 0)
             {
                 if (Spawner.Instance.CoinsToDrop >= GameObject.FindGameObjectsWithTag("Enemy").Length && _canDropCoins)
                 {
