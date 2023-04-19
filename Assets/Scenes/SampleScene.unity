@@ -2588,6 +2588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitionAnimator: {fileID: 0}
   _musicSource: {fileID: 0}
+  _tutoralPanel: {fileID: 0}
 --- !u!1 &288948873
 GameObject:
   m_ObjectHideFlags: 0
