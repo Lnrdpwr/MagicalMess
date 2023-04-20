@@ -64,6 +64,13 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
+    public void ResetReload()
+    {
+        _isReloaded = true;
+        _reloadBar.gameObject.SetActive(true);
+        _reloadingBarAnimator.Play("ReloadingBarIdle");
+    }
+
     IEnumerator Reload()
     {
         _isReloaded = false;

@@ -16,6 +16,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private PlayerHealth _player;
     [SerializeField] private PlayerSpell _playerMana;
 
+    private PlayerShooting _playerShooting;
+
     public int CoinsPerKill = 1;
 
     internal static LevelManager Instance;
@@ -26,10 +28,15 @@ public class LevelManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        _playerShooting = PlayerShooting.Instance;
+    }
+
     private void FixedUpdate()
     {
         int currentResult = _spawner.WavesPassed;
-        _passedWavesInGameText.text = $"волн пройдено: {currentResult}";
+        _passedWavesInGameText.text = $"Волн пройдено: {currentResult}";
     }
 
     public void StopGame()

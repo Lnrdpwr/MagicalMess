@@ -11,6 +11,7 @@ TagManager:
   - ButtonOrMenu
   - Acid
   - Trees
+  - Scythe
   layers:
   - Default
   - TransparentFX
