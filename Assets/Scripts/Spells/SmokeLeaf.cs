@@ -13,8 +13,15 @@ public class SmokeLeaf : MonoBehaviour
 
     private void Start()
     {
+        _damage += Shop.Instance.SpellDamageModifier * 0.01f;
+
         _spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(LifeTime(_timeBeforeDestroy));
+    }
+
+    private void FixedUpdate()
+    {
+        StartCoroutine(Reload(_timeBetweenDamage));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,8 +31,6 @@ public class SmokeLeaf : MonoBehaviour
             if (_isReloaded)
             {
                 enemy.DoDamage(0, _damage, false);
-                _isReloaded = false;
-                StartCoroutine(Reload(_timeBetweenDamage));
             }
         }
     }
@@ -37,17 +42,22 @@ public class SmokeLeaf : MonoBehaviour
             if (_isReloaded)
             {
                 enemy.DoDamage(0, _damage, false);
-                _isReloaded = false;
-                StartCoroutine(Reload(_timeBetweenDamage));
             }
         }
     }
 
     IEnumerator Reload(float timeBetweenDamage)
     {
-        _isReloaded = false;
-        yield return new WaitForSeconds(timeBetweenDamage);
-        _isReloaded = true;
+        if (_isReloaded == false)
+        {
+            yield return new WaitForSeconds(timeBetweenDamage);
+            _isReloaded = true;
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.1f);
+            _isReloaded = false;
+        }
     }
 
     IEnumerator LifeTime(float timeBeforeDestroy)
@@ -56,8 +66,7 @@ public class SmokeLeaf : MonoBehaviour
         {
             _spriteRenderer.color = new Color(1, 1, 1, _disappearCurve.Evaluate(i / timeBeforeDestroy));
             yield return new WaitForEndOfFrame();
-        }
-        //yield return new WaitForSeconds(timeBeforeDestroy);       
+        }     
         Destroy(gameObject);
     }
 }

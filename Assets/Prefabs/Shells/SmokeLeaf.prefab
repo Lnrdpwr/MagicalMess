@@ -147,9 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9fae62cdd1c574b9dfed2bd3c5dbcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 0.5
+  _damage: 0.05
   _timeBeforeDestroy: 15
-  _timeBetweenDamage: 0.5
+  _timeBetweenDamage: 0.1
   _disappearCurve:
     serializedVersion: 2
     m_Curve:
