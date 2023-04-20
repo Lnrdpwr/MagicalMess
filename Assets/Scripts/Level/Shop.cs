@@ -127,7 +127,7 @@ public class Shop : MonoBehaviour
     {
         if (_walletAmount >= _spellCost)
         {
-            _playerMana.SetSpell(_spells[index]);
+            _playerMana.SetSpell(_spells[index], index);
             _walletAmount -= _spellCost;
             _spellCost = Mathf.Round(_spellCost / 2);
 

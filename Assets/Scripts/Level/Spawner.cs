@@ -101,6 +101,10 @@ public class Spawner : MonoBehaviour
             Coefficient += _coefficientDelta;
             _skillsManager.ShowUpgradePanel();
             _wavesUntillSkill = 3;
+            if(_timeToSpawn <= 0.4f)
+            {
+                _timeToSpawn -= 0.05f;
+            }
             yield return new WaitWhile(() => _upgradePanel.activeSelf);
         }
 

@@ -9,6 +9,8 @@ public class PlayerSpell : MonoBehaviour
     [SerializeField] private float _timeToChangeBar;
     [SerializeField] private GameObject _manaBarObject;
     [SerializeField] private float _spellCooldown;
+    [SerializeField] private Image _spellReload;
+    [SerializeField] private Sprite[] _spellsSprites;
 
     private float _currentMana;
     private bool _canChangeBar = true;
@@ -62,7 +64,11 @@ public class PlayerSpell : MonoBehaviour
         }
     }
     
-    public void SetSpell(GameObject newSpell){
+    public void SetSpell(GameObject newSpell, int spellIndex){
+        _spellReload.sprite = _spellsSprites[spellIndex];
+        _spellReload.gameObject.SetActive(true);
+        _spellReload.SetNativeSize();
+        _spellReload.fillAmount = 1;
         _currentSpell = newSpell;
         _canUseSpell = true;
     }
@@ -85,7 +91,11 @@ public class PlayerSpell : MonoBehaviour
 
     IEnumerator Cooldown()
     {
-        yield return new WaitForSeconds(_spellCooldown);
+        for(float i = 0; i <= _spellCooldown; i += Time.deltaTime)
+        {
+            _spellReload.fillAmount = i / _spellCooldown;
+            yield return new WaitForEndOfFrame();
+        }
         _canUseSpell = true;
     }
 }
