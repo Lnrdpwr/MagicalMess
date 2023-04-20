@@ -67,6 +67,7 @@ public class LevelManager : MonoBehaviour
         _player.Revive();
         _playerMana.Revive();
         _spawner.ResetSpawner();
+        _musicSwitch.ResetMusic();
     }
 
 

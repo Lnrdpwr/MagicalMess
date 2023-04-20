@@ -31,6 +31,14 @@ public class MusicSwitch : MonoBehaviour
         
     }
 
+    public void ResetMusic()
+    {
+        _canSwitch = true;
+        _activeSource = _calmMusicSource;
+        _disabledSource = _activeMusicSource;
+        _activeSource.volume = 1;
+    }
+
     IEnumerator SwitchVolume()
     {
         for(float i = 0; i <= 3; i += Time.deltaTime)
