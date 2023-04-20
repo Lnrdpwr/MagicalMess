@@ -365,9 +365,10 @@ GameObject:
   - component: {fileID: 53949394}
   - component: {fileID: 53949393}
   - component: {fileID: 53949392}
+  - component: {fileID: 53949395}
   m_Layer: 5
   m_Name: ResultingPanel
-  m_TagString: Untagged
+  m_TagString: ButtonOrMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -433,6 +434,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!65 &53949395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53949391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2008.7488, y: 1263.7201, z: 1}
+  m_Center: {x: 22.672922, y: 4.56193, z: 0}
 --- !u!1 &55249383
 GameObject:
   m_ObjectHideFlags: 0
@@ -16191,9 +16205,10 @@ GameObject:
   - component: {fileID: 225617517}
   - component: {fileID: 225617519}
   - component: {fileID: 225617518}
+  - component: {fileID: 225617520}
   m_Layer: 5
   m_Name: UpgradePanel
-  m_TagString: Untagged
+  m_TagString: ButtonOrMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16259,6 +16274,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225617516}
   m_CullTransparentMesh: 1
+--- !u!65 &225617520
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225617516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1973.9521, y: 1251.549, z: 1}
+  m_Center: {x: 7.6068883, y: -7.063351, z: 0}
 --- !u!1 &243225205
 GameObject:
   m_ObjectHideFlags: 0
@@ -26724,9 +26752,10 @@ GameObject:
   m_Component:
   - component: {fileID: 360203846}
   - component: {fileID: 360203847}
+  - component: {fileID: 360203848}
   m_Layer: 5
   m_Name: ShopMenu
-  m_TagString: Untagged
+  m_TagString: ButtonOrMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26808,6 +26837,19 @@ MonoBehaviour:
   - {fileID: 1310450274}
   - {fileID: 1172572156}
   SpellDamageModifier: 1
+--- !u!65 &360203848
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360203845}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1976.2703, y: 1237.436, z: 1}
+  m_Center: {x: -0.007152558, y: -7.3115163, z: 0}
 --- !u!1 &372552560
 GameObject:
   m_ObjectHideFlags: 0
@@ -32970,9 +33012,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 496987921}
+  - component: {fileID: 496987922}
   m_Layer: 5
   m_Name: SettingsMenu
-  m_TagString: Untagged
+  m_TagString: ButtonOrMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33001,6 +33044,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 308}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!65 &496987922
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496987920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1955.2692, y: 1237.5988, z: 1}
+  m_Center: {x: 0.58284765, y: -2.4573042, z: 0}
 --- !u!1 &504069761
 GameObject:
   m_ObjectHideFlags: 0
@@ -40043,6 +40099,52 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &792367655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 792367657}
+  - component: {fileID: 792367656}
+  m_Layer: 0
+  m_Name: Interaction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &792367656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792367655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 509bbf418244cf74da7bfc4b67172f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 519420031}
+  _playerShooting: {fileID: 1572336969}
+--- !u!4 &792367657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792367655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &801317265
 GameObject:
   m_ObjectHideFlags: 0
@@ -67318,9 +67420,10 @@ GameObject:
   - component: {fileID: 1191041452}
   - component: {fileID: 1191041451}
   - component: {fileID: 1191041450}
+  - component: {fileID: 1191041453}
   m_Layer: 5
   m_Name: ShopButton
-  m_TagString: Untagged
+  m_TagString: ButtonOrMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67452,6 +67555,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191041448}
   m_CullTransparentMesh: 1
+--- !u!65 &1191041453
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191041448}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 268.85114, y: 96.29327, z: 33.744534}
+  m_Center: {x: -140.77602, y: 0.8328796, z: 8.460402}
 --- !u!1 &1214476307
 GameObject:
   m_ObjectHideFlags: 0
@@ -73365,11 +73481,11 @@ RectTransform:
   m_Father: {fileID: 1423333293}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 354}
-  m_SizeDelta: {x: 578.84, y: 102.11}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -125}
+  m_SizeDelta: {x: 578.84, y: 102.109985}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &1372197627
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -90555,9 +90671,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1547365855}
+  - component: {fileID: 1547365856}
   m_Layer: 5
   m_Name: PauseMenu
-  m_TagString: Untagged
+  m_TagString: ButtonOrMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90584,6 +90701,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!65 &1547365856
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547365854}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1990.6212, y: 1230.9012, z: 1}
+  m_Center: {x: 4.735165, y: 0.8298684, z: 0}
 --- !u!1 &1566652005
 GameObject:
   m_ObjectHideFlags: 0
