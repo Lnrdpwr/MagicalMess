@@ -73412,7 +73412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1396373291
 RectTransform:
   m_ObjectHideFlags: 0
@@ -78812,7 +78812,7 @@ GameObject:
   - component: {fileID: 1502214276}
   m_Layer: 7
   m_Name: Bound
-  m_TagString: Untagged
+  m_TagString: Trees
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

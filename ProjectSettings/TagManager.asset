@@ -10,6 +10,7 @@ TagManager:
   - ShopButton
   - ButtonOrMenu
   - Acid
+  - Trees
   layers:
   - Default
   - TransparentFX

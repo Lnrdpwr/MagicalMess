@@ -42,6 +42,11 @@ public class Bullet : MonoBehaviour
                 _piercesBeforeDestruction = PiercingPower;
             }
         }
+
+        if (collision.tag == "Trees")
+        {
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator DestroyBullet(float time)
