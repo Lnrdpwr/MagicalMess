@@ -38,6 +38,9 @@ public class PlayerHealth : MonoBehaviour
             {
                 _healthbarObject.SetActive(false);
                 _levelManager.StopGame();
+                GameObject[] projectiles = GameObject.FindGameObjectsWithTag("Scythe");
+                foreach (GameObject obj in projectiles)
+                    Destroy(obj);
                 gameObject.SetActive(false);
             }
             else if (_currentHealth <= MaximumHealth && _canChangeBar)

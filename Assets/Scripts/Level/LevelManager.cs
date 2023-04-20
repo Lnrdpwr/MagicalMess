@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private Spawner _spawner;
     [SerializeField] private GameObject _panel;
+    [SerializeField] private TMP_Text _passedWavesInGameText;
     [SerializeField] private TMP_Text _passedWavesText;
     [SerializeField] private TMP_Text _bestResultText;
     [SerializeField] private Animator _transitionAnimator;
@@ -23,6 +24,12 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void FixedUpdate()
+    {
+        int currentResult = _spawner.WavesPassed;
+        _passedWavesInGameText.text = $"волн пройдено: {currentResult}";
     }
 
     public void StopGame()
@@ -60,6 +67,7 @@ public class LevelManager : MonoBehaviour
         _player.Revive();
         _playerMana.Revive();
         _spawner.ResetSpawner();
+        _musicSwitch.ResetMusic();
     }
 
 
