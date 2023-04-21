@@ -67,7 +67,7 @@ public class PlayerShooting : MonoBehaviour
     public void ResetReload()
     {
         _isReloaded = true;
-        _reloadBar.gameObject.SetActive(true);
+        _reloadBar.gameObject.SetActive(false);
         _reloadingBarAnimator.Play("ReloadingBarIdle");
     }
 

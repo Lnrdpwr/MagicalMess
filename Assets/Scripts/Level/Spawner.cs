@@ -127,5 +127,6 @@ public class Spawner : MonoBehaviour
     {
         _canShowText = true;
         _callWaveText.SetActive(true);
+        _wavesCountText.SetActive(true);
     }
 }

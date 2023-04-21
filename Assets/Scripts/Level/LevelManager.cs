@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using YG;
@@ -75,8 +76,9 @@ public class LevelManager : MonoBehaviour
         _playerMana.Revive();
         _spawner.ResetSpawner();
         _musicSwitch.ResetMusic();
+        _playerShooting.ResetReload();
+        SoundManager.Instance.GetComponent<AudioSource>().volume = 1;
     }
-
 
     public void Restart()
     {

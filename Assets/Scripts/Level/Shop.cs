@@ -31,6 +31,7 @@ public class Shop : MonoBehaviour
     private Wallet _wallet;
     private float _walletAmount = 0;
     private int _mainSpellButton;
+    private float _tempPlayerSpeed;
 
     public float SpellDamageModifier = 1;
 
@@ -44,10 +45,14 @@ public class Shop : MonoBehaviour
         _playerMana = PlayerSpell.Instance;
         _playerShooting = PlayerShooting.Instance;
         _wallet = Wallet.Instance;
+
+        _tempPlayerSpeed = PlayerMovement.Instance.Speed;
+        PlayerMovement.Instance.Speed = 0;
     }
 
     private void OnDisable()
     {
+        PlayerMovement.Instance.Speed = _tempPlayerSpeed;
         _playerShooting.CanShoot = true;
     }
 

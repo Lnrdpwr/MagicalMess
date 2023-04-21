@@ -98,7 +98,7 @@ public class PassiveSkills : MonoBehaviour
             do
             {
                 chosenUpgrade = Random.Range(0, 7);
-            } while (chosenUpgrade == _previousUpgrade);
+            } while (chosenUpgrade == _previousUpgrade || (_playerShooting.isTracked && chosenUpgrade == 6));
             _previousUpgrade = chosenUpgrade;
 
             switch (chosenUpgrade)

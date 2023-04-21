@@ -75,6 +75,9 @@ public class PlayerSpell : MonoBehaviour
 
     public void Revive()
     {
+        _canUseSpell = true;
+        _spellReload.fillAmount = 1;
+
         _currentMana = MaximumMana;
         StartCoroutine(ChangeBar(0, MaximumMana));
     }

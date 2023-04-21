@@ -31,12 +31,19 @@ public class MusicSwitch : MonoBehaviour
         
     }
 
+    public void SetVolume(float volume)
+    {
+        _activeSource.volume = volume;
+        _disabledSource.volume = 0;
+    }
+
     public void ResetMusic()
     {
         _canSwitch = true;
         _activeSource = _calmMusicSource;
         _disabledSource = _activeMusicSource;
         _activeSource.volume = 1;
+        _disabledSource.volume = 0;
     }
 
     IEnumerator SwitchVolume()
