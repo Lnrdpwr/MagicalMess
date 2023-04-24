@@ -3,6 +3,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using YG;
 
 public class LevelManager : MonoBehaviour
@@ -66,6 +67,9 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(acid);
         }
+
+        Leaderboard.NewRecord();
+
         _panel.SetActive(true);
     }
 
