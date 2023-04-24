@@ -33,7 +33,7 @@ public class PlayerShooting : MonoBehaviour
 
     public void Update()
     {
-        if (CanShoot && _isReloaded && Input.GetButtonDown("Fire1"))
+        if (CanShoot && _isReloaded && Input.GetButton("Fire1"))
         {
             SoundManager.Instance.PlayClip(_shotClip);
             Shoot();
