@@ -75,9 +75,9 @@ public class LevelManager : MonoBehaviour
         _player.Revive();
         _playerMana.Revive();
         _spawner.ResetSpawner();
-        //_musicSwitch.ResetMusic();
+        _musicSwitch.ResetMusic();
         _playerShooting.ResetReload();
-        //SoundManager.Instance.GetComponent<AudioSource>().volume = 1;
+        SoundManager.Instance.GetComponent<AudioSource>().volume = 1;
     }
 
     public void Restart()
