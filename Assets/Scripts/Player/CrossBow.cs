@@ -1,47 +1,41 @@
 using UnityEngine;
+using YG;
 
 public class CrossBow : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private Joystick _joystick;
 
     private Vector3 _mousePosition;
+    private string _inputType;
 
     private void Update()
     {
-        _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+        _inputType = PlayerPrefs.GetString("InputType", "pc");
+        if(_inputType == "pc")
+        {
+            _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+        }
     }
 
     private void FixedUpdate()
     {
-        Vector3 lookDir = _mousePosition - transform.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        float angle = 0;
+        if (_inputType == "pc")
+        {
+            Vector3 lookDir = _mousePosition - transform.position;
+            angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        }
+        else if(_inputType == "mobile")
+        {
+            float _horizonaDelta = _joystick.Horizontal;
+            float _verticalDelta = _joystick.Vertical;
+            angle = Mathf.Atan2(_verticalDelta, _horizonaDelta) * Mathf.Rad2Deg - 90f;
+        }
+
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        //if (angle > -220f && angle < -135f)
-        //{
-        //    _playerMovement.LookForward();
-        //}
-        //else if (angle > -135f && angle < -50f)
-        //{
-        //    _playerMovement.LookRight();
-        //}
-        //else if (angle > -270f && angle < -220f)
-        //{
-        //    _playerMovement.LookLeft();
-        //}
-        //else if (angle < 15f && angle > -15f)
-        //{
-        //    _playerMovement.LookUpForward();
-        //}
-        //else if (angle < 90f && angle > 50f)
-        //{
-        //    _playerMovement.LookUpLeft();
-        //}
-        //else if (angle > -50f && angle < -15f )
-        //{
-        //    _playerMovement.LookUpRight();
-        //}
 
         if (angle > -220f && angle < -135f)
         {
@@ -59,13 +53,5 @@ public class CrossBow : MonoBehaviour
         {
             _playerMovement.LookUpForward();
         }
-        //else if (angle < 50f && angle > 15f)
-        //{
-        //    _playerMovement.LookUpLeft();
-        //}
-        //else if (angle > -50f && angle < -15f)
-        //{
-        //    _playerMovement.LookUpRight();
-        //}
     }
 }

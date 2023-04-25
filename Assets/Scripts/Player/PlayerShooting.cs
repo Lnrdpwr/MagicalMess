@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Linq.Expressions;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private Animator _reloadingBarAnimator;
     [SerializeField] private Animator _reloadingCanvasAnimator;
     [SerializeField] private AudioClip _shotClip;
+    [SerializeField] private Joystick _joystick;
 
     private bool _isReloaded = true;
 
@@ -33,7 +35,7 @@ public class PlayerShooting : MonoBehaviour
 
     public void Update()
     {
-        if (CanShoot && _isReloaded && Input.GetButton("Fire1"))
+        if (CanShoot && _isReloaded && (Input.GetButton("Fire1") || _joystick.Direction.magnitude >= 0.25f))
         {
             SoundManager.Instance.PlayClip(_shotClip);
             Shoot();

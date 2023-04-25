@@ -11,11 +11,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Sprite _leftLookUpPrefab;
     [SerializeField] Sprite _rightLookUpPrefab;
 
+    [SerializeField] private Joystick _joystick;
+
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _playerRigidbody;
     internal static PlayerMovement Instance;
     private Vector2 _direction;
+    private string _inputType;
+    private float _horizontalMovement, _verticalMovement;
 
     public float Speed;
     public Vector3 PlayerScale;
@@ -27,17 +31,25 @@ public class PlayerMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
         _playerRigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer =  GetComponent<SpriteRenderer>();
+        _inputType = PlayerPrefs.GetString("InputType", "pc");
     }
 
     private void FixedUpdate()
     {
         transform.localScale = PlayerScale;
 
-        float horizontalMovement = Input.GetAxisRaw("Horizontal");
-        float verticalMovement = Input.GetAxisRaw("Vertical");
+        if (_inputType == "pc")
+        {
+            _horizontalMovement = Input.GetAxisRaw("Horizontal");
+            _verticalMovement = Input.GetAxisRaw("Vertical");
+        }
+        else if (_inputType == "mobile")
+        {
+            _horizontalMovement = _joystick.Horizontal;
+            _verticalMovement = _joystick.Vertical;
+        }
 
-        //�������� ������ �����������, ������ �������� ������ ��������
-        _direction = Vector2.ClampMagnitude(new Vector2(horizontalMovement, verticalMovement) * Speed, Speed);
+        _direction = Vector2.ClampMagnitude(new Vector2(_horizontalMovement, _verticalMovement) * Speed, Speed);
 
         _playerRigidbody.velocity = _direction;
 
