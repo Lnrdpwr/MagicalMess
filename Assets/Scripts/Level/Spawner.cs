@@ -16,10 +16,10 @@ public class Spawner : MonoBehaviour
     [SerializeField] private int _averageCoins;
 
     private Vector2 _spawnPosition;
-    private bool _canShowText = true;
     private LevelManager _levelManager;
     private int _wavesUntillSkill = 3;
 
+    public bool CanShowText = true;
     public int WavesPassed = 0;
     public int CoinsToDrop = 5;
     public float Coefficient = 1;
@@ -34,9 +34,9 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("e") && _canShowText)
+        if (Input.GetKeyDown("e") && CanShowText)
         {
-            _canShowText = false;
+            CanShowText = false;
             _callWaveText.SetActive(false);
             _wavesCountText.SetActive(false);
 
@@ -111,21 +111,21 @@ public class Spawner : MonoBehaviour
         CoinsToDrop = Random.Range(4, 7);
         _wavesCountText.SetActive(true);
         _callWaveText.SetActive(true);
-        _canShowText = true;
+        CanShowText = true;
         _shopButton.SetActive(true);
     }
 
     public int StopSpawner()
     {
         StopAllCoroutines();
-        _canShowText = false;
+        CanShowText = false;
         _callWaveText.SetActive(false);
         return WavesPassed;
     }
 
     public void ResetSpawner()
     {
-        _canShowText = true;
+        CanShowText = true;
         _callWaveText.SetActive(true);
         _wavesCountText.SetActive(true);
     }

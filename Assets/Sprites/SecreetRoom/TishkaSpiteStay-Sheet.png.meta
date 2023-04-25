@@ -1,0 +1,673 @@
+fileFormatVersion: 2
+guid: 97a9e97361631b74ea4568656c36d0a1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 6, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd219da33f69c648a135681309fc99f
+      internalID: -116531669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1
+        width: 46
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af1681aff765d224195a51ccacc0ae9e
+      internalID: -956203822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1
+        width: 45
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6bd5de7876240c4fa027e7a94c58468
+      internalID: 209264300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 1
+        width: 46
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8f2ce345efd55d4ebbfc8804fac85fa
+      internalID: -867421736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 1
+        width: 47
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4591c0cc096d9946ad6572e66db78f0
+      internalID: -267147349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 1
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c37fdc3d1c28032408820b4a5651b2a1
+      internalID: -307038032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8283e08bbacdbb4da69fb0ee77834b3
+      internalID: 1149254358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 1
+        width: 46
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328726f77e0fe8340823769ffac48701
+      internalID: -435554161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1
+        width: 50
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a15cc94f3369294e85a38a4d559302e
+      internalID: -1723086135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 1
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c784204e838c64aa718eea58f786e8
+      internalID: -1316199959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b600fddeda7a274eb759191a63108b4
+      internalID: 1810058486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 1
+        width: 49
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c997ef537f8d4494dbc69da339295c3d
+      internalID: 1214086249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 1
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d602adc54224a4b835de620f6f9bfc
+      internalID: 693664806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 1
+        width: 50
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca1ae94ac4cfacb4b8801d1433ce5a3d
+      internalID: 701242572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1
+        width: 49
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c8dd58ab7d5dc74bb878f522e07a521
+      internalID: -170736771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 1
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa772c6a20421504a88adcd5bbf58d29
+      internalID: 530232704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 1
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec26747299083547a83ccb6f6fe82ae
+      internalID: -1138853230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 0
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ab427e56e7a3ff46b0264efa97b0a7e
+      internalID: 509346754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 1
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efefd4b0f806cf84ab4f4c6d787aafd4
+      internalID: -354373980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1
+        width: 42
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663b4b42837320745879c9ff549efb69
+      internalID: 932902426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 1
+        width: 42
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af754f25046d3dc4d9d6f21348982d5c
+      internalID: -1406136593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 1
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3d2871756736094ab1b7e0d05b36142
+      internalID: -1291549032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131f2e5555fb02343b810053667e9219
+      internalID: -31448807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 1
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59e0ae29e908fb4b8a1e9b130b278cc
+      internalID: 133459623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TishkaSpiteStay-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1544
+        y: 1
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8051bfde7067e041bd1760a90a3a995
+      internalID: 509279948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      TishkaSpiteStay-Sheet_0: -116531669
+      TishkaSpiteStay-Sheet_1: -956203822
+      TishkaSpiteStay-Sheet_10: 1810058486
+      TishkaSpiteStay-Sheet_11: 1214086249
+      TishkaSpiteStay-Sheet_12: 693664806
+      TishkaSpiteStay-Sheet_13: 701242572
+      TishkaSpiteStay-Sheet_14: -170736771
+      TishkaSpiteStay-Sheet_15: 530232704
+      TishkaSpiteStay-Sheet_16: -1138853230
+      TishkaSpiteStay-Sheet_17: 509346754
+      TishkaSpiteStay-Sheet_18: -354373980
+      TishkaSpiteStay-Sheet_19: 932902426
+      TishkaSpiteStay-Sheet_2: 209264300
+      TishkaSpiteStay-Sheet_20: -1406136593
+      TishkaSpiteStay-Sheet_21: -1291549032
+      TishkaSpiteStay-Sheet_22: -31448807
+      TishkaSpiteStay-Sheet_23: 133459623
+      TishkaSpiteStay-Sheet_24: 509279948
+      TishkaSpiteStay-Sheet_3: -867421736
+      TishkaSpiteStay-Sheet_4: -267147349
+      TishkaSpiteStay-Sheet_5: -307038032
+      TishkaSpiteStay-Sheet_6: 1149254358
+      TishkaSpiteStay-Sheet_7: -435554161
+      TishkaSpiteStay-Sheet_8: -1723086135
+      TishkaSpiteStay-Sheet_9: -1316199959
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
