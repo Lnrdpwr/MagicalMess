@@ -5,6 +5,7 @@ public class Wallet : MonoBehaviour
 {
     [SerializeField] private TMP_Text _coinsText;
     [SerializeField] private AudioClip _coinSound;
+    [SerializeField] private MagnitPassive _magnitPassive;
 
     private int _coins;
 
@@ -24,6 +25,8 @@ public class Wallet : MonoBehaviour
             _coins += coin.GetCoins();
             _coinsText.text = _coins.ToString();
             PlayerPrefs.SetInt("CollectedCoins", _coins);
+
+            _magnitPassive.affectedBodies.Remove(collision.attachedRigidbody);
         }
     }
 

@@ -6,7 +6,8 @@ public class MagnitPassive : MonoBehaviour
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private float _magnetPower;
 
-    private HashSet<Rigidbody2D> affectedBodies = new HashSet<Rigidbody2D>();
+    public HashSet<Rigidbody2D> affectedBodies = new HashSet<Rigidbody2D>();
+    //public HashSet<Coin> affectedBodies = new HashSet<Coin>();
 
     public bool IsActive = false;
 
@@ -14,17 +15,17 @@ public class MagnitPassive : MonoBehaviour
     {
         if (collision.attachedRigidbody != null && collision.TryGetComponent(out Coin coin))
         {
-            affectedBodies.Add(collision.attachedRigidbody);
+            affectedBodies.Add(collision.GetComponent<Rigidbody2D>());
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.attachedRigidbody != null && collision.TryGetComponent(out Coin coin))
-        {
-            affectedBodies.Remove(collision.attachedRigidbody);
-        }
-    }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.TryGetComponent(out Coin coin))
+    //    {
+    //        affectedBodies.Add(collision.GetComponent<Coin>()); ;
+    //    }
+    //}
 
     private void Update()
     {
@@ -34,10 +35,10 @@ public class MagnitPassive : MonoBehaviour
         {
             foreach (Rigidbody2D body in affectedBodies)
             {
-                Vector2 playerPosition = new Vector2(transform.position.x, transform.position.y);
-                Vector2 directionToPlayer = (playerPosition - body.position).normalized;
-
-                body.AddForce(directionToPlayer * _magnetPower);
+                Vector2 playerPosition = transform.position;
+                Vector2 coinPosition = body.gameObject.transform.position;
+                Vector2 direction = (playerPosition - coinPosition).normalized * _magnetPower;
+                body.GetComponent<Rigidbody2D>().velocity = direction;
             }
         }
     }
