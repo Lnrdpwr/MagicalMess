@@ -40,6 +40,15 @@ public class PlayerSpell : MonoBehaviour
         }
     }
 
+    public void UseSpell()
+    {
+        Instantiate(_currentSpell, transform);
+        _canUseSpell = false;
+        _currentMana -= ManaUsage;
+        StartCoroutine(Cooldown());
+        StartCoroutine(ChangeBar(_currentMana + ManaUsage, -ManaUsage));
+    }
+
     public void ChangeMaximumMana(float addedMana)
     {
         MaximumMana += addedMana;

@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject _upgradePanel;
     [SerializeField] private GameObject _shopButton;
     [SerializeField] private int _averageCoins;
+    [SerializeField] private GameObject _callWaveButton;
 
     private Vector2 _spawnPosition;
     private bool _canShowText = true;
@@ -113,6 +114,16 @@ public class Spawner : MonoBehaviour
         _callWaveText.SetActive(true);
         _canShowText = true;
         _shopButton.SetActive(true);
+    }
+
+    public void StartSpawnCycle()
+    {
+        _callWaveButton.SetActive(false);
+        _canShowText = false;
+        _callWaveText.SetActive(false);
+        _wavesCountText.SetActive(false);
+
+        StartCoroutine(SpawnCycle());
     }
 
     public int StopSpawner()

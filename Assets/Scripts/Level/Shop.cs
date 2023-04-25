@@ -24,6 +24,7 @@ public class Shop : MonoBehaviour
     [SerializeField] private TMP_Text _shopCoinsAmount;
     [SerializeField] private TMP_Text[] _statsLevelsText;
     [SerializeField] private TMP_Text[] _spellsLevelsText;
+    [SerializeField] private GameObject _spellButton;
      
     private PlayerHealth _playerHealth;
     private PlayerSpell _playerMana;
@@ -152,6 +153,7 @@ public class Shop : MonoBehaviour
 
             _mainSpellButton = index;
             _spellsLevelsText[_mainSpellButton].text = "Заклинание(1)";
+            _spellButton.SetActive(true);
         }
     }
 

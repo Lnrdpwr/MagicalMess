@@ -1,10 +1,7 @@
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
-using YG;
 
 public class LevelManager : MonoBehaviour
 {
@@ -17,6 +14,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private MusicSwitch _musicSwitch;
     [SerializeField] private PlayerHealth _player;
     [SerializeField] private PlayerSpell _playerMana;
+    [SerializeField] private GameObject _pcUI, _mobileUI;
 
     private PlayerShooting _playerShooting;
 
@@ -27,6 +25,15 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
+        string inputType = PlayerPrefs.GetString("InputType", "pc");
+        if(inputType == "pc")
+        {
+            _mobileUI.SetActive(false);
+        }
+        else
+        {
+            _pcUI.SetActive(false);
+        }
         Instance = this;
     }
 
