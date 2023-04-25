@@ -117,6 +117,9 @@ public class Shop : MonoBehaviour
         if (_walletAmount >= _speedCost)
         {
             _playerShooting.ReloadTime -= _speedDelta;
+            if (_playerShooting.ReloadTime <= 0)
+                _playerShooting.ReloadTime = 0.05f;
+
             _walletAmount -= _speedCost;
             _speedCost = Mathf.Round(_speedCost * 1.5f);
             _statsCostTexts[3].text = _speedCost.ToString();
