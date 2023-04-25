@@ -27272,11 +27272,11 @@ MonoBehaviour:
   _healthDelta: 1
   _manaDelta: 1
   _damageDelta: 0.5
-  _speedDelta: 0.5
+  _speedDelta: 0.05
   _healthCost: 3
   _manaCost: 3
   _damageCost: 5
-  _speedCost: 2
+  _speedCost: 5
   _statsLevels: 01000000010000000100000001000000
   _spells:
   - {fileID: 4885137079371374419, guid: cb449b718d30be7448a8d1207a272f7f, type: 3}
@@ -67556,7 +67556,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C(1)"
+  m_text: "\u041F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u043A\u0430(1)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4fdde6e82b22f854eb4ad75c65559cb5, type: 2}
   m_sharedMaterial: {fileID: 4087147146068027910, guid: 4fdde6e82b22f854eb4ad75c65559cb5, type: 2}
@@ -141653,7 +141653,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4fdde6e82b22f854eb4ad75c65559cb5, type: 2}
   m_sharedMaterial: {fileID: 4087147146068027910, guid: 4fdde6e82b22f854eb4ad75c65559cb5, type: 2}

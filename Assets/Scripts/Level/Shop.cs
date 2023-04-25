@@ -116,7 +116,7 @@ public class Shop : MonoBehaviour
     {
         if (_walletAmount >= _speedCost)
         {
-            _playerShooting.BulletSpeed += _speedDelta;
+            _playerShooting.ReloadTime -= _speedDelta;
             _walletAmount -= _speedCost;
             _speedCost = Mathf.Round(_speedCost * 1.5f);
             _statsCostTexts[3].text = _speedCost.ToString();
@@ -124,7 +124,7 @@ public class Shop : MonoBehaviour
             _shopCoinsAmount.text = _walletAmount.ToString();
 
             _statsLevels[3]++;
-            _statsLevelsText[3].text = "Скорость(" + _statsLevels[3].ToString() + ")"; 
+            _statsLevelsText[3].text = "Перезарядка(" + _statsLevels[3].ToString() + ")"; 
         }
     }
 
