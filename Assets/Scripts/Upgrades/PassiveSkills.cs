@@ -53,7 +53,7 @@ public class PassiveSkills : MonoBehaviour
 
         if (_playerShooting.Damage > 1)
         {
-            _playerShooting.Damage -= 1;
+            _playerShooting.Damage -= 0.25f;
         }
 
         _playerShooting.BulletSpeed += 1;
