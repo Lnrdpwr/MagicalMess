@@ -8,6 +8,7 @@ public class PassiveSkills : MonoBehaviour
     [SerializeField] private PlayerShooting _playerShooting;
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private PlayerHealth _playerHealth;
+    [SerializeField] private MagnitPassive _magnet;
     [SerializeField] private AudioClip _buttonSound;
     //UI
     [SerializeField] private Button[] _buttons;
@@ -77,6 +78,11 @@ public class PassiveSkills : MonoBehaviour
     public void MonsterMark()
     {
         _playerShooting.isTracked = true;
+    }
+
+    public void Magnet()
+    {
+        _magnet.IsActive = true;
     }
 
     public void HidePanel()

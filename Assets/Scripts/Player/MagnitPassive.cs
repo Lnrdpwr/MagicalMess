@@ -8,6 +8,8 @@ public class MagnitPassive : MonoBehaviour
 
     private HashSet<Rigidbody2D> affectedBodies = new HashSet<Rigidbody2D>();
 
+    public bool IsActive = false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.attachedRigidbody != null && collision.TryGetComponent(out Coin coin))
@@ -28,12 +30,15 @@ public class MagnitPassive : MonoBehaviour
     {
         transform.position = _playerMovement.gameObject.transform.position;
 
-        foreach (Rigidbody2D body in affectedBodies)
+        if (IsActive)
         {
-            Vector2 playerPosition = new Vector2(transform.position.x, transform.position.y);
-            Vector2 directionToPlayer = (playerPosition - body.position).normalized;
+            foreach (Rigidbody2D body in affectedBodies)
+            {
+                Vector2 playerPosition = new Vector2(transform.position.x, transform.position.y);
+                Vector2 directionToPlayer = (playerPosition - body.position).normalized;
 
-            body.AddForce(directionToPlayer * _magnetPower);
+                body.AddForce(directionToPlayer * _magnetPower);
+            }
         }
     }
 }
