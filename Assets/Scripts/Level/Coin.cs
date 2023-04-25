@@ -31,9 +31,12 @@ public class Coin : MonoBehaviour
         float alpha = 1;
         for(float i = 5; i > 0; i -= 0.5f)
         {
-            alpha = Mathf.Abs(alpha - 1);
+            alpha = Mathf.Abs(alpha - 0.75f);
             _coinRenderer.color = new Color(1, 1, 1, alpha);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.34f);
+            alpha = 1;
+            _coinRenderer.color = new Color(1, 1, 1, alpha);
+            yield return new WaitForSeconds(0.16f);
         }
 
         Destroy(gameObject);
