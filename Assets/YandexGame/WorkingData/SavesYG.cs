@@ -17,6 +17,7 @@ namespace YG
         public bool[] openLevels = new bool[3];
 
         // Ваши сохранения
+        public int qauntityWaves = 0;                       // Можно задать полям значения по умолчанию
 
         // ...
 

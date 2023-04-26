@@ -51,7 +51,7 @@ public class LevelManager : MonoBehaviour
         if (currentResult > bestResult)
         {
             _bestResultText.text = "Лучший результат: " + currentResult.ToString();
-            PlayerPrefs.SetInt("BestResult", currentResult);
+            PlayerPrefs.SetInt("BestResult", currentResult);s
 
             YandexGame.savesData.qauntityWaves = currentResult;
             YandexGame.SaveProgress();
