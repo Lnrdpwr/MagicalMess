@@ -26,7 +26,7 @@ public class MagnitPassive : MonoBehaviour
     //    }
     //}
 
-    private void Update()
+    private void FixedUpdate()
     {
         transform.position = _playerMovement.gameObject.transform.position;
 

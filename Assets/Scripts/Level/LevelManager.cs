@@ -73,13 +73,14 @@ public class LevelManager : MonoBehaviour
         {
             enemy.GetComponent<EnemyHealth>().DestroyEnemy();
         }
+
         GameObject[] acids = GameObject.FindGameObjectsWithTag("Acid");
         foreach (GameObject acid in acids)
         {
             Destroy(acid);
         }
 
-        Leaderboard.NewRecord();
+        YandexGame.NewLeaderboardScores("MagicalMessBoard", bestResult);
 
         _panel.SetActive(true);
     }
