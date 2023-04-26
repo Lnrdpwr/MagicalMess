@@ -74593,7 +74593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1396373291
 RectTransform:
   m_ObjectHideFlags: 0
@@ -74612,7 +74612,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 290, y: 0}
-  m_SizeDelta: {x: 2500, y: 1200}
+  m_SizeDelta: {x: 2500, y: 2000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1396373292
 Animator:
@@ -74656,7 +74656,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 1387923225, guid: 2751fc914a431f44a865fd04dcee1268, type: 3}
-  m_Type: 0
+  m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -74664,7 +74664,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.2
+  m_PixelsPerUnitMultiplier: 0.25
 --- !u!222 &1396373294
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -115803,7 +115803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1781622873
 Transform:
   m_ObjectHideFlags: 0
@@ -115833,7 +115833,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerMovement: {fileID: 1572336966}
   _magnetPower: 5
-  IsActive: 1
 --- !u!58 &1781622875
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -115849,7 +115848,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 3
 --- !u!1 &1782328645
 GameObject:
   m_ObjectHideFlags: 0
