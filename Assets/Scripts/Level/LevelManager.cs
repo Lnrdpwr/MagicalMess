@@ -51,7 +51,7 @@ public class LevelManager : MonoBehaviour
         if (currentResult > bestResult)
         {
             _bestResultText.text = "Лучший результат: " + currentResult.ToString();
-            PlayerPrefs.SetInt("BestResult", currentResult);s
+            PlayerPrefs.SetInt("BestResult", currentResult);
 
             YandexGame.savesData.qauntityWaves = currentResult;
             YandexGame.SaveProgress();
@@ -66,13 +66,14 @@ public class LevelManager : MonoBehaviour
         {
             enemy.GetComponent<EnemyHealth>().DestroyEnemy();
         }
+
         GameObject[] acids = GameObject.FindGameObjectsWithTag("Acid");
         foreach (GameObject acid in acids)
         {
             Destroy(acid);
         }
 
-        Leaderboard.NewRecord();
+        YandexGame.NewLeaderboardScores("MagicalMessBoard", bestResult);
 
         _panel.SetActive(true);
     }
