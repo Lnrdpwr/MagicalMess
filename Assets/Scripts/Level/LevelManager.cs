@@ -9,8 +9,6 @@ using YG.Example;
 
 public class LevelManager : MonoBehaviour
 {
-    readonly SavesYG _dataSave;
-
     [SerializeField] private Spawner _spawner;
     [SerializeField] private GameObject _panel;
     [SerializeField] private TMP_Text _passedWavesInGameText;
@@ -46,16 +44,17 @@ public class LevelManager : MonoBehaviour
 
     public void StopGame()
     {
-        int bestResult = _dataSave.qauntityWaves;
+        int bestResult = YandexGame.savesData.qauntityWaves;
         int currentResult = _spawner.StopSpawner();
         _passedWavesText.text = "Пройдено волн: " + currentResult.ToString();
 
         if (currentResult > bestResult)
         {
             _bestResultText.text = "Лучший результат: " + currentResult.ToString();
-            PlayerPrefs.SetInt("BestResult", currentResult);
-            _dataSave.qauntityWaves = currentResult;
-            SaverTest.MySaveData(_dataSave.qauntityWaves);
+            PlayerPrefs.SetInt("BestResult", currentResult);s
+
+            YandexGame.savesData.qauntityWaves = currentResult;
+            YandexGame.SaveProgress();
         }
         else
         {
