@@ -47,5 +47,12 @@ namespace YG.Example
             $"First Session - {YandexGame.savesData.isFirstSession}\n" +
             $"Prompt Done - {YandexGame.savesData.promptDone}\n";
         }
+
+        public static void MySaveData(int getQauntityWaves)
+        {
+            YandexGame.savesData.qauntityWaves = getQauntityWaves;
+
+            YandexGame.SaveProgress();
+        }
     }
 }
