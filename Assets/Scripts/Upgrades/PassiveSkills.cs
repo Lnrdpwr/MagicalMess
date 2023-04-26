@@ -8,14 +8,14 @@ public class PassiveSkills : MonoBehaviour
     [SerializeField] private PlayerShooting _playerShooting;
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private PlayerHealth _playerHealth;
-    [SerializeField] private MagnitPassive _magnet;
+    [SerializeField] private GameObject _magnet;
     [SerializeField] private AudioClip _buttonSound;
     //UI
     [SerializeField] private Button[] _buttons;
     [SerializeField] private TMP_Text[] _buttonTexts;
     [SerializeField] private GameObject _panel;
 
-
+    private bool _gotMagnet = false;
     private int _previousUpgrade;
 
     public void ArrowpPiercingUpLevel()
@@ -82,7 +82,8 @@ public class PassiveSkills : MonoBehaviour
 
     public void Magnet()
     {
-        _magnet.IsActive = true;
+        _magnet.SetActive(true);
+        _gotMagnet = true;
     }
 
     public void HidePanel()
@@ -104,7 +105,7 @@ public class PassiveSkills : MonoBehaviour
             do
             {
                 chosenUpgrade = Random.Range(0, 7);
-            } while (chosenUpgrade == _previousUpgrade || (_playerShooting.isTracked && chosenUpgrade == 6));
+            } while (chosenUpgrade == _previousUpgrade || (_playerShooting.isTracked && chosenUpgrade == 6) || (_gotMagnet && chosenUpgrade == 7));
             _previousUpgrade = chosenUpgrade;
 
             switch (chosenUpgrade)
@@ -136,6 +137,10 @@ public class PassiveSkills : MonoBehaviour
                 case 6:
                     _buttons[i].onClick.AddListener(MonsterMark);
                     _buttonTexts[i].text = "Метка монстра\nнаносит урон через время";
+                    break;
+                case 7:
+                    _buttons[i].onClick.AddListener(Magnet);
+                    _buttonTexts[i].text = "Магнит\n-здоровье\nмагнетизм";
                     break;
             }
             _buttons[i].onClick.AddListener(HidePanel);

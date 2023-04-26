@@ -11,6 +11,7 @@ public class PlayerSpell : MonoBehaviour
     [SerializeField] private float _spellCooldown;
     [SerializeField] private Image _spellReload;
     [SerializeField] private Sprite[] _spellsSprites;
+    [SerializeField] private Image _spellButton;
 
     private float _currentMana;
     private bool _canChangeBar = true;
@@ -80,6 +81,7 @@ public class PlayerSpell : MonoBehaviour
         _spellReload.fillAmount = 1;
         _currentSpell = newSpell;
         _canUseSpell = true;
+        _spellButton.sprite = _spellsSprites[spellIndex];
     }
 
     public void Revive()
@@ -103,11 +105,13 @@ public class PlayerSpell : MonoBehaviour
 
     IEnumerator Cooldown()
     {
+        _spellButton.color = Color.grey;
         for(float i = 0; i <= _spellCooldown; i += Time.deltaTime)
         {
             _spellReload.fillAmount = i / _spellCooldown;
             yield return new WaitForEndOfFrame();
         }
+        _spellButton.color = Color.white;
         _canUseSpell = true;
     }
 }
