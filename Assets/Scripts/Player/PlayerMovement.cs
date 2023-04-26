@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Experimental.AI;
 using UnityEngine.UI;
+using YG;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -31,19 +32,19 @@ public class PlayerMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
         _playerRigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer =  GetComponent<SpriteRenderer>();
-        _inputType = PlayerPrefs.GetString("InputType", "pc");
+        _inputType = YandexGame.EnvironmentData.deviceType;
     }
 
     private void FixedUpdate()
     {
         transform.localScale = PlayerScale;
 
-        if (_inputType == "pc")
+        if (_inputType == "desktop")
         {
             _horizontalMovement = Input.GetAxisRaw("Horizontal");
             _verticalMovement = Input.GetAxisRaw("Vertical");
         }
-        else if (_inputType == "mobile")
+        else if (_inputType == "mobile" || _inputType == "tablet")
         {
             _horizontalMovement = _joystick.Horizontal;
             _verticalMovement = _joystick.Vertical;

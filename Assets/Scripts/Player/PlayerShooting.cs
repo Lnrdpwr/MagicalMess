@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private AudioClip _shotClip;
     [SerializeField] private Joystick _joystick;
 
+    private string _inputType;
     private bool _isReloaded = true;
 
     public bool CanShoot = true;
@@ -29,11 +31,12 @@ public class PlayerShooting : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        _inputType = YandexGame.EnvironmentData.deviceType;
     }
 
     public void Update()
     {
-        if (CanShoot && _isReloaded && (Input.GetButton("Fire1") || _joystick.Direction.magnitude >= 0.25f))
+        if (CanShoot && _isReloaded && (_inputType == "desktop" && Input.GetMouseButton(0) || (_inputType == "mobile" || _inputType == "tablet") && _joystick.Direction.magnitude >= 0.25f))
         {
             SoundManager.Instance.PlayClip(_shotClip);
             Shoot();

@@ -6,7 +6,6 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject[] _enemies;
     [SerializeField] private Vector2 _topRight, _bottomLeft;
     [SerializeField] private float _timeToSpawn, _waveTime;
-    [SerializeField] private GameObject _callWaveText;
     [SerializeField] private GameObject _wavesCountText;
     [SerializeField] private float _coefficientDelta;
     [SerializeField] private MusicSwitch _musicSwitch;
@@ -31,18 +30,6 @@ public class Spawner : MonoBehaviour
     {
         Instance = this;
         _levelManager = LevelManager.Instance;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown("e") && _canShowText)
-        {
-            _canShowText = false;
-            _callWaveText.SetActive(false);
-            _wavesCountText.SetActive(false);
-
-            StartCoroutine(SpawnCycle());
-        }
     }
 
     IEnumerator SpawnCycle()
@@ -111,16 +98,15 @@ public class Spawner : MonoBehaviour
 
         CoinsToDrop = Random.Range(4, 7);
         _wavesCountText.SetActive(true);
-        _callWaveText.SetActive(true);
         _canShowText = true;
         _shopButton.SetActive(true);
+        _callWaveButton.SetActive(true);
     }
 
     public void StartSpawnCycle()
     {
         _callWaveButton.SetActive(false);
         _canShowText = false;
-        _callWaveText.SetActive(false);
         _wavesCountText.SetActive(false);
 
         StartCoroutine(SpawnCycle());
@@ -130,14 +116,12 @@ public class Spawner : MonoBehaviour
     {
         StopAllCoroutines();
         _canShowText = false;
-        _callWaveText.SetActive(false);
         return WavesPassed;
     }
 
     public void ResetSpawner()
     {
         _canShowText = true;
-        _callWaveText.SetActive(true);
         _wavesCountText.SetActive(true);
         _shopButton.SetActive(true);
     }

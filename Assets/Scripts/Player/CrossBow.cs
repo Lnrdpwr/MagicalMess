@@ -12,8 +12,8 @@ public class CrossBow : MonoBehaviour
 
     private void Update()
     {
-        _inputType = PlayerPrefs.GetString("InputType", "pc");
-        if(_inputType == "pc")
+        _inputType = YandexGame.EnvironmentData.deviceType;
+        if(_inputType == "desktop")
         {
             _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
         }
@@ -22,12 +22,12 @@ public class CrossBow : MonoBehaviour
     private void FixedUpdate()
     {
         float angle = 0;
-        if (_inputType == "pc")
+        if (_inputType == "desktop")
         {
             Vector3 lookDir = _mousePosition - transform.position;
             angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         }
-        else if(_inputType == "mobile")
+        else if(_inputType == "mobile" || _inputType == "tablet")
         {
             float _horizonaDelta = _joystick.Horizontal;
             float _verticalDelta = _joystick.Vertical;
