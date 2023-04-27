@@ -1,18 +1,29 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;
 
-public class ScenesSwitch : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
     [SerializeField] private Animator _transitionAnimator;
     [SerializeField] private AudioSource _musicSource;
-    [SerializeField] private GameObject _tutoralPanel;
+    [SerializeField] private GameObject _pcTutorialPanel, _mobileTutorialPanel;
+
+    private string _deviceType;
 
     private void Start()
     {
+        _deviceType = YandexGame.EnvironmentData.deviceType;
         if (!PlayerPrefs.HasKey("PassedTutorial"))
         {
-            _tutoralPanel.SetActive(true);
+            if(_deviceType == "desktop")
+            {
+                _mobileTutorialPanel.SetActive(false);
+            }
+            else//mobile è tablet
+            {
+                _pcTutorialPanel.SetActive(false);
+            }
             PlayerPrefs.SetInt("PassedTutorial", 1);
             PlayerPrefs.Save();
         }

@@ -39542,7 +39542,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &703316096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -90883,7 +90883,7 @@ MonoBehaviour:
   - {fileID: -1242185528, guid: a3cad06a2025e684c8915293a0852155, type: 3}
   - {fileID: -291438780, guid: a3cad06a2025e684c8915293a0852155, type: 3}
   - {fileID: 1437881580, guid: a3cad06a2025e684c8915293a0852155, type: 3}
-  _spellButton: {fileID: 0}
+  _spellButton: {fileID: 854885672}
   MaximumMana: 5
   ManaUsage: 1
 --- !u!95 &1572336974
@@ -113876,7 +113876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1716101851
 RectTransform:
   m_ObjectHideFlags: 0

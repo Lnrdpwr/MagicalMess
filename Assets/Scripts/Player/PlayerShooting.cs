@@ -36,7 +36,7 @@ public class PlayerShooting : MonoBehaviour
 
     public void Update()
     {
-        if (CanShoot && _isReloaded && (_inputType == "desktop" && Input.GetMouseButton(0) || (_inputType == "mobile" || _inputType == "tablet") && _joystick.Direction.magnitude >= 0.25f))
+        if (CanShoot && _isReloaded && (_inputType == "desktop" && Input.GetMouseButton(0) || (_inputType == "mobile" || _inputType == "tablet") && _joystick.Direction.magnitude >= 0.5f))//боже......
         {
             SoundManager.Instance.PlayClip(_shotClip);
             Shoot();
