@@ -100,6 +100,7 @@ public class PlayerSpell : MonoBehaviour
             _manaBar.fillAmount = (changeFrom + _manaBarChangeCurve.Evaluate(i / _timeToChangeBar) * previousChange) / MaximumMana;
             yield return new WaitForEndOfFrame();
         }
+        _manaBar = _currentMana / MaximumMana;
         _canChangeBar = true;
     }
 
