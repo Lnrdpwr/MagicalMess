@@ -94,7 +94,8 @@ public class PlayerHealth : MonoBehaviour
             _healthBar.fillAmount = (changeFrom + _healthBarChangeCurve.Evaluate(i / _timeToChangeBar) * previousChange) / MaximumHealth;
             yield return new WaitForEndOfFrame();
         }
-
+        
+        _healthBar.fillAmount = _currentHealth / MaximumHealth;
         _canChangeBar = true;
     }
 
