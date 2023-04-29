@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
 
             if (isTrackActive == true)
             {
-                enemy.DoDamage(2, Damage, true);  
+                enemy.DoDamage(1, Damage, true);  
             }
 
             if (_piercesBeforeDestruction <= 0)

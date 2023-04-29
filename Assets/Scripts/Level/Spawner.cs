@@ -124,5 +124,6 @@ public class Spawner : MonoBehaviour
         _canShowText = true;
         _wavesCountText.SetActive(true);
         _shopButton.SetActive(true);
+        _callWaveButton.SetActive(true);
     }
 }
