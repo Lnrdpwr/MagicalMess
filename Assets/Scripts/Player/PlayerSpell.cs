@@ -43,11 +43,14 @@ public class PlayerSpell : MonoBehaviour
 
     public void UseSpell()
     {
-        Instantiate(_currentSpell, transform);
-        _canUseSpell = false;
-        _currentMana -= ManaUsage;
-        StartCoroutine(Cooldown());
-        StartCoroutine(ChangeBar(_currentMana + ManaUsage, -ManaUsage));
+        if (_canUseSpell && _currentMana >= ManaUsage)
+        {
+            Instantiate(_currentSpell, transform);
+            _canUseSpell = false;
+            _currentMana -= ManaUsage;
+            StartCoroutine(Cooldown());
+            StartCoroutine(ChangeBar(_currentMana + ManaUsage, -ManaUsage));
+        }
     }
 
     public void ChangeMaximumMana(float addedMana)
@@ -81,7 +84,10 @@ public class PlayerSpell : MonoBehaviour
         _spellReload.fillAmount = 1;
         _currentSpell = newSpell;
         _canUseSpell = true;
+
         _spellButton.sprite = _spellsSprites[spellIndex];
+        _spellButton.SetNativeSize();
+        _spellButton.rectTransform.localScale = new Vector2(1.2f, 1.2f);
     }
 
     public void Revive()

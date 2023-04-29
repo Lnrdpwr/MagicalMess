@@ -140211,7 +140211,7 @@ MonoBehaviour:
   _playerShooting: {fileID: 1572336969}
   _playerMovement: {fileID: 1572336966}
   _playerHealth: {fileID: 1572336970}
-  _magnet: {fileID: 0}
+  _magnet: {fileID: 1781622872}
   _buttonSound: {fileID: 8300000, guid: c1c491e2eb693d14896ca9a784448af4, type: 3}
   _buttons:
   - {fileID: 681429441}
