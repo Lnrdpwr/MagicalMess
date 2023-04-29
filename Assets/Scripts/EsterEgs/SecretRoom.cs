@@ -22,7 +22,7 @@ public class SecretRoom : MonoBehaviour
 
         if (playerCanPass)
         {
-            _collider.offset = new Vector2(-20f, 0.45f);
+            _collider.offset = new Vector2(-40f, 0.45f);
             _partyInTheWoods.SetActive(true);
         }
         else
