@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private Animator _transitionAnimator;
     [SerializeField] private AudioSource _musicSource;
-    [SerializeField] private GameObject _pcTutorialPanel, _mobileTutorialPanel, _tutorPanel;
+    [SerializeField] private GameObject _pcTutorialPanel, _mobileTutorialPanel, _tutorPanel, _mainMenu, _lastPage;
 
     private string _deviceType;
     private bool _watchedTutorial;
@@ -36,6 +36,12 @@ public class MenuManager : MonoBehaviour
             YandexGame.savesData.watchedTutorial = true;
             YandexGame.SaveProgress();
             LoadScene(1);
+        }
+        else
+        {
+            _tutorPanel.SetActive(false);
+            _mainMenu.SetActive(true);
+            _lastPage.SetActive(false);
         }
     }
 
