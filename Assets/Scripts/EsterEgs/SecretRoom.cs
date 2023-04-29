@@ -5,6 +5,8 @@ using UnityEngine.Tilemaps;
 
 public class SecretRoom : MonoBehaviour
 {
+    [SerializeField] private GameObject _wavesCountText;
+    [SerializeField] private GameObject _callWaveText;
     [SerializeField] private Spawner _spawner;
     [SerializeField] private TilemapCollider2D _collider;
 
@@ -27,4 +29,12 @@ public class SecretRoom : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out PlayerMovement playerMovement))
+        {
+            _callWaveText.SetActive(false);
+            _wavesCountText.SetActive(false);
+        }
+    }
 }

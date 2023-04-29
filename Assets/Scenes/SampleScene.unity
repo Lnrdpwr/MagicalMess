@@ -39542,6 +39542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 601329630}
   - component: {fileID: 601329629}
+  - component: {fileID: 601329631}
   m_Layer: 0
   m_Name: SecretRoomManager
   m_TagString: Untagged
@@ -39561,6 +39562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71469331a88ab634a9ea1d1675e86c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _wavesCountText: {fileID: 1372197625}
+  _callWaveText: {fileID: 1284043499}
   _spawner: {fileID: 195371135}
   _collider: {fileID: 379129198}
 --- !u!4 &601329630
@@ -39579,6 +39582,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &601329631
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601329628}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 22.126236, y: -14.771076}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 11.656113, y: 3.535637}
+  m_EdgeRadius: 0
 --- !u!1 &604841411
 GameObject:
   m_ObjectHideFlags: 0
@@ -39922,6 +39951,7 @@ Transform:
   - {fileID: 1825267839}
   - {fileID: 1496777698}
   - {fileID: 1371724580}
+  - {fileID: 979550753}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -51667,14 +51697,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979550751}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.49, y: 26, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 36.124435, y: 26.730919, z: 0.057349693}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1020643186}
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 658364930}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &979550754
 MonoBehaviour:
