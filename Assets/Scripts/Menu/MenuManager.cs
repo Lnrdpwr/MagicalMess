@@ -11,21 +11,17 @@ public class MenuManager : MonoBehaviour
 
     private string _deviceType;
 
-    private void Start()
+    public void PlatformToTutorial()
     {
         _deviceType = YandexGame.EnvironmentData.deviceType;
-        if (!PlayerPrefs.HasKey("PassedTutorial"))
+
+        if (_deviceType == "desktop")
         {
-            if(_deviceType == "desktop")
-            {
-                _mobileTutorialPanel.SetActive(false);
-            }
-            else//mobile è tablet
-            {
-                _pcTutorialPanel.SetActive(false);
-            }
-            PlayerPrefs.SetInt("PassedTutorial", 1);
-            PlayerPrefs.Save();
+            _pcTutorialPanel.SetActive(true);
+        }
+        else
+        {
+            _mobileTutorialPanel.SetActive(true);
         }
     }
 
