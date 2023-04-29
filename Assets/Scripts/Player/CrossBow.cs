@@ -7,6 +7,8 @@ public class CrossBow : MonoBehaviour
 
     private Vector3 _mousePosition;
 
+    public bool IsRotateble;
+
     private void Update()
     {
         _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
@@ -16,32 +18,8 @@ public class CrossBow : MonoBehaviour
     {
         Vector3 lookDir = _mousePosition - transform.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        if (IsRotateble)
         transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        //if (angle > -220f && angle < -135f)
-        //{
-        //    _playerMovement.LookForward();
-        //}
-        //else if (angle > -135f && angle < -50f)
-        //{
-        //    _playerMovement.LookRight();
-        //}
-        //else if (angle > -270f && angle < -220f)
-        //{
-        //    _playerMovement.LookLeft();
-        //}
-        //else if (angle < 15f && angle > -15f)
-        //{
-        //    _playerMovement.LookUpForward();
-        //}
-        //else if (angle < 90f && angle > 50f)
-        //{
-        //    _playerMovement.LookUpLeft();
-        //}
-        //else if (angle > -50f && angle < -15f )
-        //{
-        //    _playerMovement.LookUpRight();
-        //}
 
         if (angle > -220f && angle < -135f)
         {
