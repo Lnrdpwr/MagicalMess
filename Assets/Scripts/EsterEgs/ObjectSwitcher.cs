@@ -9,12 +9,16 @@ public class ObjectSwitcher : MonoBehaviour
     [SerializeField] private Sprite _crossbowSprite;
     [SerializeField] private Sprite _cameraSpotSprite;
 
+    public bool IsCameraInHands = false;
+
     public void SwitchToCamera()
     {
         _crossbowRenderer.sprite = _cameraSpotSprite;
         _crossBow.IsRotateble = false;
         _playerShooting.ShootStoping = true;
         _animator.Play("Camera");
+
+        IsCameraInHands = true;
     }
 
     public void SwitchToCrossBow()
@@ -23,5 +27,7 @@ public class ObjectSwitcher : MonoBehaviour
         _crossBow.IsRotateble = true;
         _playerShooting.ShootStoping = false;
         _animator.Play("CameraIdle");
+
+        IsCameraInHands = false;
     }
 }

@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.Experimental.AI;
-using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
