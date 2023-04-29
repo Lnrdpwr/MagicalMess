@@ -14,6 +14,7 @@ public class PlayerShooting : MonoBehaviour
 
     private bool _isReloaded = true;
 
+    public bool ShootStoping = false;
     public bool CanShoot = true;
     public bool isTracked = false;//Метка монстра
     public float ReloadTime;//Перезарядка
@@ -33,7 +34,7 @@ public class PlayerShooting : MonoBehaviour
 
     public void Update()
     {
-        if (CanShoot && _isReloaded && Input.GetButton("Fire1"))
+        if (CanShoot && _isReloaded && Input.GetButton("Fire1") && ShootStoping == false)
         {
             SoundManager.Instance.PlayClip(_shotClip);
             Shoot();

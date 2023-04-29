@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraTakeble : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private ObjectSwitcher _objectSwitcher;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.TryGetComponent(out ObjectSwitcher objectSwitcher))
+        {
+            _objectSwitcher.SwitchToCamera();
+            Destroy(gameObject);
+        }
         
     }
 }
