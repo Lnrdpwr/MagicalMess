@@ -81471,6 +81471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1536119644}
   - component: {fileID: 1536119643}
+  - component: {fileID: 1536119645}
   m_Layer: 0
   m_Name: Pancel
   m_TagString: Untagged
@@ -81545,6 +81546,27 @@ Transform:
   m_Father: {fileID: 658364930}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1536119645
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536119642}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e7ba92817319124a8a1e66916b37aa0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1540335432
 GameObject:
   m_ObjectHideFlags: 0
@@ -122127,7 +122149,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 9
 --- !u!1 &1913295804
 GameObject:
   m_ObjectHideFlags: 0
