@@ -7,9 +7,37 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private Animator _transitionAnimator;
     [SerializeField] private AudioSource _musicSource;
-    [SerializeField] private GameObject _pcTutorialPanel, _mobileTutorialPanel;
+    [SerializeField] private GameObject _pcTutorialPanel, _mobileTutorialPanel, _tutorPanel;
 
     private string _deviceType;
+    private bool _watchedTutorial;
+    private bool _firstViewing = false;
+
+
+    public void StartTutorial()
+    {
+        _watchedTutorial = YandexGame.savesData.watchedTutorial;
+        if (!_watchedTutorial)
+        {
+            _firstViewing = true;
+            PlatformToTutorial();
+            _tutorPanel.SetActive(true);
+        }
+        else
+        {
+            LoadScene(1);
+        }
+    }
+
+    public void StartGameAfterTutor()
+    {
+        if (_firstViewing)
+        {
+            YandexGame.savesData.watchedTutorial = true;
+            YandexGame.SaveProgress();
+            LoadScene(1);
+        }
+    }
 
     public void PlatformToTutorial()
     {
@@ -40,4 +68,6 @@ public class MenuManager : MonoBehaviour
         }
         SceneManager.LoadScene(sceneNum);
     }
+
+    
 }
