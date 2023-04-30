@@ -11,11 +11,11 @@ public class SecretRoom : MonoBehaviour
     [SerializeField] private Spawner _spawner;
     [SerializeField] private TilemapCollider2D _collider;
 
-    private bool playerCanPass = true;
+    public bool playerCanPass = false;
 
     private void FixedUpdate()
     {
-        if (_spawner.WavesPassed == 5 && _spawner.CanShowText)
+        if (_spawner.WavesPassed >= 10 && _spawner.CanShowText)
         {
             playerCanPass = true;
         }

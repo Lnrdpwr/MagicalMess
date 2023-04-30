@@ -12,6 +12,8 @@ TagManager:
   - Acid
   - Trees
   - Scythe
+  - BaroStop
+  - TakeReverd
   layers:
   - Default
   - TransparentFX
