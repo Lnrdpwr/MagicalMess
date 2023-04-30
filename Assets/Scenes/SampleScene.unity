@@ -2032,6 +2032,7 @@ MonoBehaviour:
   _shopButton: {fileID: 1191041448}
   _averageCoins: 0
   _callWaveButton: {fileID: 118518769}
+  _coinSound: {fileID: 8300000, guid: 35a045a36fa6e86429e73262da5894e1, type: 3}
   WavesPassed: 0
   CoinsToDrop: 5
   Coefficient: 1
@@ -3358,7 +3359,7 @@ MonoBehaviour:
   _healthDelta: 1
   _manaDelta: 1
   _damageDelta: 0.5
-  _speedDelta: 0.075
+  _speedDelta: 0.05
   _healthCost: 3
   _manaCost: 3
   _damageCost: 5

@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject _shopButton;
     [SerializeField] private int _averageCoins;
     [SerializeField] private GameObject _callWaveButton;
+    [SerializeField] private AudioClip _coinSound;
 
     private Vector2 _spawnPosition;
     private bool _canShowText = true;
@@ -86,6 +87,13 @@ public class Spawner : MonoBehaviour
         _wavesUntillSkill--;
         if(_wavesUntillSkill == 0)
         {
+            GameObject[] allCoins = GameObject.FindGameObjectsWithTag("Coin");
+            foreach(GameObject coin in allCoins)
+            {
+                coin.GetComponent<Coin>().GetCoins();
+                SoundManager.Instance.PlayClip(_coinSound);
+            }
+
             Coefficient += _coefficientDelta;
             _skillsManager.ShowUpgradePanel();
             _wavesUntillSkill = 3;
